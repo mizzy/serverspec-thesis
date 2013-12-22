@@ -10,47 +10,47 @@
 \def\endUnderline{\vphantom{y}\egroup\smash{\underline{\box0}}\\}
 \def\|{\verb|}
 
-\setcounter{����}{53}
-\setcounter{���}{10}
+\setcounter{巻数}{53}
+\setcounter{号数}{10}
 \setcounter{page}{1}
 
-\����{2011}{11}{4}
-%\�Ƽ���{2011}{7}{16}   %��ά��ǽ
-%\�ƺƼ���{2011}{7}{20} %��ά��ǽ
-\��Ͽ{2011}{12}{1}
+\受付{2011}{11}{4}
+%\再受付{2011}{7}{16}   %省略可能
+%\再再受付{2011}{7}{20} %省略可能
+\採録{2011}{12}{1}
 
 \begin{document}
 
 
-\title{��������ز���ʸ�兩�㡼�ʥ���ʸ�ν�����ˡ\\
-��2012ǯ10��12���ǡ�}
+\title{情報処理学会論文誌ジャーナル論文の準備方法\\
+（2012年10月12日版）}
 
 \etitle{How to Prepare Your Paper for IPSJ Journal \\
 (version 2012/10/12)}
 
-\affiliate{IPSJ}{��������ز�\\
+\affiliate{IPSJ}{情報処理学会\\
 IPSJ, Chiyoda, Tokyo 101--0062, Japan}
 
 
-\paffiliate{JU}{����������\\
+\paffiliate{JU}{情報処理大学\\
 Johoshori Uniersity}
 
-\author{���� ��Ϻ}{Joho Taro}{IPSJ}[joho.taro@ipsj.or.jp]
-\author{���� �ֻ�}{Shori Hanako}{IPSJ}
-\author{�ز� ��Ϻ}{Gakkai Jiro}{IPSJ,JU}[gakkai.jiro@ipsj.or.jp]
+\author{情報 太郎}{Joho Taro}{IPSJ}[joho.taro@ipsj.or.jp]
+\author{処理 花子}{Shori Hanako}{IPSJ}
+\author{学会 次郎}{Gakkai Jiro}{IPSJ,JU}[gakkai.jiro@ipsj.or.jp]
 
 \begin{abstract}
-�ܹƤϡ���������ز���ʸ�兩�㡼�ʥ����Ƥ��븶�Ƥ�ɮ����ݡ��������
-ʸ�����˺ǽ����Ƥ��������ݤ�����������ޤȤ᤿��ΤǤ��롥�礭��ʬ��
-��ȡ���ʸ��Ƥ�ή��ȡ�\LaTeX �����ѤΥ�������ե�������Ѥ���������
-ʸ�ե����ޥåȤ˴ؤ���ؿˡ��������ʸ�����Ƥ˴ؤ��Ƥ���٤����ȡ������
-���Ǥʤ����Ȥ�ޤȤ᤿�٤��餺�����å��ꥹ�Ȥ���ʤ롥�ܹƼ��Τ� \LaTeX 
-�����ѤΥ�������ե�������Ѥ��Ƽ�ɮ����Ƥ��뤿�ᡤ��ʸ��ɮ�κݤ˻��ͤ�
-�ʤ�й����Ǥ��롥
+本稿は，情報処理学会論文誌ジャーナルに投稿する原稿を執筆する際，および論
+文採択後に最終原稿を準備する際の注意点等をまとめたものである．大きく分け
+ると，論文投稿の流れと，\LaTeX と専用のスタイルファイルを用いた場合の論
+文フォーマットに関する指針，および論文の内容に関してするべきこと，するべ
+きでないことをまとめたべからずチェックリストからなる．本稿自体も \LaTeX 
+と専用のスタイルファイルを用いて執筆されているため，論文執筆の際に参考に
+なれば幸いである．
 \end{abstract}
 
 \begin{jkeyword}
-��������ز���ʸ�兩�㡼�ʥ롤\LaTeX����������ե����롤�٤��餺��
+情報処理学会論文誌ジャーナル，\LaTeX，スタイルファイル，べからず集
 \end{jkeyword}
 
 \begin{eabstract}
@@ -68,416 +68,416 @@ IPSJ Journal, \LaTeX, style files, ``Dos and Dont's'' list
 \maketitle
 
 %1
-\section{�Ϥ����}
+\section{はじめに}
 
-��������ز�Ǥϡ�����ʸ��Ȥ�����ʸ�兩�㡼�ʥ��ȯ�Ԥ�ԤäƤ��롥��
-��ޤ���ʸ�兩�㡼�ʥ��Խ��Ѱ���Ǥϡ���ʸ�兩�㡼�ʥ����ʸ�Ǻܻ��Υե���
-�ޥåȤȤ���A4����2���Ȥ���Ѥ��Ƥ���������������¿������˾�˴�Ť���
-A4�ķ�2���Ȥ��ѹ����뤳�Ȥˤ������ޤ�������ޤǤ���ƻ��ȷǺܻ��η�����
-�ۤʤäƤ�����������Υե����ޥå��ѹ��˹�碌�ơ���ƻ���Ǻܻ���Ʊ�ͤ�
-A4�ķ�2���ȤǼ����դ��뤳�Ȥˤ�����
-
-
-�����ȼ����\LaTeX �Υ�������ե�����⿷������Τ��ѹ��������ܹƤǤϡ�
-�ޤ����Υ�������ե�������Ѥ�����ʸ�Υե����ޥåȤ˴ؤ��ƽҤ٤롥������
-��������ե�����Ǥϡ��������̤ʥ��ޥ�ɤϻȤ鷺�ˡ�ɸ��Ū�� \LaTeX �Υ�
-�������Ƨ�����Ƥ��롥��ʸ�ե����ޥåȤ˴ؤ��Ƥϡ�\ref{sec:format}~�Ϥ�
-��Ҥ���ؿˤ˽��ä�ĺ�����������˵��ꤵ��Ƥ��뤳�Ȱʳ���ɸ��Ū��\LaTeX 
-�Υ��ޥ�ɤ򤽤Τޤ޻Ȥ����Ȥ��Ǥ��롥�ܹƤϡ����Υ�������ե������º�
-�˻ȤäƤ���Τǡ���ʸ��ɮ�κݤ˻��ͤˤ��줿����
+情報処理学会では，基幹論文誌として論文誌ジャーナルの発行を行っている．こ
+れまで論文誌ジャーナル編集委員会では，論文誌ジャーナルの論文掲載時のフォー
+マットとしてA4横型2段組を採用してきたが，会員からの多くの要望に基づき，
+A4縦型2段組に変更することにした．また，これまでは投稿時と掲載時の形式が
+異なっていたが，今回のフォーマット変更に合わせて，投稿時も掲載時と同様の
+A4縦型2段組で受け付けることにした．
 
 
-\footnotetext{��ʸ�ϼºݤˤ���ʸ�兩�㡼�ʥ��Խ��Ѱ���Ǻ���������ΤǤ��롥}
+これに伴い，\LaTeX のスタイルファイルも新しいものに変更した．本稿では，
+まずそのスタイルファイルを用いた論文のフォーマットに関して述べる．新たな
+スタイルファイルでは，極力特別なコマンドは使わずに，標準的な \LaTeX のス
+タイルを踏襲している．論文フォーマットに関しては，\ref{sec:format}~章で
+後述する指針に従って頂くが，そこに規定されていること以外は標準的な\LaTeX 
+のコマンドをそのまま使うことができる．本稿は，そのスタイルファイルを実際
+に使っているので，論文執筆の際に参考にされたい．
 
-�ޤ�����ʸ�兩�㡼�ʥ��Խ��Ѱ���Ǥϡ���ʸ�μ�ɮ����ݤˡ����Ԥ�����٤�
-���ȡ�����٤��Ǥʤ����Ȥ�֤٤��餺���פȤ��ƤޤȤ᤿���ܹƤθ�Ⱦ�ˡ���
-ʸ�����Ƥ˴ؤ���ؿˤˤʤ�褦�ˡ��֤٤��餺���פ����Ƥ�����å��ꥹ�Ȥ�
-���ƤĤ��Ƥ���Τǡ���Ƥ����������ƤΥ����å������Ѥ��줿����
+
+\footnotetext{本文は実際には論文誌ジャーナル編集委員会で作成したものである．}
+
+また，論文誌ジャーナル編集委員会では，論文の執筆する際に，著者がするべき
+こと，するべきでないことを「べからず集」としてまとめた．本稿の後半に，論
+文の内容に関する指針になるように，「べからず集」の内容をチェックリストと
+してつけているので，投稿する前の内容のチェックに利用されたい．
 
 %2
-\section{��Ƥ�ή��}
+\section{投稿の流れ}
 
 %2.1
-\subsection{����}
+\subsection{準備}
 
-��������ز���ʸ�兩�㡼�ʥ�� \LaTeX ��������ե������ޤ���ʸ��ɮ����
-�Ȥ�
+情報処理学会論文誌ジャーナルの \LaTeX スタイルファイルを含む論文執筆キッ
+トは
 \begin{quote}
 \small
 \|http://www.ipsj.or.jp/jip/submit/style.html|
 \end{quote}
-�������������ɤ��뤳�Ȥ��Ǥ��롥��ʸ��ɮ���åȤϰʲ��Υե������ޤ��
-���롥
+からダウンロードすることができる．論文執筆キットは以下のファイルを含んで
+いる．
 \begin{enumerate}
-\item \|ipsj.cls      |: �ǽ������ѥ�������ե�����
-\item \|ipsjdraft.sty |: ����ѥ�������ʺ����ѡ�
-\item \|ipsjpref.sty  |: ��ʸ�ѥ�������
-\item \|jsample.tex   |: �ܹƤΥ������ե�����
-\item \|esample.tex   |: ��ʸ����ץ�Υ������ե�����
-\item \|ipsjsort.bst  |: jBibTEX �������������̾���
-\item \|ipsjunsrt.bst |: jBibTEX ��������ʽи����
-\item \|bibsample.bib |: ʸ���ꥹ�ȤΥ���ץ�
-\item \|ebibsample.bib|: ��ʸʸ���ꥹ�ȤΥ���ץ�
+\item \|ipsj.cls      |: 最終原稿用スタイルファイル
+\item \|ipsjdraft.sty |: 投稿用スタイル（査読用）
+\item \|ipsjpref.sty  |: 序文用スタイル
+\item \|jsample.tex   |: 本稿のソースファイル
+\item \|esample.tex   |: 英文サンプルのソースファイル
+\item \|ipsjsort.bst  |: jBibTEX スタイル（著者名順）
+\item \|ipsjunsrt.bst |: jBibTEX スタイル（出現順）
+\item \|bibsample.bib |: 文献リストのサンプル
+\item \|ebibsample.bib|: 英文文献リストのサンプル
 \end{enumerate}
-���åȤ�Unix�ѡ�Windows (DOS)�ѡ�Macintosh�Ѥʤɤ��Ѱդ���Ƥ��ꡤ���Ԥ�
-��ȴĶ��˱�������Τ�����Ǥ���褦�ˤʤäƤ��롥�ޤ����¹ԴĶ��Ȥ��Ƥ� 
-\LaTeXe ������Ȥ��Ƥ���Τǡ��������줿����
+キットはUnix用，Windows (DOS)用，Macintosh用などが用意されており，著者の
+作業環境に応じたものを選択できるようになっている．また，実行環境としては 
+\LaTeXe を前提としているので，準備されたい．
 
-Microsoft Word�˴ؤ��Ƥϡ���Ƥ��줿�ե����ޥåȤ��ˡ��ȼԤ� \LaTeX ��
-�Ѵ��������Ǥ�Ԥ��Τǡ������ޤǤ⻲�ͤȤ��Ƥ����Ȥ�ʤ����Ȥ��Τ���ĺ
-��������
+Microsoft Wordに関しては，投稿されたフォーマットを基に，業者が \LaTeX に
+変換して組版を行うので，あくまでも参考としてしか使わないことを承知して頂
+きたい．
 
 %2.2
-\subsection{�ǽ����Ƥκ��������}
+\subsection{最終原稿の作成と投稿}
 
-�ܹƤ˽��ä��Ѱդ�������Ѹ��Ƥ� \LaTeX ����������pdf�ե�������������
-Adobe��pdf reader���ɤ�뤳�Ȥ��ǧ�����塤
+本稿に従って用意した投稿用原稿の \LaTeX ソースからpdfファイルを作成し，
+Adobeのpdf readerで読めることを確認した後，
 \begin{quote}
 \small
 \|https://www.ipsj.or.jp/prms/author_pre_submit.do|
 \end{quote}
-��PRMS (Paper Review Management System)�˥᡼�륢�ɥ쥹����Ͽ���������
-�������᡼��˽��äơ����ꤵ�줿URL������Ƥ��롥��Ƥ�ή��ˤĤ��Ƥϡ�
+のPRMS (Paper Review Management System)にメールアドレスを登録し，送られ
+たきたメールに従って，指定されたURLから投稿する．投稿の流れについては，
 \begin{quote}
 \small
 \|http://www.ipsj.or.jp/journal/submit/manual/|
 \|manual_j_for_Author.pdf|
 \end{quote}
-�򻲾Ȥ��줿����
+を参照されたい．
 
-�ʤ�����������ز���ʸ�兩�㡼�ʥ�Ǥϡ���ʸ�����Ԥ����ɼԤ�̾�����Τ뤳
-�Ȥ��ʤ������ʤ������ɼԤ����Ԥ�̾�����Τ�ʤ����֥�֥饤��ɤκ��ɤ��
-������Ƥ��롥���Τ��ᡤ����ǤǤϡ����Ƥ�����̾�Ȥ��ν�°��ɽ�����ʤ���
-���ˤ���ɬ�פ����롥
+なお，情報処理学会論文誌ジャーナルでは，論文の著者が査読者の名前を知るこ
+とがないだけなく，査読者も著者の名前を知らないダブルブラインドの査読を取
+り入れている．このため，投稿版では，原稿に著者名とその所属は表示しないよ
+うにする必要がある．
 
 %2.3
-\subsection{�ǽ����Ƥκ����ȥե����������}
+\subsection{最終原稿の作成とファイルの送付}
 
-��Ƥ�����ʸ�κ�Ͽ�����ꤷ���顤���ɼԤ���Υ����Ȥʤɤˤ������äƸ���
-�����������ԾҲ�ʤ���ƻ��ˤʤ��ä����ܤ�������ɲä��롥�ޤ���ɽ�ʤ�
-�Υ쥤�����Ȥ�ǽ�Ū�ʤ�ΤȤ��롥�ʤ���ι����μ�֤�Ǿ��ˤ��뤿��ˡ�
-�����ʳ��ǵ��Ҥθ���ʤɤ����˽����褦����̩�˥����å�����ĺ��������
+投稿した論文の採録が決定したら，査読者からのコメントなどにしたがって原稿
+を修正し，著者紹介など投稿時になかった項目があれば追加する．また図表など
+のレイアウトも最終的なものとする．なお後の校正の手間を最小にするために，
+この段階で記述の誤りなどを完全に除去するように綿密にチェックして頂きたい．
 
-�ǽ��ǤǤϡ�����̾����Ӥ��ν�°��ɽ�������Ʊ���ˡ��ز���ؼ����줿��
-�����������Ƭ�ڡ����ֹ桤���ա���Ͽǯ������ǯ������ˤ򵭽Ҥ��롥�ʤ���
-�񤫤�λؼ����ʤ����ܤ˴ؤ��Ƥϡ����Ҥ��ʤ��Ƥ褤��
+最終版では，著者名およびその所属を表示すると同時に，学会より指示された巻
+数，号数，先頭ページ番号，受付／採録年月日（年は西暦）を記述する．なお学
+会からの指示がない項目に関しては，記述しなくてよい．
 
-�ز�ؤ�{\bf \LaTeX �ե�����ʤ�ޤȤ᤿��Ρˤȥϡ��ɥ��ԡ���������}��
-�դ��롥���դ���ե����뷲��ɸ��Ū�ʹ����� \|.tex| �� \|.bbl| �Ǥ��ꡤ��
-��¾��PostScript�ե���������̤ʥ�������ե����뤬������ղä��롥�ʤ� 
-\|.tex| �ϰ����ȼԤ��������뤳�Ȥ�����Τǡ�{ɬ����ĤΥե�����ˤ���}��
-�ޤ�ɬ�פʥե����뤬���Ƥ����äƤ��뤳�ȡ��ä����̤ʥ�������ե�����˱�
-�줬�ʤ����Ȥ����տ�����ǧ����ĺ��������
+学会へは{\bf \LaTeX ファイル（をまとめたもの）とハードコピーの双方を}送
+付する．送付するファイル群の標準的な構成は \|.tex| と \|.bbl| であり，こ
+の他にPostScriptファイルや特別なスタイルファイルがあれば付加する．なお 
+\|.tex| は印刷業者が修正することがあるので，{必ず一つのファイルにする}．
+また必要なファイルが全てそろっていること，特に特別なスタイルファイルに洩
+れがないことを，注意深く確認して頂きたい．
 
-�ե������������ˡ�ʤɤˤĤ��Ƥϡ���Ͽ���ΤȤȤ�˳ز��̳�ɤ���������
-�ؼ��˽�����
+ファイルの送付方法などについては，採録通知とともに学会事務局から送られる
+指示に従う．
 
 %2.4
-\subsection{���Թ��������ǡ�����}
+\subsection{著者校正・組版・出版}
 
-�ز�Ǥ��Ѹ���ѻ������δ��˽��äƽ������뤳�Ȥ����롥�ޤ� \LaTeX ��
-�¹ԴĶ��κ��ۤʤɤˤ�ä����Ԥ����������ϡ��ɥ��ԡ��ȼºݤ����Ƿ�̤���
-̯�˰ۤʤ뤳�Ȥ����롥�����ν����亹�ۤ�����ʤ�����ǽ�Ū�˳�ǧ���뤿
-��ˡ����Ԥ˥�����꤬������Τǡ��⤷���꤬����м��ˤ�äƻ�Ŧ����
-�������롥�ʤ�{\bf �����ʳ��Ǥε��Ҹ���ν����ϸ�§�Ȥ���ǧ����ʤ�}��
-�ǡ��������ջ��˺ٿ������դ�ʧ�äƤ�������������
+学会では用語や用字を一定の基準に従って修正することがある．また \LaTeX の
+実行環境の差異などによって著者が作成したハードコピーと実際の組版結果が微
+妙に異なることがある．これらの修正や差異が問題ないかを最終的に確認するた
+めに，著者にゲラ刷りが送られるので，もし問題があれば朱書によって指摘して
+返送する．なお{\bf この段階での記述誤りの修正は原則として認められない}の
+で，原稿送付時に細心の注意を払っていただきたい．
 
-���θ塤���Ԥι����˴�Ť��ǽ�Ū�����Ǥ�Ԥʤ�������饤����Ǥ��롥
+その後，著者の校正に基づき最終的な組版を行ない，オンライン出版する．
 
 %3
-\section{��ʸ�ե����ޥåȤλؿ�}
+\section{論文フォーマットの指針}
 \label{sec:format}
 
-�ʲ�����������ز���ʸ�兩�㡼�ʥ��ѥ�������ե�������Ѥ�����ʸ�ե����ޥ�
-�ȤλؿˤˤĤ��ƽҤ٤�Τǡ�����˽��äƸ��Ƥ��Ѱ�ĺ��������\LaTeX ����
-��������Ū��ʸ�Ϻ������ѤˤĤ��Ƥϡ�\cite{okumura, companion} ���򻲹ͤ�
-���줿����
+以下，情報処理学会論文誌ジャーナル用スタイルファイルを用いた論文フォーマッ
+トの指針について述べるので，これに従って原稿を用意頂きたい．\LaTeX を用
+いた一般的な文章作成技術については，\cite{okumura, companion} 等を参考に
+されたい．
 
 %4
-\section{��ʸ�ι���}
+\section{論文の構成}
 \label{config}
 
-�ե�����ϼ��Τ褦�ˤʤ롥����������ƻ��˾�ά��ǽ�ʤ�Ρ��ޤ��ȥ�󥶥�
-�������ͭ���ޥ�ɤˤĤ��Ƥ� \ref{sig}~��򻲾Ȥ��줿����
+ファイルは次のようになる．下線部は投稿時に省略可能なもの．またトランザク
+ション特有コマンドについては \ref{sig}~節を参照されたい．
 
 \noindent
-\|\documentclass[submit]{ipsj}|�ޤ���\\
-\|\documentclass[submit,draft]{ipsj}|\footnote{{\tt [draft]}������ѡ�
-�������륪�ץ�����\ref{option}�Ỳ�ȡ�}
+\|\documentclass[submit]{ipsj}|または\\
+\|\documentclass[submit,draft]{ipsj}|\footnote{{\tt [draft]}は投稿用，
+スタイルオプションは\ref{option}節参照．}
 \\
-\quad ɬ�פʤ�Х��ץ����Υ���������ɲ�\\
-\Underline{\|\setcounter{|{\bf ����}\|}{<����>}|}\\
-\Underline{\|\setcounter{|{\bf ���}\|}{<���>}|}\\
-\Underline{\|\setcounter{|{\bf page}\|}{<��Ƭ�ڡ���>}|}\\
-\Underline{\|\|{\bf ����}\|{<ǯ>}{<��>}{<��>}|}\\
-\Underline{\|\|{\bf ��Ͽ}\|{<ǯ>}{<��>}{<��>}|}\\
-\quad ɬ�פʤ�Х桼���Υޥ����򤳤��˵���\\
+\quad 必要ならばオプションのスタイルを追加\\
+\Underline{\|\setcounter{|{\bf 巻数}\|}{<巻数>}|}\\
+\Underline{\|\setcounter{|{\bf 号数}\|}{<号数>}|}\\
+\Underline{\|\setcounter{|{\bf page}\|}{<先頭ページ>}|}\\
+\Underline{\|\|{\bf 受付}\|{<年>}{<月>}{<日>}|}\\
+\Underline{\|\|{\bf 採録}\|{<年>}{<月>}{<日>}|}\\
+\quad 必要ならばユーザのマクロをここに記述\\
 \|\begin{document}|\\
-\|\title{ɽ��(��ʸ)}|\\
-\|\etitle{ɽ��(��ʸ)}|\\
-\Underline{\|\affiliate{��°��٥�}{<��ʸ��°>\\<��ʸ��°>}|}\\
-\quad ɬ�פʤ�� \|\paffiliate| �ˤ�긽�ߤν�°���������\\
-\Underline{\|\paffiliate{����°��٥�}{<�¸���°>\\<�Ѹ���°>}|}\\\\
-\Underline{\|\author{���� ��Ϻ}{Taro Joho}|}\\
-\Underline{\|          {<��°��٥�>}[E-mail]|}\\
-\Underline{\|\author{���� �ֻ�}{Hanako Shori}|}\\
-\Underline{\|          {<��°��٥�2,����°��٥�3>}|}\\\\
+\|\title{表題(和文)}|\\
+\|\etitle{表題(英文)}|\\
+\Underline{\|\affiliate{所属ラベル}{<和文所属>\\<英文所属>}|}\\
+\quad 必要ならば \|\paffiliate| により現在の所属を宣言する\\
+\Underline{\|\paffiliate{現所属ラベル}{<和現所属>\\<英現所属>}|}\\\\
+\Underline{\|\author{情報 太郎}{Taro Joho}|}\\
+\Underline{\|          {<所属ラベル>}[E-mail]|}\\
+\Underline{\|\author{処理 花子}{Hanako Shori}|}\\
+\Underline{\|          {<所属ラベル2,現所属ラベル3>}|}\\\\
 \|\begin{abstract}|\\
-\|<���ס���ʸ��>|\\
+\|<概要（和文）>|\\
 \|\end{abstract}|\\
 \|\begin{jkeyword}|\\
-\|<�������>|\\
+\|<キーワード>|\\
 \|\end{jkeyword}|\\
 \|\begin{eabstract}|\\
-\|<���סʱ�ʸ��>|\\
+\|<概要（英文）>|\\
 \|\end{eabstract}|
 \|\begin{ekeyword}|\\
 \|<KeyWords>|\\
 \|\end{ekeyword}|\\
 \|\maketitle|\\
-\|\section{|��1���ɽ��\|}|\\
+\|\section{|第1節の表題\|}|\\
 \dots\dots\dots\dots\dots\\
-\quad \|<��ʸ>|\\
+\quad \|<本文>|\\
 \dots\dots\dots\dots\dots\\
-�ռ����������\\
+謝辞がある場合は\\
 \|\begin{acknowledgment}|\\
 \|\end{acknowledgment}|\\\\
 \|\begin{thebibliography}{99}%9 or 99|\\
 \|\bibitem{1}|\\
 \|\bibitem{2}|\\
 \|\end{thebibliography}|\\\\
-��Ͽ���������\\
+付録がある場合は\\
 \|\appendix|\\
-\|\section{|��Ͽ1���ɽ��\|}|\\\\
+\|\section{|付録1節の表題\|}|\\\\
 \Underline{\|\begin{biography}|}\\
-\Underline{\|\profile{<X>}{<�Ļ� ̾��>}{<�ץ��ե�����ʸ��>}|}\\
+\Underline{\|\profile{<X>}{<苗字 名前>}{<プロフィール文章>}|}\\
 \Underline{\|\end{biography}|}\\
 \|\end{document}|
 
 
 
 %4.1
-\subsection{���ץ���󡦥�������}
+\subsection{オプション・スタイル}
 
-\label{option} \|\documentclass{ipsj}|�Υ��ץ����\footnote{������ѤΥ�
-�ץ����� \ref{sig}~����������롥}�Ȥ��ơ��ʲ��Τ�Τ��Ѱդ��Ƥ��롥
-{\bf ����������ʤ������ʸ��ʸ�Ѥ�ɸ�ॹ������}�Ȥʤ뤬���������Ǥκ�
-����ʸ��ʸ�Υ����ȥ롤��ʸ��ʸ���̤ˡ�{\bf ���ߥ�}�ס�{\bf ����}�פΥե�
-��Ȥ���Ѥ��Ƥ��뤿�ᡤ\TeX ɸ��ե���Ȥ��֤������� \|submit| �Ȥ�����
-�ץ������Ѱդ�����
+\label{option} \|\documentclass{ipsj}|のオプション\footnote{研究会用のオ
+プションは \ref{sig}~節で説明する．}として，以下のものを用意してある．
+{\bf 何も定義しなければ和文論文用の標準スタイル}となるが，今回，組版の際
+に和文論文のタイトル，和文論文種別に「{\bf 太ミン}」「{\bf 太ゴ}」のフォ
+ントを使用しているため，\TeX 標準フォントに置き換える \|submit| というオ
+プションを用意した．
 
 \begin{enumerate}
-\item\|submit         | �ե�����ִ���
-\item\|draft          | �����
-\item\|invited        | ������ʸ
-\item\|sigrecommended | ������ʸ
-\item\|technote       | �ƥ��˥���Ρ�����
-\item\|preface        | ��ʸ��
-\item\|JIP            | ��ʸ��
+\item\|submit         | フォント置換用
+\item\|draft          | 投稿用
+\item\|invited        | 招待論文
+\item\|sigrecommended | 推薦論文
+\item\|technote       | テクニカルノート用
+\item\|preface        | 序文用
+\item\|JIP            | 英文用
 \end{enumerate}
-�����Υ��ץ�����Ǥ�դ��ȹ礻�ǻ��Ѥ���ǽ�Ǥ��롥
+これらのオプションは任意の組合せで使用が可能である．
 
-\|\documentclass[submit,draft]{ipsj}|�Ȥ���С�
-����ѤΥ�������Ȥʤ롥
+\|\documentclass[submit,draft]{ipsj}|とすれば，
+投稿用のスタイルとなる．
 
-�ʤ���\|\usepackage| �����Ū�ʥ�������ե��������ꤷ�����ˤϡ��ǽ�
-�����ѤΥե����뷲��ɬ����������ե������ޤ�롥��������\LaTeXe ��ɸ��
-���ۤ˴ޤޤ�Ƥ����Ρʤ��Ȥ��� \|graphicx|�ˤˤĤ��Ƥ�Ʊ����ɬ�פϤʤ���
+なお，\|\usepackage| で補助的なスタイルファイルを指定した場合には，最終
+原稿用のファイル群に必ずスタイルファイルを含める．ただし，\LaTeXe の標準
+配布に含まれているもの（たとえば \|graphicx|）については同封の必要はない．
 
-��������ե�����ˤ�äƤ���ʸ�凉�������̷�⤹��褦�ʤ�Τ⤢��Τǡ�
-���դ��ƻ��Ѥ���ĺ��������
+スタイルファイルによっては論文誌スタイルと矛盾するようなものもあるので，
+注意して使用して頂きたい．
 
 %4.2
-\subsection{ɽ�ꡦ����̾��}
+\subsection{表題・著者名等}
 
-ɽ�ꡤ����̾�Ȥ��ν�°������ӳ��פ����ҤΥ��ޥ�ɤ�Ķ��ˤ��{\bf ��ʸ��
-��ʸ�������ˤĤ���}��������塤\|\maketitle| �ˤ�äƽ��Ϥ��롥
+表題，著者名とその所属，および概要を前述のコマンドや環境により{\bf 和文と
+英文の双方について}定義した後，\|\maketitle| によって出力する．
 
 %4.2.1
-\subsubsection{ɽ��} 
+\subsubsection{表題} 
 
-ɽ��ϡ�\|\title| ����� \|\etitle| ���������ɽ��ϥ��󥿥�󥰤���롥
-ʸ������¿����ΤˤĤ��Ƥϡ�Ŭ�� \|\\| ���������Ʋ��Ԥ��롥
+表題は，\|\title| および \|\etitle| で定義した表題はセンタリングされる．
+文字数の多いものについては，適宜 \|\\| を挿入して改行する．
 
 %4.2.2
-\subsubsection{����̾����°} 
+\subsubsection{著者名・所属} 
 
-�����Ԥν�°��������Ԥ����� \|\affiliate| ���Ѥ��ƥ�٥����1�����ˤ�
-�դ��ʤ����������ȡ��������ֹ���դ��ƽ�°�����Ϥ���롥�ʤ���ʣ������
-�Ԥ�Ʊ����°�Ǥ�����ˤϡ������������������ɤ���
+各著者の所属を第一著者から順に \|\affiliate| を用いてラベル（第1引数）を
+付けながら定義すると，脚注に番号を付けて所属が出力される．なお，複数の著
+者が同じ所属である場合には，一度定義するだけで良い．
 
-���ߤν�°�� \|\paffiliate| ���Ѥ���Ʊ�ͤ˥�٥롤��°��򵭽Ҥ��롥��°
-��ˤϼ�ư�ǡָ��ߡס�\|\\|�β��Ԥǡ�Presently with�פ���������롥����
-̾�� \|\author| ��������롥������̾��ľ��ˡ���ʸ����̾����°��٥�ȥ᡼
-�륢�ɥ쥹�������롥���Ԥ�ʣ���ξ��� \|\author| �򷫤��֤����Ȥǡ�2
-�͡�3�͡�\dots �������Ƥ��������ߤν�°�䡤ʣ���ν�°����ɲä������
-�ϡ���°��٥�򥫥�ޤǶ��ڤꡤ�ɲä���Ф褤��
+現在の所属は \|\paffiliate| を用い，同様にラベル，所属先を記述する．所属
+先には自動で「現在」，\|\\|の改行で「Presently with」が挿入される．著者
+名は \|\author| で定義する．各著者名の直後に，英文著者名，所属ラベルとメー
+ルアドレスを記入する．著者が複数の場合は \|\author| を繰り返すことで，2
+人，3人，\dots と増えていく．現在の所属や，複数の所属先を追加する場合に
+は，所属ラベルをカンマで区切り，追加すればよい．
 
-�ޤ����᡼�륢�ɥ쥹��ʬ�Ͼ�ά����ǽ������ɬ����ɽ�ԤΥ��ɥ쥹��ɬ�פȤ�
-�롥�ʤ�����ʸ����̾����ʸ����̾�ϡ�����̾��Ⱦ�ѡ�ASCII�ˤζ���Ƕ��ڤ롥
+また，メールアドレス部分は省略が可能だが，必ず代表者のアドレスは必要とな
+る．なお，和文著者名，英文著者名は，姓と名を半角（ASCII）の空白で区切る．
 
 %4.2.3
-\subsubsection{����} 
+\subsubsection{概要} 
 
-��ʸ�γ��פ� \|abstract| �Ķ�����ˡ�
-��ʸ�γ��פ� \|eabstract| �Ķ�����ˡ����줾�쵭�Ҥ��롥
+和文の概要は \|abstract| 環境の中に，
+英文の概要は \|eabstract| 環境の中に，それぞれ記述する．
 
 %4.2.4
-\subsubsection{�������} 
+\subsubsection{キーワード} 
 
-��ʸ�γ��פ� \|jkeyword| �Ķ�����ˡ�
-��ʸ�γ��פ� \|ekeyword| �Ķ�����ˡ����줾��1��5�쵭�Ҥ��롥
+和文の概要は \|jkeyword| 環境の中に，
+英文の概要は \|ekeyword| 環境の中に，それぞれ1〜5語記述する．
 
 %4.3
-\subsection{��ʸ}
+\subsection{本文}
 
 %4.3.1
-\subsubsection{���Ф�}
+\subsubsection{見出し}
 
-��侮��θ��Ф��ˤ� \|\section|, \|\subsection|, \|\subsubsection|,
-\|\paragraph| �Ȥ��ä����ޥ�ɤ���Ѥ��롥
+節や小節の見出しには \|\section|, \|\subsection|, \|\subsubsection|,
+\|\paragraph| といったコマンドを使用する．
 
-\<������ס��������פʤɤˤĤ��Ƥϡ�\|\newtheorem|��Ŭ���Ķ������������
-�δĶ����Ѥ��Ƶ��Ҥ��롥
+\<「定義」，「定理」などについては，\|\newtheorem|で適宜環境を宣言し，そ
+の環境を用いて記述する．
 
 %4.3.2
-\subsubsection{������}
+\subsubsection{行送り}
 
-2���Ȥ���Ѥ��Ƥ��ꡤ�������ʤǹԤδ�����ΰ��֤����פ��뤳�Ȥ�§�Ȥ�
-�Ƥ��롥�ޤ����ḫ�Ф��ʤɡ��Ԥδֳ֤�¾��ꤿ������Ȥä������ɤߤ䤹��
-���Ǥϡ����θ�§����褦�˥�������ե����뤬��ưŪ�˥��ڡ�����������
-�롥�������ä���ʸ��Ǥ� \|\vspace| �� \|\vskip| ���Ѥ������ڡ�����Ĵ��
-��Ԥʤ�ʤ��褦�ˤ��뤳�ȡ�
+2段組を採用しており，左右の段で行の基準線の位置が一致することを原則とし
+ている．また，節見出しなど，行の間隔を他よりたくさんとった方が読みやすい
+場所では，この原則を守るようにスタイルファイルが自動的にスペースを挿入す
+る．したがって本文中では \|\vspace| や \|\vskip| を用いたスペースの調整
+を行なわないようにすること．
 
 %4.3.3
-\subsubsection{�ե���ȥ�����}
+\subsubsection{フォントサイズ}
 
-�ե���ȥ������ϡ���������ե�����ˤ�äƼ�ưŪ�����ꤵ��뤿�ᡤ����Ū
-�ˤ����Ԥ���ʬ�ǥե���ȥ��������ѹ�����ɬ�פϤʤ���
+フォントサイズは，スタイルファイルによって自動的に設定されるため，基本的
+には著者が自分でフォントサイズを変更する必要はない．
 
 %4.3.4
-\subsubsection{������}
+\subsubsection{句読点}
 
-�����ˤ����ѤΡ֡��ס������ˤ����ѤΡ֡��פ��Ѥ��롥��������ʸ��������
-�ǡ�.�פ��,�פ�Ȥ����ˤϡ�Ⱦ��ʸ����Ȥ����֡��פ�֡��פϻȤ�ʤ���
+句点には全角の「．」，読点には全角の「，」を用いる．ただし英文中や数式中
+で「.」や「,」を使う場合には，半角文字を使う．「。」や「、」は使わない．
 
 %4.3.5
-\subsubsection{����ʸ����Ⱦ��ʸ��}
+\subsubsection{全角文字と半角文字}
 
-����ʸ����Ⱦ��ʸ����ξ���ˤ���ʸ���ϼ��Τ褦�˻Ȥ�ʬ���롥
+全角文字と半角文字の両方にある文字は次のように使い分ける．
 
 \begin{enumerate}
-\item ��̤����ѤΡ֡ʡפȡ֡ˡפ��Ѥ��롥â������ʸ�γ��ס���ɽ���Ф���
-���ǡ����Ǥ�Ⱦ�ѤΡ�(�פȡ�)�פ��Ѥ��롥
+\item 括弧は全角の「（」と「）」を用いる．但し，英文の概要，図表見出し，
+書誌データでは半角の「(」と「)」を用いる．
 
-\item �ѿ��������򡤵������Ⱦ��ʸ�����Ѥ��롥���������������˴ؤ��Ƥϡ�
-����ǽҤ٤��褦���㳰�����롥
+\item 英数字，空白，記号類は半角文字を用いる．ただし，句読点に関しては，
+前項で述べたような例外がある．
 
-\item �������ʤ�����ʸ�����Ѥ��롥
+\item カタカナは全角文字を用いる．
 
-\item ������Ǥϳ������Ĥ�����̤��롥
-�����ˤ� \|``| ���Ѥ����Ĥ��ˤ�\|''| ���Ѥ��롥
+\item 引用符では開きと閉じを区別する．
+開きには \|``| を用い，閉じには\|''| を用いる．
 \end{enumerate}
 
 %4.3.6
-\subsubsection{�վ��}
+\subsubsection{箇条書}
 
-�վ��˴ؤ���������ä����Ƥ��ʤ������˱�����ɸ��Ū�� \|enumerate|,
-\|itemize|, \|description| �δĶ����Ѥ��Ƥ褤��
+箇条書に関する形式を特に定めていない．場合に応じて標準的な \|enumerate|,
+\|itemize|, \|description| の環境を用いてよい．
 
 
 %4.3.7
-\subsubsection{����}
+\subsubsection{脚注}
 
-������ \|\footnote| ���ޥ�ɤ�Ȥäƽ񤯤ȡ��ڡ���ñ�̤�\footnote{������
-�㡥}��\footnote{��Ĥ�ε�����}�Τ褦�ʻ��ȵ���ȤȤ�˵�������������롥
-�ʤ����ڡ������ʣ���ε����������硤���ȵ���� \LaTeX ��2��¹Ԥ��ʤ�
-���������ʤ�ʤ����Ȥ����դ��줿����
+脚注は \|\footnote| コマンドを使って書くと，ページ単位に\footnote{脚注の
+例．}や\footnote{二つめの脚注．}のような参照記号とともに脚注が生成される．
+なお，ページ内に複数の脚注がある場合，参照記号は \LaTeX を2回実行しない
+と正しくならないことに注意されたい．
 
-�ޤ����ˤ�äƤϡ�������Ĥ������֤ȵ������ΤȤ��̤��ʤ��֤������褤��
-�Ȥ⤢�롥���ξ��ˤϡ�\|\footnotemark| ���ޥ�ɤ� \|\footnotetext| ��
-�ޥ�ɤ�Ȥä��н褷�Ƥ�������������
+また場合によっては，脚注をつけた位置と脚注本体とを別の段に置く方がよいこ
+ともある．この場合には，\|\footnotemark| コマンドや \|\footnotetext| コ
+マンドを使って対処していただきたい．
 
-�ʤ��������ֹ����ʸ����̤��ֹ�ǽ��Ϥ���롥
+なお，脚注番号は論文内で通し番号で出力される．
 
 %4.3.8
-\subsubsection{Overfull��Underfull}
+\subsubsection{OverfullとUnderfull}
 
-���ǻ��ˤ�overfull�򵯤����ʤ����Ȥ�§�Ȥ��Ƥ��롥���äơ��ޤ���Ф���
-�����������ԤδĶ���overfull�򵯤����ʤ��褦�ˡ�ʸ�Ϥ��פ���ʤɤκ���
-�����Ϥ�ʧ�äƤ�������������â����\|flushleft| �Ķ���\|\\|��
-\|\linebreak| �ʤɤˤ��ξü·���򤷤ʤ����Ǥ�overfull�β���ϡ��Ǥ����
-���򤱤Ƥ��������������ޤ����Ԥμ�ɮ�����Ǥ�ȯ�����ʤ�overfull�������ǻ�
-�δĶ��Ǥ�ȯ�����뤳�Ȥ⤢�롥���Τ褦�ʻ��֤�Ǥ���������򤹤뤿��ˡ�
-ʸ���Ĺ�������� \|\verb| ���򤱤롤�ѥ饰��դ���Ƭ�ն�Ǥ�Ĺ����ñ���
-���Ѥ��ʤ����ʤɤ����դ�ʧ���褦�ˤ���ĺ��������
+組版時にはoverfullを起こさないことを原則としている．従って，まず提出する
+ソースが著者の環境でoverfullを起こさないように，文章を工夫するなどの最善
+の努力を払っていただきたい．但し，\|flushleft| 環境，\|\\|，
+\|\linebreak| などによる両端揃えをしない形でのoverfullの回避は，できるだ
+け避けていただきたい．また著者の執筆時点では発生しないoverfullが，組版時
+の環境では発生することもある．このような事態をできるだけ回避するために，
+文中の長い数式や \|\verb| を避ける，パラグラフの先頭付近では長い英単語を
+使用しない，などの注意を払うようにして頂きたい．
 
 %4.4
-\subsection{����}\label{sec:Item}
+\subsection{数式}\label{sec:Item}
 
 %4.4.1
-\subsubsection{��ʸ��ο���}
+\subsubsection{本文中の数式}
 
-��ʸ��ο����� \|$| �� \|$|, \|\(| �� \|\)|, ���뤤�� \|math| �Ķ��Τ���
-��ǰϤ�Ǥ�褤��
+本文中の数式は \|$| と \|$|, \|\(| と \|\)|, あるいは \|math| 環境のいず
+れで囲んでもよい．
 
 %4.4.2
-\subsubsection{���Ȥο���}
+\subsubsection{別組の数式}
 
-���ȿ���(displayed math)�ˤĤ��Ƥ� \|$$| �� \|$$| �ϻ��Ѥ����ˡ�\|\[| �� 
-\|\]| �ǰϤफ��\|displaymath|, \|equation|, \|eqnarray| �Τ����줫�δ�
-�����Ѥ��롥������
+別組数式(displayed math)については \|$$| と \|$$| は使用せずに，\|\[| と 
+\|\]| で囲むか，\|displaymath|, \|equation|, \|eqnarray| のいずれかの環
+境を用いる．これらは
 %
 \begin{equation}
 \Delta_l = \sum_{i=l|1}^L\delta_{pi}
 \end{equation}
 %
-�Τ褦�ˡ����󥿥�󥰤ǤϤʤ�����������ǿ�������Ϥ��������ؤ��⤤����
-�ˤ������������ۼ����뵡ǽ�����롥
+のように，センタリングではなく固定字下げで数式を出力し，かつ背が高い数式
+による行送りの乱れを吸収する機能がある．
 
 %4.4.3
-\subsubsection{eqnarray�Ķ�}
+\subsubsection{eqnarray環境}
 
-�ߤ��˴�Ϣ�������Ȥο�����2�԰ʾ�Ϣ³���Ƹ������ˤϡ�ñ��\|\[| �� 
-\|\]|�����뤤�� \|\begin{equation}| ��\|\end{equation}| �ǰϤä��������
-���¤٤�ΤǤϤʤ���\|\begin|\allowbreak\|{eqnarray}| �� 
-\|\end{eqnarray}| ��Ȥäơ�����ʤ��뤤��������ˤΰ��֤ǽ�·����Ԥʤ�
-�������ɤߤ䤹����
+互いに関連する別組の数式が2行以上連続して現れる場合には，単に\|\[| と 
+\|\]|，あるいは \|\begin{equation}| と\|\end{equation}| で囲った数式を書
+き並べるのではなく，\|\begin|\allowbreak\|{eqnarray}| と 
+\|\end{eqnarray}| を使って，等号（あるいは不等号）の位置で縦揃えを行なっ
+た方が読みやすい．
 
 %4.4.4
-\subsubsection{�����Υե����}
+\subsubsection{数式のフォント}
 
-\LaTeX ��ɸ��Ū�˥��ݡ��Ȥ��Ƥ����ΰʳ����ü�ʿ����ѥե���Ȥϡ��Ǥ�
-������Ȥ�ʤ��褦�ˤ��줿�����ɤ����Ƥ���Ѥ��ʤ���Фʤ�ʤ����ˤϡ�
-���λݿ����Ф�ĺ���ȤȤ�ˡ����ǹ����˿�����Ϳ����ĺ�����Ȥ⤢�뤳�Ȥ�α
-�դ��줿����
+\LaTeX が標準的にサポートしているもの以外の特殊な数式用フォントは，でき
+るだけ使わないようにされたい．どうしても使用しなければならない場合には，
+その旨申し出て頂くとともに，組版工程に深く関与して頂くこともあることに留
+意されたい．
 
 \begin{figure}[tb]
 \setbox0\vbox{
 \hbox{\|\begin{figure}[tb]|}
-\hbox{\quad \|<|�����Τλ���\|>|}
-\hbox{\|\caption{<|��ʸ���Ф�\|>}|}
-\hbox{\|\ecaption{<|��ʸ���Ф�\|>}|}
+\hbox{\quad \|<|図本体の指定\|>|}
+\hbox{\|\caption{<|和文見出し\|>}|}
+\hbox{\|\ecaption{<|英文見出し\|>}|}
 \hbox{\|\label{| $\ldots$ \|}|}
 \hbox{\|\end{figure}|}
 }
 \centerline{\fbox{\box0}}
-\caption{1�����ο�}
+\caption{1段幅の図}
 \ecaption{Single column figure with caption\\
 explicitly broken by $\backslash\backslash$.}
 \label{fig:single}
 \end{figure}
 
 %4.5
-\subsection{��}
+\subsection{図}
 
-1�ʤ����ˤ����ޤ�ޤϡ�\figref{fig:single} �η����ǻ��ꤹ�롥���֤λ���
-�� \|h| �ϻȤ�ʤ����ޤ����ޤβ�����ʸ�ȱ�ʸ�������θ��Ф���
-\|\caption| �� \|\ecaption| �ǻ��ꤹ�롥ʸ������¿�����Ф��Ϥϼ�ưŪ�˲�
-�Ԥ��ƺ������ιԤ���˥��󥿥�󥰤��뤬�����Ф���2�Ԥˤʤ���ˤ�Ŭ
-�� \|\\| ���������Ʋ��Ԥ����ۤ����ɤ���̤Ȥʤ뤳�Ȥ����Ф��Ф���
-��\figref{fig:single} �α�ʸ���Ф��򻲾ȡˡ��ޤλ��Ȥ� \|\figref{<|���
-��\|>}| ���Ѥ��ƹԤʤ���
+1段の幅におさまる図は，\figref{fig:single} の形式で指定する．位置の指定
+に \|h| は使わない．また，図の下に和文と英文の双方の見出しを，
+\|\caption| と \|\ecaption| で指定する．文字数が多い見出しはは自動的に改
+行して最大幅の行を基準にセンタリングするが，見出しが2行になる場合には適
+宜 \|\\| を挿入して改行したほうが良い結果となることがしばしばある
+（\figref{fig:single} の英文見出しを参照）．図の参照は \|\figref{<|ラベ
+ル\|>}| を用いて行なう．
 
 \begin{figure}[tb]
 \begin{minipage}[t]{0.5\columnwidth}
@@ -499,13 +499,13 @@ explicitly broken by $\backslash\backslash$.}
 \hbox{\|\end{minipage}|}}
 \hbox{}
 \centerline{\fbox{\box0}}
-\caption{\protect\tabref*{tab:right} �����}
+\caption{\protect\tabref*{tab:right} の中身}
 \ecaption{Contents of Table \protect\ref{tab:right}.}
 \label{fig:left}
 \end{minipage}%
 \begin{minipage}[t]{0.5\columnwidth}
 \CaptionType{table}
-\caption{\protect\figref*{fig:left} �Ǻ�������ɽ}
+\caption{\protect\figref*{fig:left} で作成した表}
 \ecaption{A table built by\\ Fig.\,\protect\ref{fig:left}.}
 \label{tab:right}
 \vskip1mm
@@ -520,54 +520,54 @@ L2&C2&R2\\\hline
 \begin{figure*}[tb]
 \setbox0\vbox{\large
 \hbox{\|\begin{figure*}[t]|}
-\hbox{\quad \|<|�����Τλ���\|>|}
-\hbox{\|\caption{<|��ʸ���Ф�\|>}|}
-\hbox{\|\ecaption{<|��ʸ���Ф�\|>}|}
+\hbox{\quad \|<|図本体の指定\|>|}
+\hbox{\|\caption{<|和文見出し\|>}|}
+\hbox{\|\ecaption{<|英文見出し\|>}|}
 \hbox{\|\label{| $\ldots$ \|}|}
 \hbox{\|\end{figure*}|}}
 \centerline{\fbox{\hbox to.9\textwidth{\hss\box0\hss}}}
-\caption{2�����ο�}
+\caption{2段幅の図}
 \ecaption{Double column figure.}
 \label{fig:double}
 \end{figure*}
 
 
-�ޤ����̥��ڡ���������Τ���ˡ�1�Ĥ� \|figure|�ʤޤ��� \|table|�˴Ķ���
-���ʣ���ο�ɽ���¤٤�ɽ�����������ˤϡ�\figref{fig:left} �� 
-\tabref{tab:right} �Τ褦�˸ġ��ο�ɽ�ȳơ��� \|\caption|/\|\ecaption| 
-�� \|minipage| �Ķ�������뤳�ȤǼ¸��Ǥ��롥�ʤ��ޤ�ɽ�����ߤ����硤
-\|minipage| �Ķ������\|\CaptionType{figure}| ���뤤�� \|\CaptionType|
-\|{table}| ����ꤹ��С���¦�δĶ��� \|figure| �Ǥ��äƤ� \|table| �Ǥ���
-�Ƥ���ꤵ�줿���Ф��������롥
+また紙面スペースの節約のために，1つの \|figure|（または \|table|）環境の
+中に複数の図表を並べて表示したい場合には，\figref{fig:left} と 
+\tabref{tab:right} のように個々の図表と各々の \|\caption|/\|\ecaption| 
+を \|minipage| 環境に入れることで実現できる．なお図と表が混在する場合，
+\|minipage| 環境の中で\|\CaptionType{figure}| あるいは \|\CaptionType|
+\|{table}| を指定すれば，外側の環境が \|figure| であっても \|table| であっ
+ても指定された見出しが得られる．
 
-2�ʤ����ˤޤ�����ޤϡ�\figref{fig:double} �η����ǻ��ꤹ�롥
-���֤λ���� \|t| �����Ȥ��ʤ���
+2段の幅にまたがる図は，\figref{fig:double} の形式で指定する．
+位置の指定は \|t| しか使えない．
 
-�ޤ���ȤǤ���ʸ�Ȱ㤤���ɤΤ褦���礭���Υե���Ȥ���Ѥ��Ƥ⹽��ʤ�
-��\figref{fig:double} ���ȡˡ��ޤ��ޤ���ȤȤ��ơ�encapsulate ���줿
-PostScript�ե�����ʤ�����EPS�ե�����ˤ��ɤ߹��ळ�Ȥ�Ǥ��롥�ɤ߹�
-�ߤΤ���ˤϡ��ץꥢ��֥��
+図の中身では本文と違い，どのような大きさのフォントを使用しても構わない
+（\figref{fig:double} 参照）．また図の中身として，encapsulate された
+PostScriptファイル（いわゆるEPSファイル）を読み込むこともできる．読み込
+みのためには，プリアンブルで
 %
 \begin{quote}
 \|\usepackage{graphicx}|
 \end{quote}
 %
-��Ԥä���ǡ�\|\includegraphics| ���ޥ�ɤ�ޤ�������ս���֤�������
-�����˥ե�����̾�ʤʤɡˤ���ꤹ�롥
+を行った上で，\|\includegraphics| コマンドを図を埋め込む箇所に置き，その
+引数にファイル名（など）を指定する．
 
 %4.6
-\subsection{ɽ}
+\subsection{表}
 
-ɽ�η����Ϥʤ�٤����ʤ�����Τ����ž夬��򤹤ä��ꤵ���륳�ĤǤ��롥��
-����Ĥ�����ˤϡ����־�η����ˤ��������Ȥ���������ü�ˤϽĤη�����
-�Ĥ��ʤ� ��\tabref{tab:example}�ˡ�ɽ��Υե���ȥ������Υǥե���Ȥ�
-\|\footnotesize|�Ǥ��롥
+表の罫線はなるべく少なくするのが，仕上がりをすっきりさせるコツである．罫
+線をつける場合には，一番上の罫線には二重線を使い，左右の端には縦の罫線を
+つけない （\tabref{tab:example}）．表中のフォントサイズのデフォルトは
+\|\footnotesize|である．
 
-�ޤ���ɽ�ξ����ʸ�ȱ�ʸ�������θ��Ф��� \|\caption|�� \|\ecaption| ��
-���ꤹ�롥ɽ�λ��Ȥ� \|\tabref{<|��٥�\|>}| ���Ѥ��ƹԤʤ���
+また，表の上に和文と英文の双方の見出しを， \|\caption|と \|\ecaption| で
+指定する．表の参照は \|\tabref{<|ラベル\|>}| を用いて行なう．
 
 \begin{table}[tb] 
-\caption{ɽ����} 
+\caption{表の例} 
 \ecaption{An Example of Table.}
 \label{tab:example}
 \hbox to\hsize{\hfil
@@ -581,210 +581,210 @@ row4 &	item 1,4 & item 2,4 & item 3,4 \\\hline
 \end{table}
 
 %4.7
-\subsection{����ʸ�����ռ�}
+\subsection{参考文献・謝辞}
 
 %4.7.1
-\subsubsection{����ʸ���λ���}
+\subsubsection{参考文献の参照}
 
-��ʸ��ǻ���ʸ���򻲾Ȥ�����ˤ�%��%����ʸ���ֹ椬ʸ���ñ��Ȥ��ƻȤ��
-%����ȡ������Ǥʤ����ȤȤǤϡ����Ѥ���ʸ�����礭�����ۤʤ롥���Ԥ�
-%\|\Cite|�ˤ�껲�Ȥ�����Ԥ�
-%\|\cite|�ˤ�껲�Ȥ��롥���Ȥ��С�
-\|\cite|����Ѥ��롥���Ȥ��줿��٥�ϼ�ưŪ�˥����Ȥ��졤
-\|[]|�Ǥ��줾����ڤ��롥
+本文中で参考文献を参照する場合には%，%参考文献番号が文中の単語として使われ
+%る場合と，そうでない参照とでは，使用する文字の大きさが異なる．前者は
+%\|\Cite|により参照し，後者は
+%\|\cite|により参照する．たとえば；
+\|\cite|を使用する．参照されたラベルは自動的にソートされ，
+\|[]|でそれぞれ区切られる．
 %
 \begin{quote}
-ʸ�� \|\cite{companion,okumura}| �� \LaTeX ������Ū�ʲ����Ǥ��롥
+文献 \|\cite{companion,okumura}| は \LaTeX の総合的な解説書である．
 \end{quote}
 %
-�Ƚ񤯤ȡ�
+と書くと；
 %
 \begin{quote}
-ʸ��\cite{companion,okumura}�� \LaTeX ������Ū�ʲ����Ǥ��롥
+文献\cite{companion,okumura}は \LaTeX の総合的な解説書である．
 \end{quote}
 %
-�������롥
+が得られる．
 
 %4.7.2
-\subsubsection{����ʸ���ꥹ��}
-����ʸ���ꥹ�Ȥˤϡ�
-��§�Ȥ�����ʸ��ǰ��Ѥ���ʸ���Τߤ���󤹤롥
-����ϻ��Ƚ礢�뤤��������Ԥ��Ļ��Υ���ե��٥åȽ�Ȥ��롥
-ʸ���ꥹ�Ȥ�BiB\TeX ��\verb+ipsjunsrt.bst+�ʻ��Ƚ��
-�ޤ���\verb+ipsjsort.bst+�ʥ���ե��٥åȽ�ˤ��Ѥ��ƺ�ꡤ
-\verb+\bibliograhpystyle+��\verb+\bibliography+���ޥ�ɤˤ��
-���Ѥ��뤳�Ȥ�����롥
-�������Ѥ���С�
-������κۤˤ��ä���Τ��Ǥ���Τǡ�
-�Ǥ���������Ѥ��Ƥ�������������
-�ޤ������ѤΥե����뷲�ˤ�\verb+.bib+�ե�����ǤϤʤ�\verb+.bbl+�ե������
-ɬ���ޤ�뤳�Ȥ����դ��줿����
-���������餫����ͳ��thebibliography�Ķ���ʸ���ꥹ�Ȥ�
-�ּ���פ��ʤ���Фʤ�ʤ����ϡ�
-���Υ����ɤλ���ʸ���ꥹ�Ȥ����տ������ơ�
-���Υ�������ˤ������äƤ�������������
+\subsubsection{参考文献リスト}
+参考文献リストには，
+原則として本文中で引用した文献のみを列挙する．
+順序は参照順あるいは第一著者の苗字のアルファベット順とする．
+文献リストはBiB\TeX と\verb+ipsjunsrt.bst+（参照順）
+または\verb+ipsjsort.bst+（アルファベット順）を用いて作り，
+\verb+\bibliograhpystyle+と\verb+\bibliography+コマンドにより
+利用することが出来る．
+これらを用いれば，
+規定の体裁にあったものができるので，
+できるだけ利用していただきたい．
+また製版用のファイル群には\verb+.bib+ファイルではなく\verb+.bbl+ファイルを
+必ず含めることに注意されたい．
+一方，何らかの理由でthebibliography環境で文献リストを
+「手作り」しなければならない場合は，
+このガイドの参考文献リストを注意深く見て，
+そのスタイルにしたがっていただきたい．
 
 
 
 %4.7.3
-\subsubsection{�ռ�}
+\subsubsection{謝辞}
 
-�ռ���������ˤϡ�����ʸ���ꥹ�Ȥ�ľ�����֤���\|acknowledgment|�Ķ���
-�������롥���δĶ�����Ȥ���ƻ��ˤϽ��Ϥ���ʤ���
+謝辞がある場合には，参考文献リストの直前に置き，\|acknowledgment|環境の
+中に入れる．この環境の中身は投稿時には出力されない．
 
 %4.8
-\subsection{���ԾҲ�}
+\subsection{著者紹介}
 
-��ʸ�κǸ��\|\end{document}| ��ľ���ˤˡ��ʲ��Τ褦�����ԾҲ�򵭽Ҥ��롥
+本文の最後（\|\end{document}| の直前）に，以下のように著者紹介を記述する．
 
 \begin{quote}
 \|\begin{biography}|\\
-\|\profile{m}{<|�������̾\|>}{|������ԤξҲ�\|}|\\
-\|\profile{m}{<|��������̾\|>}{|�������ԤξҲ�\|}|\\
+\|\profile{m}{<|第一著者名\|>}{|第一著者の紹介\|}|\\
+\|\profile{m}{<|第二著者名\|>}{|第二著者の紹介\|}|\\
 \|\profile{m}{<|$\dots$\|>}{|$ldots$\|}|\\
 \|\end{biography}|
 \end{quote}
 
-�ʤ��ǽ�ΰ������Ѥ��뤳�Ȥǡ�������̤��Ѥ�롥��������ξ���\|s|���ե�
-�����ξ���\|f|�������ξ���\|n|������롥
+なお最初の引数を変えることで，会員種別が変わる．学生会員の場合は\|s|，フェ
+ローの場合は\|f|，非会員の場合は\|n|を入れる．
 \begin{quote}
-\|\profile{n}{<|�������̾\|>}{|������ԤξҲ�\|}|
+\|\profile{n}{<|第一著者名\|>}{|第一著者の紹介\|}|
 \end{quote}
-�ʤ����ԾҲ����ƻ��ˤϽ��Ϥ���ʤ���
+なお著者紹介は投稿時には出力されない．
 
 %5
-\section{��ʸ���Ƥ˴ؤ���ؿ�}
+\section{論文内容に関する指針}
 
-��ʸ�����ƤˤĤ��ơ���ʸ�兩�㡼�ʥ��Խ��Ѱ���Ǻ��������֤٤��餺���פ�
-�ʲ��˼�����������Υ����å��ꥹ�ȤȤ�������ĺ������������ʳ��ˤ⡤����
-���ѡ��᥿���ɼ��ѤΡ֤٤��餺����\cite{webpage2}��������Ƥ���Τǡ���
-�Ȥ��줿�����ޤ�����ʸ���Ѥ˴ؤ��� \cite{book1, book2, book3, book4}�Τ�
-���ʽ��Ҥ⻲�ͤˤʤ롥
+論文の内容について，論文誌ジャーナル編集委員会で作成した「べからず集」を
+以下に示す．投稿前のチェックリストとして利用頂きたい．これ以外にも，査読
+者用，メタ査読者用の「べからず集」\cite{webpage2}も公開しているので，参
+照されたい．また，作文技術に関する \cite{book1, book2, book3, book4}のよ
+うな書籍も参考になる．
 
 %5.1
-\subsection{�����δ���}
+\subsection{書き方の基本}
 
 \begin{itemize}
- \item[$\Box$] ����ο�������ͭ���������������ɼԤ������褦�˵��Ҥ��롥
- \item[$\Box$] �ɤ߼�ˡ��ɤߤ䤹��ʸ�Ϥ򿴤���������Ƥ����夹�롤�طʡ�
-	       ��������꤬�����Ƥʤɤ��ɼԤˤȤä���ô�ˡ�
- \item[$\Box$] ��褹�٤����꤬���Ѳ��ʰ���Ū�˵��ҡˤ���Ƥ��ʤ��ΤϺ�
-	       �ͤ��פ����XX��ؤ�����Ȥ������Ҥ˽��ϡˡ����뤤�ϡ�
-	       ��ñ�ˡֺ��ޤ����פ����ǡ˲�褹�٤����ꤽ�Τ�Τε���
-	       ���ʤ��ΤϺƹͤ��פ��롥
- \item[$\Box$] ���������Τ˵�����Ƥ��ʤ����ޤ��ϡ��ϰϡ��³�����������
-	       �ɤλ�Ŧ��Ŭ�ڤǤϤʤ����ޤ��ϡ����������Ƥˤ��ä���Τ�
-	       �Ϥʤ���ΤϺƹͤ��פ��롥
- \item[$\Box$] �ʳص�����ʸ�Ȥ�����Ŭ����ɽ���䡤ʬ����ˤ���ɽ��������
-	       �ΤϺƹͤ��פ��롥
- \item[$\Box$] ��ü�ʸ����Τ䡤Ĺʸ��Ϣ³�ʤɤϺƹͤ��פ��롥
- \item[$\Box$] �ϡ���Τ����������Τι�������Ŭ�ڤǤʤ�ʸ�ϤϺƹͤ��פ�
-	       �롥
- \item[$\Box$] ʸ���ʸ̮�����¬���ʤ������Ƥ��İ����������ʸ�ˤ��ʤ���
- \item[$\Box$] ���������������������ꡤ����������������ʬ�ǤϤʤ��ΤϺ�
-	       �ͤ��פ��롥
- \item[$\Box$] �����˾�Ĺ�������դ˴�ñ��������������ΤϺƹͤ��פ��롥
- \item[$\Box$] ̤�����򸺤餹��
+ \item[$\Box$] 研究の新規性，有用性，信頼性が読者に伝わるように記述する．
+ \item[$\Box$] 読み手に，読みやすい文章を心がける（内容が前後する，背景・
+	       課題の設定が不明瞭などは読者にとって負担）．
+ \item[$\Box$] 解決すべき問題が汎用化（一般的に記述）されていないのは再
+	       考を要する（XX大学の問題という記述に終始）．あるいは，
+	       （単に「作りました」だけで）解決すべき問題そのものの記述
+	       がないのは再考を要する．
+ \item[$\Box$] 結論が明確に記されていない，または，範囲，限界，問題点な
+	       どの指摘が適切ではない，または，結論が内容にそったもので
+	       はないものは再考を要する．
+ \item[$\Box$] 科学技術論文として不適当な表現や，分かりにくい表現がある
+	       のは再考を要する．
+ \item[$\Box$] 極端な口語体や，長文の連続などは再考を要する．
+ \item[$\Box$] 章，節のたて方，全体の構成等が適切でない文章は再考を要す
+	       る．
+ \item[$\Box$] 文中の文脈から推測しないと内容の把握が困難な論文にしない．
+ \item[$\Box$] 説明に飛躍した点があり，仮説等の説明が十分ではないのは再
+	       考を要する．
+ \item[$\Box$] 説明に冗長な点，逆に簡単すぎる点があるのは再考を要する．
+ \item[$\Box$] 未定義語を減らす．
 \end{itemize}
 
 %5.2
-\subsection{��������ͭ���������Τ˼���}
+\subsection{新規性と有効性を明確に示す}
 
 \begin{itemize}
- \item[$\Box$] ���踦��Ȥδ�Ϣ�������ư�����ͤ餤�������Τ����������
-	       ���ʤ��ΤϺƹͤ��פ��롥
- \item[$\Box$] ���Ρ����Τε��Ѥ����Ǥ��äơ����򿷤��������ǥ��Ȥ�����
-	       �Ƥ��Ƥ���Τ����񤫤�Ƥ��ʤ��ΤϺƹͤ��פ��롥
- \item[$\Box$] ��ʬ�ʻ���ʸ���Ͽ������μ�ĥ�˷礫���ʤ���
- \item[$\Box$] ������Ƥ�����������ǰŪ�ޤ������Ū�ʿ��˽��Ϥ��Ƥ��ơ�
-	       �ɼԤ�������Ƥ�����Ǥ��ʤ��ʤ�������ǿ��������������
-	       �ʤ���ΡˤΤϺƹͤ��פ��롥
- \item[$\Box$] ��ʸ����Ƥ�����ˡ��ͭ�����μ�ĥ���ʤ����ޤ��Ϥ�������
-	       ��ʤΤϺƹͤ��פ��롥
+ \item[$\Box$] 在来研究との関連，研究の動機，ねらい等が明確に説明されて
+	       いないのは再考を要する．
+ \item[$\Box$] 既知／公知の技術が何であって，何を新しいアイデアとして提
+	       案しているのかが書かれていないのは再考を要する．
+ \item[$\Box$] 十分な参考文献は新規性の主張に欠かせない．
+ \item[$\Box$] 提案内容の説明が，概念的または抽象的な水準に終始していて，
+	       読者が提案内容を理解できない（それだけで新規性が感じられ
+	       ないもの）のは再考を要する．
+ \item[$\Box$] 論文で提案した方法の有効性の主張がない，またはきわめて貧
+	       弱なのは再考を要する．
 \end{itemize}
 
 %5.3
-\subsection{�����˴ؤ������Ū������}
+\subsection{書き方に関する具体的な注意}
 
 \begin{itemize}
- \item[$\Box$] ��ʸɸ�꤬���Ƥ�Ŭ�ڤ�ɽ�����Ƥ��ʤ��ΤϺƹͤ��פ��롥
- \item[$\Box$] ��ʸɸ�꤬���Ƥ�Ŭ�ڤ�ɽ�����Ƥ��ʤ����ޤ��ϱѸ�Ȥ���Ŭ
-	       �ڤǤʤ��ΤϺƹͤ��פ��롥
- \item[$\Box$] ���֥��ȥ饯�Ȥ���ݤ�Ŭ�ڤ�ɽ�����Ƥ��ʤ����ޤ��ϱ�ʸ��
-	       Ŭ�ڤǤϤʤ��ΤϺƹͤ��פ��롥
- \item[$\Box$] ���桦ά���������ΤΤ�ΤǤʤ����ޤ��ϡ��Ѹ줬Ŭ�ڤǤʤ���
-	       �ޤ��ϡ��ޡ�ɽ��������Ŭ���ǤϤʤ��ΤϺƹͤ��פ��롥
- \item[$\Box$] �Ŀ�Ū���뤤�����˾����ʥ��롼�ס���Ȥ��������Ѥ����
-	       �����Ѹ줬���̤�������ʤ���¿�Ѥ���Ƥ���ΤϺƹͤ��פ�
-	       �롥
- \item[$\Box$] ��ɽ���ΤϽ�ʬ�����ΤǤϤʤ����ޤ��ϸ��꤬����ΤϺƹͤ�
-	       �פ��롥
- \item[$\Box$] ��ɽ�������ǤϤʤ��ΤϺƹͤ��פ��롥
- \item[$\Box$] ��ɽ���礭�����̼ܤλ��꤬Ŭ�ڤǤʤ��ΤϺƹͤ��פ���.
+ \item[$\Box$] 和文標題が内容を適切に表現していないのは再考を要する．
+ \item[$\Box$] 英文標題が内容を適切に表現していない，または英語として適
+	       切でないのは再考を要する．
+ \item[$\Box$] アブストラクトが主旨を適切に表現していない，または英文が
+	       適切ではないのは再考を要する．
+ \item[$\Box$] 記号・略号等が周知のものでなく，または，用語が適切でなく，
+	       または，図・表の説明が適当ではないのは再考を要する．
+ \item[$\Box$] 個人的あるいは非常に小さなグループ／企業だけで通用するよ
+	       うな用語が特別な説明もなしに多用されているのは再考を要す
+	       る．
+ \item[$\Box$] 図表自体は十分に明確ではない，または誤りがあるのは再考を
+	       要する．
+ \item[$\Box$] 図表が鮮明ではないのは再考を要する．
+ \item[$\Box$] 図表が大きさ，縮尺の指定が適切でないのは再考を要する.
 \end{itemize}
 
 %5.4
-\subsection{����ʸ��}
+\subsection{参考文献}
 
 \begin{itemize}
- \item[$\Box$] ����ʸ����10��ʾ�ɬ�ס�ʬ��ˤ�äƤ�20��ʾ塤30��ʾ�
-	       �Ȥ����ո��⤢���.
- \item[$\Box$] ��ʬ�ʻ���ʸ���Ͽ������μ�ĥ�˷礫���ʤ���
- \item[$\Box$] Ŭ�ڤ�ʸ�������Ѥ���Ƥ��餺�����ο���Ŭ�ڤǤϤʤ��ΤϺ�
-	       �ͤ��פ��롥
- \item[$\Box$] ���ܿͤˤ�뤷����٤���ʸ����Ѥ��뤳�Ȥ����ܿ͸��楳�ߥ�
-	       �˥ƥ���ȯŸ�ˤĤʤ��롥
- \item[$\Box$] ����ʸ���ϼ�ʬ�Τ�ΤФ���ǤϤ��ᡥ
+ \item[$\Box$] 参考文献は10件以上必要（分野によっては20件以上，30件以上
+	       という意見もある）.
+ \item[$\Box$] 十分な参考文献は新規性の主張に欠かせない．
+ \item[$\Box$] 適切な文献が引用されておらず，その数も適切ではないのは再
+	       考を要する．
+ \item[$\Box$] 日本人によるしかるべき論文を引用することで日本人研究コミュ
+	       ニティの発展につながる．
+ \item[$\Box$] 参考文献は自分のものばかりではだめ．
 \end{itemize}
 
 %5.5
-\subsection{������}
+\subsection{二重投稿}
 
 \begin{itemize}
- \item[$\Box$] �����ƤϤ��ƤϤʤ�ʤ� �� ��������ݲ�Ĥ˺��򤵤줿��
-	       ʸ�����������ˤʤ�ʤ��褦����Ƥ��뤳�ȤϹ���ʤ���
- \item[$\Box$] ¾����ʸ�Ȥޤä���Ʊ����ɽ����Ѥ������ʤ������Ѥ��뤳��
-	       �϶ػߡ�
- \item[$\Box$] ��ȯɽ����ʸ���Ȥδ֤˽�ʣ������ΤϺƹͤ��פ��롥
+ \item[$\Box$] 二重投稿はしてはならない ─ ただし国際会議に採択された論
+	       文を著作権が問題にならないように投稿することは構わない．
+ \item[$\Box$] 他の論文とまったく同じ図表を引用の明示なしに利用すること
+	       は禁止．
+ \item[$\Box$] 既発表の論文等との間に重複があるのは再考を要する．
 \end{itemize}
 
 %5.6
-\subsection{¾�οͤ��ɤ�Ǥ�餦}
+\subsection{他の人に読んでもらう}
 
 \begin{itemize}
- \item[$\Box$] ��Ʒи������ʤ��ͤϡ���Ͽ���줿�и���˭�٤ʿͤ˹�������
-	       ��餦��
- \item[$\Box$] �ɼԤ�Ω�줫�鸫������Ū���������ʤ��������դ��Ƶ��Ҥ��롥
+ \item[$\Box$] 投稿経験が少ない人は，採録された経験の豊富な人に校正して
+	       もらう．
+ \item[$\Box$] 読者の立場から見て論理的な飛躍がないかに注意して記述する．
 \end{itemize}
 
 %5.7
-\subsection{����¾}
+\subsection{その他}
 
 \begin{itemize}
- \item[$\Box$] ����պ�Ͽ��ν����ǡ���Ͽ���ʳ�����ͳ��ʤ��������뤳
-	       �Ȥ϶ػߡ�
- \item[$\Box$] ���֥�֥饤��ɤʤΤǺ��ɼԤ����٤ʤ���
- \item[$\Box$] ������˥����å��ꥹ�Ȥγƹ��ܤ��������Ƥ��뤫��ɬ����ǧ
-	       ���롥 
+ \item[$\Box$] 条件付採録後の修正で，採録条件以外を理由もなく修正するこ
+	       とは禁止．
+ \item[$\Box$] ダブルブラインドなので査読者は選べない．
+ \item[$\Box$] 投稿前にチェックリストの各項目を満たしているか，必ず確認
+	       する． 
 \end{itemize}
 
 %6
-\section{������}
+\section{おわりに}
 
-�ܹƤǤϡ�A4�ķ�2���Ȥ��Ѥ��ѹ�������������ե�������Ѥ�����ʸ�Υե���
-�ޥå���ˡ�ȡ���ʸ�兩�㡼�ʥ��Խ��Ѱ��񤬤ޤȤ᤿�֤٤��餺���פ˴�Ť�
-��ʸ�ν����򼨤���������Ū�ˤޤ��Խ�ʬ����ʬ��¿�����ᡤ�ո�����˾����
+本稿では，A4縦型2段組み用に変更したスタイルファイルを用いた論文のフォー
+マット方法と，論文誌ジャーナル編集委員会がまとめた「べからず集」に基づく
+論文の書き方を示した．内容的にまだ不十分の部分が多いため，意見，要望等を
 \begin{quote}
  \|editt@ipsj.or.jp|
 \end{quote}
-�ޤǤ���ĺ��������
+までお寄せ頂きたい．
 
 \begin{acknowledgment}
-A4�������Ф��륬���ɤ��ˡ��ܹƤ����������
-���饹�ե�����κ����ˤ����Ƥϡ�
-������ؤ����硡����ˤ��ޤ��ޤʤ�������ĺ����
-�����BiB\TeX ��Ϣ�ե���������ѤˤĤ��Ƥ����ĺ�������Ȥ򿼼դ��롥
-�ޤ���A4�������Ф��륬���ɤ�������줿�������Խ��Ѱ����ô���Ԥ˿��դ��롥
+A4横型に対するガイドを基に，本稿を作成した．
+クラスファイルの作成においては，
+京都大学の中島　浩氏にさまざまなご教示を頂き，
+さらにBiB\TeX 関連ファイルの利用についても快諾頂いたことを深謝する．
+また，A4横型に対するガイドを作成された当時の編集委員会の担当者に深謝する．
 \end{acknowledgment}
 
 \begin{thebibliography}{10}
@@ -792,17 +792,17 @@ A4�������Ф��륬���ɤ��ˡ��ܹƤ����������
 %\bibitem{latex}
 %Lamport, L.: {\em A Document Preparation System \LaTeX User's Guide \&
 %  Reference Manual}, Addison Wesley, Reading, Massachusetts (1986).
-% ��Cooke, E., et al.����ʸ����������ƥ� \LaTeX�������������Ƕ�
-%  (1990)��.
+% （Cooke, E., et al.訳：文書処理システム \LaTeX，アスキー出版局
+%  (1990)）.
 
 %\bibitem{total}
-%��ƣ�¿͡� \LaTeX �ȡ����륬���ɡ����¥����ƥ�ȥ졼�ǥ��� (1991).
+%伊藤和人： \LaTeX トータルガイド，秀和システムトレーディング (1991).
 %\bibitem{nodera}
-%���δ�֡��ڡ� \LaTeX����Ω���� (1990).
+%野寺隆志：楽々 \LaTeX，共立出版 (1990).
 
 \bibitem{okumura}
-��¼��ɧ��������5�� \LaTeXe ��ʸ��������硤
-����ɾ����(2010).
+奥村晴彦：改訂第5版 \LaTeXe 美文書作成入門，
+技術評論社(2010).
 
 \bibitem{companion}
 Goossens, M., Mittelbach, F. and Samarin, A.:
@@ -810,9 +810,9 @@ Goossens, M., Mittelbach, F. and Samarin, A.:
 Addison Wesley, Reading, Massachusetts (1993).
 
 \bibitem{book1}
-�ڲ���ͺ��
-���ʷϤκ�ʸ���ѡ�
-�������(1981).
+木下是雄：
+理科系の作文技術，
+中公新書(1981).
 
 \bibitem{book2}
 Strunk W. J. and White E.B.:
@@ -830,14 +830,14 @@ Higham N.J.:
 SIAM (1998).
 
 \bibitem{webpage1}
-��������ز���ʸ�兩�㡼�ʥ��Խ��Ѱ���
-��Ƽԥޥ˥奢��(online)��
+情報処理学会論文誌ジャーナル編集委員会：
+投稿者マニュアル(online)，
 \urlj{http://www.ipsj.or.jp/journal /submit/manual/j\_manual.html}
 (2007.04.05).
 
 \bibitem{webpage2}
-��������ز���ʸ�兩�㡼�ʥ��Խ��Ѱ���
-�٤��餺��(online)��
+情報処理学会論文誌ジャーナル編集委員会：
+べからず集(online)，
 \urlj{http://www.ipsj.or.jp/journal/manual /bekarazu.html}
 (2011.09.15).
 
@@ -846,206 +846,206 @@ SIAM (1998).
 
 \appendix
 %7
-\section{��Ͽ�ν���}
+\section{付録の書き方}
 
-��Ͽ��������ˤϡ�����ʸ���ꥹ�Ȥ�ľ��˥��ޥ�� \|\appendix| �˰���³
-���ƽ񤯡���Ͽ�Ǥϡ�\|\section| ���ޥ�ɤ�{\bf A.1}��{\bf A.2}�ʤɤθ���
-�����������롥
+付録がある場合には，参考文献リストの直後にコマンド \|\appendix| に引き続
+いて書く．付録では，\|\section| コマンドが{\bf A.1}，{\bf A.2}などの見出
+しを生成する．
 
 %7.1
-\subsection{���Ф�����}
+\subsection{見出しの例}
 
-��Ͽ�� \|\subsetion| �ǤϤ��Τ褦���Ф��ˤʤ롥
+付録の \|\subsetion| ではこのよう見出しになる．
 
 %8
-\section{�������ʸ�ѥ��ޥ��}
+\section{研究会論文用コマンド}
 \label{sig}
 
-�Ƹ������ʸ��ʥȥ�󥶥������ˤˤϳơ��˸�ͭ�Υ��֥����ȥ롤ά�Ρ���
-�֤����롥�ǽ����ƤǤϡ��ʲ��Υ��ޥ�ɤ� \|\documentclass| ��{\bf ���ץ���
-��}�Ȥ��뤳�Ȥǡ������ξ����Ϳ���롥
+各研究会論文誌（トランザクション）には各々に固有のサブタイトル，略称，通
+番がある．最終原稿では，以下のコマンドを \|\documentclass| の{\bf オプショ
+ン}とすることで，これらの情報を与える．
 
 \begin{itemize}
-\item \|PRO|�ʥץ�����ߥ󥰡�
-\item \|TOM|�ʿ�����ǥ벽�ȱ��ѡ�
-\item \|TOD|�ʥǡ����١�����
-\item \|ACS|�ʥ���ԥ塼�ƥ��󥰥����ƥ��
-\item \|CDS|�ʥ��󥷥塼�ޡ��ǥХ���\,\&\,�����ƥ��
-\item \|TBIO|��Bioinformatics��\footnote{%
-TBIO, SLDM, CVA�ϱ�ʸ��ʸ��Ǥ���Τ���̾�Ϥʤ���}
-\item \|SLDM|��System LSI Design Methodology��\footnotemark[5]
-\item \|CVA|��Computer Vision and Applicaitons��\footnotemark[5]
+\item \|PRO|（プログラミング）
+\item \|TOM|（数理モデル化と応用）
+\item \|TOD|（データベース）
+\item \|ACS|（コンピューティングシステム）
+\item \|CDS|（コンシューマ・デバイス\,\&\,システム）
+\item \|TBIO|（Bioinformatics）\footnote{%
+TBIO, SLDM, CVAは英文論文誌であるので和名はない．}
+\item \|SLDM|（System LSI Design Methodology）\footnotemark[5]
+\item \|CVA|（Computer Vision and Applicaitons）\footnotemark[5]
 \end{itemize}
 
-�ޤ���ʸ��ʸ�����κݤˤ� \|english| �򥪥ץ������ɲä���Ф褤����������
-�ơ�\|\documentclass[PRO]{ipsj}| �Ȥ���С֥ץ�����ߥ󥰡פ���ʸ�ѡ�
-\|\documentclass[PRO,english]| \|{ipsj}| �Ȥ���б�ʸ�ѤȤʤ롥
+また英文論文作成の際には \|english| をオプションに追加すればよい．したがっ
+て，\|\documentclass[PRO]{ipsj}| とすれば「プログラミング」の和文用，
+\|\documentclass[PRO,english]| \|{ipsj}| とすれば英文用となる．
 
-�ޤ������ˤϡֹ�פ�Ϣư���ʤ���ȯ�Է�פ����뤿�ᡤ�ز񤢤뤤���Խ���
-����λؼ��˴�Ť���ȯ�Է��
+また研究会には「号」と連動しない「発行月」があるため，学会あるいは編集委
+員会の指示に基づき，発行月を
 %
 \begin{itemize}\item[]
-\|\setcounter{|{\bf ���}\|}{<ȯ�Է�>}|
+\|\setcounter{|{\bf 月数}\|}{<発行月>}|
 \end{itemize}
 %
-�ˤ�äƻ��ꤹ�롥
+によって指定する．
 
-����¾���ʲ��γ���Ǽ����褦�ˡ������Ĥ�����ʸ��˸�ͭ�ε�ǽ��¸����뤿
-��Υ��ޥ�ɤʤɤ��Ѱդ���Ƥ��롥
+この他，以下の各節で示すように，いくつかの論文誌に固有の機能を実現するた
+めのコマンドなどが用意されている．
 
 
 
 %9
-\section{��ʬ����ͭ���ޥ��}
+\section{各分冊固有コマンド}
 
-��ʬ���ˤ�äƤ��줾��٤������ͤ��㤦���ᡤƱ�����ޥ�ɤǤ���Ϸ�̤���
-�ʤ��礬���롥�ޤ��ֺƼ��աס��ֺơ����աפ������礬���ꡤ������
-
-\noindent
-��ʸ�Ǥ�
-\begin{itemize}\item[]
-\|\|{\bf �Ƽ���}\|{<ǯ>}{<��>}{<��>}|\\
-\|\|{\bf �ƺƼ���}\|{<ǯ>}{<��>}{<��>}|
-\end{itemize}
-��ʸ�Ǥ�
-\begin{itemize}\item[]
-\|\|{\bf rereceived}\|{<ǯ>}{<��>}{<��>}|\\
-\|\|{\bf rerereceived}\|{<ǯ>}{<��>}{<��>}|
-\end{itemize}
-�ȥץꥢ��֥���ɲä��롥
-
-%9.1
-\subsection{\<�֥ץ�����ߥ󥰡�PRO�ˡ׸�ͭ��ǽ}
-
-\<����ʸ��ץ�����ߥ󥰡פˤ���ʸ�ʳ��ˡ��ץ�����ߥ󥰸����Ǥθ���
-ȯɽ�����ƹ������ޤޤ�Ƥ��롥�������ƹ����ϡ�\|\documentclass|�Υ��ץ���
-��Ȥ���\|abstract|����ꤹ�롥\ref{config}~���\|\maketitle|�ޤǤ�����
-����ʤ�ե�����ʤ��ʤ����ʸ���ʤ��ե�����ˤ����������롥�ʤ�\|\|{\bf 
-����}��\|\|{\bf ��Ͽ}�����פǤ��뤬�������ȯɽǯ������
+各分冊によってそれぞれ細かい仕様が違うため，同じコマンドでも出力結果が異
+なる場合がある．また「再受付」，「再々受付」が入る場合があり，それらは
 
 \noindent
-��ʸ�Ǥ�
+和文では
 \begin{itemize}\item[]
-\|\|{\bf ȯɽ}\|{<ǯ>}{<��>}{<��>}|
+\|\|{\bf 再受付}\|{<年>}{<月>}{<日>}|\\
+\|\|{\bf 再再受付}\|{<年>}{<月>}{<日>}|
 \end{itemize}
-��ʸ�Ǥ�
+英文では
 \begin{itemize}\item[]
-\|\|{\bf Presents}\|{<ǯ>}{<��>}{<��>}|
+\|\|{\bf rereceived}\|{<年>}{<月>}{<日>}|\\
+\|\|{\bf rerereceived}\|{<年>}{<月>}{<日>}|
 \end{itemize}
-�ˤ����ꤹ�롥
+とプリアンブルに追加する．
 
 %9.1
-\subsection{\<�֥ǡ����١�����TOD�ˡ׸�ͭ��ǽ}
+\subsection{\<「プログラミング（PRO）」固有機能}
 
-\<����ʸ��ǡ����١����פ���ʸ��ô���Խ��Ѱ��ϡ�
+\<「論文誌：プログラミング」には論文以外に，プログラミング研究会での研究
+発表の内容梗概が含まれている．この内容梗概は，\|\documentclass|のオプショ
+ンとして\|abstract|を指定する．\ref{config}~節の\|\maketitle|までの内容
+からなるファイル（すなわち本文がないファイル）から生成する．なお\|\|{\bf 
+受付}や\|\|{\bf 採録}は不要であるが，代わりに発表年月日を，
+
+\noindent
+和文では
 \begin{itemize}\item[]
-\|\Editor{<��̾>}|
+\|\|{\bf 発表}\|{<年>}{<月>}{<日>}|
 \end{itemize}
-�ˤ����ꤹ�롥��ʸ�Ǥϡ�ô���Խ��Ѱ��ס���ʸ�Ǥϡ�Editor in Charge:��
-�����롥
+英文では
+\begin{itemize}\item[]
+\|\|{\bf Presents}\|{<年>}{<月>}{<日>}|
+\end{itemize}
+により指定する．
 
-�ޤ�����������ѹ���ȼ����\underline{��ʸ�κǸ�}������Τǡ�
-\|\end{document}|������ľ���֤���
+%9.1
+\subsection{\<「データベース（TOD）」固有機能}
+
+\<「論文誌：データベース」の論文の担当編集委員は，
+\begin{itemize}\item[]
+\|\Editor{<氏名>}|
+\end{itemize}
+により指定する．和文では「担当編集委員」，英文では「Editor in Charge:」
+と入る．
+
+またスタイルの変更に伴い，\underline{本文の最後}に入るので，
+\|\end{document}|の前に直接置く．
 
 
 
 
 %9.2
-\subsection{\<�֥��󥷥塼�ޡ��ǥХ���\,\&\,�����ƥ��CDS�ˡ׸�ͭ��ǽ}
+\subsection{\<「コンシューマ・デバイス\,\&\,システム（CDS）」固有機能}
 
-\<����ʸ����󥷥塼�ޡ��ǥХ���\,\&\,�����ƥ�פǤϡ�
-��ʸ�μ���ˤ�äƸ��Ф����Ѥ�뤿�ᡤ
-���ץ��������ؤ���Ԥ���
+\<「論文誌：コンシューマ・デバイス\,\&\,システム」では，
+論文の種類によって見出しが変わるため，
+オプションで切替えを行う．
 
-�Ƽ��̤�
+各種別は
 \begin{itemize}
-\item \|systems  |���󥷥塼�ޡ������ƥ���ʸ\\
+\item \|systems  |コンシューマ・システム論文\\
 \|         |Paper on Consumer Systems
 
-\item \|services |���󥷥塼�ޡ������ӥ���ʸ\\
+\item \|services |コンシューマ・サービス論文\\
 \|         |Paper on Consumer Services
 
-\item \|devices  |���󥷥塼�ޡ��ǥХ�����ʸ\\
+\item \|devices  |コンシューマ・デバイス論文\\
 \|         |Paper on Consumer Devices
 
-\item \|research |������ʸ\\
+\item \|research |研究論文\\
 \|         |Research Paper
 \end{itemize}
-�Ȥʤ롥
+となる．
 
-��ʸ�Υ��󥷥塼�ޡ������ƥ���ʸ�ʤ顤\\
+和文のコンシューマ・システム論文なら，\\
 \|\documentclass[CDS,systems]{ipsj}|
-�Ȥʤꡤ��ʸ���Ƥʤ� \|english|���ɲä���Ф褤��
+となり，英文原稿なら \|english|を追加すればよい．
 
 %9.3
-\subsection{\<��Bioinformatics��TBIO�ˡ׸�ͭ��ǽ}
+\subsection{\<「Bioinformatics（TBIO）」固有機能}
 
-Trans.\ Bioinformatics (TBIO)�ϱ�ʸ��ʸ��Ǥ���Τǡ�\|TBIO|���ץ�����
-����ˤ�äƼ�ưŪ��\|english|���ץ���󤬻��ꤵ�줿��ΤȤߤʤ��졤
-\|english| ���ץ����ξ�ά����ǽ��
+Trans.\ Bioinformatics (TBIO)は英文論文誌であるので，\|TBIO|オプションの
+指定によって自動的に\|english|オプションが指定されたものとみなされ，
+\|english| オプションの省略が可能．
 
-��ʸ���̤ϰʲ���3�
+論文種別は以下の3種．
 \begin{itemize}
-\item \makebox[4.9zw][l]{����ʤ�} Original Paper (Default)
+\item \makebox[4.9zw][l]{指定なし} Original Paper (Default)
 \item \|Data     | Database/Software Paper
 \item \|Survey   | Survey Paper
 \end{itemize}
 
-\|\documentclass[TBIO]{ipsj}|��Original Paper��\\
-\|\documentclass[TBIO,Survey]{ipsj}|��Survey Paper�Ȥʤ롥
+\|\documentclass[TBIO]{ipsj}|でOriginal Paper，\\
+\|\documentclass[TBIO,Survey]{ipsj}|でSurvey Paperとなる．
 
-�ޤ���ô���Խ��Ѱ���TODƱ�͡�\|\Editor|��������뤬����Communicated by��
-�Ȥʤ롥TODƱ�͡�\|\end{document}|������ľ���֤���
+また，担当編集委員はTOD同様，\|\Editor|で定義するが，「Communicated by」
+となる．TOD同様，\|\end{document}|の前に直接置く．
 
 %9.4
-\subsection{\<��Computer Vision and Applicaitons\\\<��CVA�ˡ׸�ͭ��ǽ}
+\subsection{\<「Computer Vision and Applicaitons\\\<（CVA）」固有機能}
 
-Trans.\ CVA���ʸ��ʸ��Ǥ��뤿�ᡤ\|english| ���ץ����ξ�ά���ġ�
+Trans.\ CVAも英文論文誌であるため，\|english| オプションの省略が可．
 
-��ʸ���̤�3���ढ�ꡤ
+論文種別は3種類あり，
 \begin{itemize}
-\item \makebox[4.9zw][l]{����ʤ�} Regular Paper (Default)
+\item \makebox[4.9zw][l]{指定なし} Regular Paper (Default)
 \item \|Research | Research Paper
 \item \|system   | Systems Paper
 \end{itemize}
-�Ȥʤ롥
+となる．
 
-TBIOƱ�͡�ô���Խ��Ѱ������ꡤ
-����ʸ�Ϥ�TBIOƱ�͡���Communicated by�פȤʤ롥
+TBIO同様，担当編集委員が入り，
+挿入文章もTBIO同様，「Communicated by」となる．
 
 %9.5
-\subsection{\<��System LSI Design Methodology��SLDM�ˡ׸�ͭ��ǽ}
+\subsection{\<「System LSI Design Methodology（SLDM）」固有機能}
 
-Trans.\ SLDM���ʸ��ʸ��Ǥ��뤿�ᡤ\|english| ���ץ����ξ�ά���ġ�
+Trans.\ SLDMも英文論文誌であるため，\|english| オプションの省略が可．
 
-��ʸ���̤�2���ढ�ꡤ
+論文種別は2種類あり，
 \begin{itemize}
-\item \makebox[4.9zw][l]{����ʤ�} Regular Paper (Default)
+\item \makebox[4.9zw][l]{指定なし} Regular Paper (Default)
 \item \|Short    | Short Paper
 \end{itemize}
-�Ȥʤ롥
+となる．
 
-SLDM��ô���Խ��Ѱ������뤬����ʸ�Ϥ���ʸ�ˤ�äƼ�ư����ʸ�Ϥ��ۤʤ롥
+SLDMも担当編集委員が入るが挿入文章が論文によって自動挿入文章が異なる．
 
-�̾�ϡ�Recommended by Associate Editor:�ס�\|invited|�Υ��ץ��������
-�����Τߡ���Invited by Editor-in-Chief:�פȤʤ롥
+通常は「Recommended by Associate Editor:」，\|invited|のオプションが入っ
+た場合のみ，「Invited by Editor-in-Chief:」となる．
 
 \begin{biography}
-\profile{m}{���� ��Ϻ}{1970ǯ����1992ǯ��������������������ʳز�´��
-1994ǯƱ����ر����β���λ��Ʊǯ��������ز����ҡ�����饤����Ǥθ���
-�˽������ŻҾ����̿��ز�IEEE��ACM �Ʋ��}
+\profile{m}{情報 太郎}{1970年生．1992年情報処理大学理学部情報科学科卒．
+1994年同大大学院修士課程了．同年情報処理学会入社．オンライン出版の研究
+に従事．電子情報通信学会，IEEE，ACM 各会員}
 %
-\profile{n}{���� �ֻ�}{1960ǯ����1982ǯ��������������������ʳز�´��
-1984ǯƱ����ر����β���λ��1987ǯƱ��β���λ��������Ρ�1987ǯ�����
-����ؽ��ꡥ1992ǯ�Ͷ���ؽ�������1997ǯƱ�綵��������饤����Ǥθ���
-�˽�����2010ǯ���������ǰ�޼��ޡ��ŻҾ����̿��ز�IEEE��IEEE-CS��ACM
-�Ʋ��}
+\profile{n}{処理 花子}{1960年生．1982年情報処理大学理学部情報科学科卒．
+1984年同大大学院修士課程了．1987年同博士課程了．理学博士．1987年情報処
+理大学助手．1992年架空大学助教授．1997年同大教授．オンライン出版の研究
+に従事．2010年情報処理記念賞受賞．電子情報通信学会，IEEE，IEEE-CS，ACM
+各会員}
 %
-\profile{s}{�ز� ��Ϻ}{1950ǯ����1974ǯ�Ͷ������ر����β���λ��
-1987ǯƱ��β���λ��������Ρ�1977ǯ�Ͷ���ؽ��ꡥ1992ǯ���������ؽ�
-������1987ǯƱ�綵����2000ǯ�����������ز���䡥����饤����Ǥθ���
-�˽�����2010ǯ���������ǰ�޼��ޡ���������ز��������ŻҾ����̿��ز�
-IEEE��IEEE-CS��ACM �Ʋ��}
+\profile{s}{学会 次郎}{1950年生．1974年架空大学大学院修士課程了．
+1987年同博士課程了．工学博士．1977年架空大学助手．1992年情報処理大学助
+教授．1987年同大教授．2000年から情報処理学会顧問．オンライン出版の研究
+に従事．2010年情報処理記念賞受賞．情報処理学会理事．電子情報通信学会，
+IEEE，IEEE-CS，ACM 各会員}
 %
 \end{biography}
 
