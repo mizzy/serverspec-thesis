@@ -16,11 +16,28 @@ serverspec: 宣言的記述でサーバの状態をテスト可能な汎用性�
 
 ## 1. はじめに
 
-## 2.
+ * システムの大規模・複雑化に伴い、サーバの構築・運用を効率化するためにサーバの状態をコードで記述する手法が数多く提案されている
+   * CFEngineにはじまり、Puppet、Chef、Ansibleなど
+   * SmartFrogもこの一種？
+     * https://github.com/mizzy/serverspec-thesis/issues/2#issuecomment-31063257
+   * Infrastructure as Code について書かれた論文等はあるか？
+     * 書籍Web Operationsの第5章
+ * それらの手法を効率よく扱うプロセスとしてのTest-Driven Infrastructure
+   * 関連論文等はあるか？
+   * [書籍](http://shop.oreilly.com/product/0636920030973.do)はある
+   * その前身の Agile Infrastructure に触れてもよさそう
+     * http://www.jedi.be/presentations/IEEE-Agile-Infrastructure.pdf
+ * Patrick Debois氏のAgile Infrastructureに論文は2008年なので、Puppetの登場（2006年）より後、Chefの登場（2009年）より前。
+     * Infrastructure as Codeはいつぐらいに出てきた言葉なのか？
+     * Test-Driven Infrastructureはいつぐらいに出てきた言葉なのか？
+       * 書籍Test-Driven Infrastructure with Chefの初出は2011年
 
-## 3.
+## 2. サーバのテストの現状と課題
 
-## 4.
+## 3. 提案するサーバテスト手法
+
+## 4. 提案手法によりもたらされた成果
+
 
 ## 5. むすび
 
