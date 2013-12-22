@@ -1,0 +1,252 @@
+
+
+% ipsjdraft.sty  (C) 2012 Information Processing Society of Japan
+% Copyright (C) 1995-2010 by Hiroshi Nakashima, Yasuki Saito and
+%                            The Editorial Board of the IPSJ Journal
+
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ipsj}
+%\ProvidesClass{ipsj}
+% [2011/12/19-2012/03/09 v1.00-v1.01 IPSJDRAFT.STY]
+ [2012/06/01 v2.00 IPSJDRAFT.STY]
+
+
+
+%% draft
+\ifx\@classoptionslist\undefined\else
+\def\ipsj@draft@option{draft}
+\def\ipsj@remove@draft@option{\def\@tempb{}%
+	\@for\@tempa:=\@classoptionslist\do{%
+		\ifx\@tempa\ipsj@draft@option\else
+		\edef\@tempb{\@tempb,\@tempa}\fi}%
+	\ifx\@tempb\@empty \def\@classoptionslist{}\else
+	\expandafter\ipsj@remove@draft@ption\@tempb\@nil\fi}
+\def\ipsj@remove@draft@ption,#1\@nil{%
+	\def\@classoptionslist{#1}}
+\ipsj@remove@draft@option
+\fi
+
+
+
+
+
+\def\biography{\ipsjnobiography}
+\def\endbiography{\ipsjendnobiography}
+
+\def\ipsjnobiography{\let\profile\@gobble
+	\ifDS@english \let\author\@gobble \fi
+	\let\adjust\@gobble \setbox0\vbox\bgroup
+	\tolerance\@M \hbadness\@M \hfuzz\maxdimen}
+\def\ipsjendnobiography{\egroup\setbox0\hbox{}}
+
+
+
+\newbox\ackbox
+\let\@acknowledgment\acknowledgment
+
+\def\acknowledgment{\global\setbox\ackbox\vtop\bgroup\@acknowledgment}
+\def\endacknowledgment{\par\egroup}
+
+
+
+
+
+\def\@uketsuke{%
+\leavevmode%
+\phantom{@received}
+\@ifundefined{@rereceived}{\phantom{, }}{%
+   \phantom{\@rereceived}
+   \@ifundefined{@rerereceived}{\phantom{, }}{\phantom{\@rerereceived}}%
+   \par
+}%
+\phantom{\@accepted}%
+\@ifundefined{@released}{}{, \@released}%
+}
+
+
+\def\@euketsuke{%
+\leavevmode%
+\phantom{\@ereceived}
+\@ifundefined{@erereceived}{\phantom{, }}{%
+   \phantom{\@erereceived}
+   \@ifundefined{@ererereceived}{\phantom{, }}{\phantom{\@ererereceived}}%
+   \par
+}%
+\phantom{\@eaccepted}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+
+
+\def\authoroutput#1{%
+%\begin{center}
+\bgroup
+\offsetemail\z@
+\count@\@ne
+\advance\author@count\@ne
+%%%
+%%%
+%%%
+\@whilenum{\count@<\author@count}\do{%
+\mbox{% start
+%
+%% \csname #1authorfont\endcsname%% !! font
+%
+\ifDS@english
+\protect\phantom{%
+   \csname authorname\the\count@\endcsname %\csname affiliate@num@\endcsname
+}%
+\else
+\protect\phantom{%
+   \csname #1authorname\the\count@\endcsname %\csname affiliate@num@\endcsname
+}%
+\fi
+%%%%%label
+\null{}%
+\expandafter\@tempcnta\csname authorlabel@num@\the\count@\endcsname
+   \advance\@tempcnta\@ne
+   \@tempcntb\@ne
+{%
+   \@whilenum{\@tempcntb<\@tempcnta}\do{%
+      \edef\temp{\csname authorlabel\the\count@ @\the\@tempcntb\endcsname}%
+       \textsuperscript{%
+\csname #1labelfont\endcsname%% !! font
+%%%change from here
+%%%add paffiliate
+         \expandafter\if\csname affiliate@num@\temp\endcsname\relax
+\protect\phantom{%    
+            \csname paffiliate@num@\temp\endcsname%%affiliate
+}%
+         \else
+\protect\phantom{%    
+            \csname affiliate@num@\temp\endcsname
+}%
+         \fi
+%%%end
+\protect\phantom{%    
+         \comma@or@relax@affilabel
+}
+}%
+      \advance\@tempcntb\@ne
+}%
+}%
+%%%%%%email
+\expandafter\@tempcnta\csname authoremail@num@\the\count@\endcsname\relax
+   \ifnum\@tempcnta=\z@\relax\else%
+\protect\phantom{% 
+\textsuperscript{,}%
+}%
+\fi
+   \advance\@tempcnta\@ne
+   \@tempcntb\@ne
+   \@whilenum{\@tempcntb<\@tempcnta}\do{%
+         %\textsuperscript{\space}%
+      \bgroup
+         \advance\@tempcntb\offsetemail
+%%%
+\protect\phantom{%         
+\textsuperscript{\csname #1labelfont\endcsname%% !! font
+            \@alph{\@tempcntb}\rparen\comma@or@relax@email}%
+}%
+%%%
+      \egroup
+      \advance\@tempcntb\@ne
+   }%
+\advance\@tempcntb-1\relax
+\global\advance\offsetemail\@tempcntb
+%
+}%% end
+%%
+\csname #1break@or@oneskip\endcsname
+%%
+\advance\count@\@ne
+%%%
+}%
+%%%%%%
+%\end{center}%
+\egroup
+%}}
+}
+
+
+
+
+
+
+\let\org@footnotetext\@footnotetext
+\let\org@maketitle\maketitle
+
+\def\maketitle{%
+\org@maketitle
+\global\let\@footnotetext\org@footnotetext
+}
+
+
+
+
+\def\footnote{%
+   \@ifnextchar[%
+      \@xfootnote
+     {\stepcounter\@mpfn
+      \protected@xdef\@thefnmark{\thempfn}%
+      \@footnotemark\@footnotetext}}
+
+
+\newbox\@footnote@tempbox
+\long\def\@footnotetext#1{%
+   \ifydir\def\@tempa{\yoko}\else\def\@tempa{\tate}\fi%%% pTeX
+   \begingroup
+   \setbox\z@\vbox{%
+      \@tempa%%% pTeX
+      \reset@font\footnotesize
+      \interlinepenalty\interfootnotelinepenalty
+      \hsize\columnwidth \@parboxrestore
+      \protected@edef\@currentlabel{\csname p@footnote\endcsname\@thefnmark}%
+      \@makefntext{\rule\z@\footnotesep\ignorespaces#1\@finalstrut\strutbox}%
+}%
+   \global\setbox\@footnote@tempbox\box\voidb@x
+   \splittopskip\z@ \splitmaxdepth\boxmaxdepth
+   \vbadness\@M \vfuzz\maxdimen
+   \@footnote@reconstructbox
+   \endgroup
+   \insert\footins{%
+      \@tempa%%% pTeX
+      \reset@font\footnotesize
+      \interlinepenalty\interfootnotelinepenalty
+      \splittopskip\footnotesep
+      \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+      \unvbox\@footnote@tempbox}}
+\def\@footnote@reconstructbox{%
+   \ifvoid\z@\else
+      \dimen@\ht\z@ \advance\dimen@\dp\z@
+      \setbox\tw@=\vsplit\z@ to \z@
+      \ifvoid\z@\else \setbox\z@\vbox{\unvbox\z@}\fi
+      \setbox\tw@\vbox{\unvbox\tw@}%
+      \advance\dimen@-\ht\z@ \advance\dimen@-\dp\z@
+      \advance\dimen@-\ht\tw@ \advance\dimen@-\dp\tw@
+      \global\setbox\@footnote@tempbox\vbox{%
+         \unvbox\@footnote@tempbox
+         \phantom{\box\tw@}
+         \ifvoid\z@\else \vskip\dimen@ \fi}%
+      \expandafter\@footnote@reconstructbox
+   \fi}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\endinput
+
