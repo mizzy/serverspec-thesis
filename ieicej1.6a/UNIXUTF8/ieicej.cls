@@ -22,21 +22,21 @@
 \newif\if@tecrep \@tecrepfalse
 
 \DeclareOption{paper}{%
- \gdef\hd@type{ÏÀÊ¸}\gdef\tl@type{ÏÀ\hskip1zw Ê¸}\gdef\@type{P}}
+ \gdef\hd@type{è«–æ–‡}\gdef\tl@type{è«–\hskip1zw æ–‡}\gdef\@type{P}}
 \DeclareOption{invited}{\@papertrue
- \gdef\hd@type{¾·ÂÔÏÀÊ¸}\gdef\tl@type{¾·ÂÔÏÀÊ¸}\gdef\@type{P}}
+ \gdef\hd@type{æ‹›å¾…è«–æ–‡}\gdef\tl@type{æ‹›å¾…è«–æ–‡}\gdef\@type{P}}
 \DeclareOption{comment}{\@papertrue
- \gdef\hd@type{²òÀâÏÀÊ¸}\gdef\tl@type{²òÀâÏÀÊ¸}\gdef\@type{P}}
+ \gdef\hd@type{è§£èª¬è«–æ–‡}\gdef\tl@type{è§£èª¬è«–æ–‡}\gdef\@type{P}}
 \DeclareOption{survey}{\@papertrue
- \gdef\hd@type{¥µ¡¼¥Ù¥¤ÏÀÊ¸}\gdef\tl@type{¥µ¡¼¥Ù¥¤ÏÀÊ¸}\gdef\@type{P}}
+ \gdef\hd@type{ã‚µãƒ¼ãƒ™ã‚¤è«–æ–‡}\gdef\tl@type{ã‚µãƒ¼ãƒ™ã‚¤è«–æ–‡}\gdef\@type{P}}
 \DeclareOption{letter}{\@lettertrue\@paperfalse
- \gdef\hd@type{¥ì¥¿¡¼}\gdef\tl@type{\@typeofletter}\gdef\@type{L}}
+ \gdef\hd@type{ãƒ¬ã‚¿ãƒ¼}\gdef\tl@type{\@typeofletter}\gdef\@type{L}}
 \DeclareOption{electronicsletter}{\@electronicslettertrue\@paperfalse
- \gdef\hd@type{¥ì¥¿¡¼}\gdef\tl@type{¥ì¥¿¡¼}\gdef\@type{LP}}
+ \gdef\hd@type{ãƒ¬ã‚¿ãƒ¼}\gdef\tl@type{ãƒ¬ã‚¿ãƒ¼}\gdef\@type{LP}}
 \DeclareOption{technicalreport}{\@tecreptrue}
 
-\def\tl@type{ÏÀ\hskip1zw Ê¸}
-\def\hd@type{ÏÀÊ¸}
+\def\tl@type{è«–\hskip1zw æ–‡}
+\def\hd@type{è«–æ–‡}
 \def\@type{P}% paper
 
 %\def\ieicejline@warning{\ClassWarning{ieicej}}
@@ -63,7 +63,7 @@
  \let\xkanjiskip\jasciikanjiskip
  }{\@NTTfalse\let\jmathkanjiskip\xkanjiskip}
 \@ifundefined{iftdir}{\newif\iftdir\tdirfalse}{}
-\@ifundefined{burasage}{}{\burasage`¡¤=1\burasage`¡¥=1}
+\@ifundefined{burasage}{}{\burasage`ï¼Œ=1\burasage`ï¼=1}
 
 \newdimen\@JQ
  \@JQ=0.7392507pt
@@ -106,7 +106,7 @@
   \tombowtrue \tombowdatefalse
   \setlength{\@tombowwidth}{\z@}%
   \maketombowbox}
-\DeclareOption{tate}{\AtBeginDocument{\tate\message{¡Ô½ÄÁÈ¥â¡¼¥É¡Õ}}}
+\DeclareOption{tate}{\AtBeginDocument{\tate\message{ã€Šç¸¦çµ„ãƒ¢ãƒ¼ãƒ‰ã€‹}}}
 \DeclareOption{oneside}{\@twosidefalse}
 \DeclareOption{twoside}{\@twosidetrue}
 \DeclareOption{onecolumn}{\@twocolumnfalse}
@@ -678,7 +678,7 @@
 \def\Sissue#1{\gdef\@Sissue{#1}}
 \def\@Sissue{}
 
-\if@letter\typeofletter{¸¦µæÂ®Êó}\fi
+\if@letter\typeofletter{ç ”ç©¶é€Ÿå ±}\fi
 \field{X}
 \no{xx}
 \vol{x}
@@ -697,7 +697,7 @@
 }
 %% L (letter)
 \let\t@typefont@L\huge
-\def\head@type#1{%% 20\@JQ Ê¿2
+\def\head@type#1{%% 20\@JQ å¹³2
  \if@cameraready
   \@ifundefined{PSTricksLoaded}{\scalebox{1}[0.8]{\t@typefont@L #1}}
    {\def\tmp@scalebox##1{\pst@makebox{\@scalebox{##1}}}%
@@ -714,10 +714,10 @@
 
 \if@cameraready
  \def\hd@typeofletter{%
-  \def\@tempx{¥·¥ç¡¼¥È¥Î¡¼¥È}%
+  \def\@tempx{ã‚·ãƒ§ãƒ¼ãƒˆãƒãƒ¼ãƒˆ}%
   \ifx\@typeofletter\@tempx
-   ¥·\kern-.25zw ¥ç\kern-.25zw ¡¼\kern-.25zw ¥È\kern-.35zw 
-   ¥Î\kern-.25zw ¡¼\kern-.25zw ¥È%
+   ã‚·\kern-.25zw ãƒ§\kern-.25zw ãƒ¼\kern-.25zw ãƒˆ\kern-.35zw 
+   ãƒ\kern-.25zw ãƒ¼\kern-.25zw ãƒˆ%
   \else
    {\kanjiskip=-.075zw \@typeofletter}\hskip1mm
   \fi
@@ -739,7 +739,7 @@
     \raisebox{-3mm}{\head@type{\hd@typeofletter}}\hrulefill
    }}}\hfil
    \ifx\@Sissue\empty
-    {\Small\head@font ÅÅ»Ò¾ğÊóÄÌ¿®³Ø²ñÏÀÊ¸»ï\ \hd@year 
+    {\Small\head@font é›»å­æƒ…å ±é€šä¿¡å­¦ä¼šè«–æ–‡èªŒ\ \hd@year 
      /\@no\ Vol.\ \@vol\ No.\,\@no}%
    \else
     {\normalsize\bfseries\mathversion{bold}\@Sissue}%
@@ -764,21 +764,21 @@
   \let\@evenhead\@oddhead
  \fi
  \def\@oddfoot{\@Lbot\hfil
-  {\foot@font ÅÅ»Ò¾ğÊóÄÌ¿®³Ø²ñÏÀÊ¸»ï\hskip1zw
+  {\foot@font é›»å­æƒ…å ±é€šä¿¡å­¦ä¼šè«–æ–‡èªŒ\hskip1zw
     \@field\hskip1zw Vol.\ \@vol\hskip1zw No.\,\@no\hskip1zw
    pp.\,\thepage --\pageref{ieicej@lastpage}\hskip1zw
-   %%\ft@year Ç¯\@no ·î
-   {\normalfont\copyright}¡Ê¼Ò¡ËÅÅ»Ò¾ğÊóÄÌ¿®³Ø²ñ\ft@year
+   %%\ft@year å¹´\@no æœˆ
+   {\normalfont\copyright}ï¼ˆç¤¾ï¼‰é›»å­æƒ…å ±é€šä¿¡å­¦ä¼š\ft@year
   }\hfil
     \llap{{\nombre@font\thepage\hskip3mm}}%
   \@Rbot}%
  \def\@evenfoot{\@Lbot
   \rlap{\hskip3mm{\nombre@font\thepage}}\hfil
-   {\foot@font ÅÅ»Ò¾ğÊóÄÌ¿®³Ø²ñÏÀÊ¸»ï\hskip1zw
+   {\foot@font é›»å­æƒ…å ±é€šä¿¡å­¦ä¼šè«–æ–‡èªŒ\hskip1zw
     \@field\hskip1zw Vol.\ \@vol\hskip1zw
     No.\,\@no\hskip1zw pp.\,\thepage --\pageref{ieicej@lastpage}\hskip1zw 
-    %%\ft@year Ç¯\@no ·î
-    {\normalfont\copyright}¡Ê¼Ò¡ËÅÅ»Ò¾ğÊóÄÌ¿®³Ø²ñ\ft@year
+    %%\ft@year å¹´\@no æœˆ
+    {\normalfont\copyright}ï¼ˆç¤¾ï¼‰é›»å­æƒ…å ±é€šä¿¡å­¦ä¼š\ft@year
    }\hfil
   \@Rbot}%
 }
@@ -796,20 +796,20 @@
   \@Rtop}%
  \def\@evenhead{\@Ltop
   \rlap{\hbox to \textwidth{\smash{\rule[-1.75mm]{\textwidth}{0.25mm}}}}\hfil
-   {\Small\head@font ÅÅ»Ò¾ğÊóÄÌ¿®³Ø²ñÏÀÊ¸»ï\ 
+   {\Small\head@font é›»å­æƒ…å ±é€šä¿¡å­¦ä¼šè«–æ–‡èªŒ\ 
     \hd@year /\@no\ Vol.\ {\let\bfseries\relax \@vol}\ No.\,\@no}%
   \@Rtop}%
 }
 
 \def\odd@header{%
  \if@letter
-  {\Small\head@font ¥ì\hskip1zw ¥¿\hskip1zw ¡¼}%
+  {\Small\head@font ãƒ¬\hskip1zw ã‚¿\hskip1zw ãƒ¼}%
  \else
   \if@electronicsletter
-   {\Small\head@font ¥ì\hskip1zw ¥¿\hskip1zw ¡¼}%
+   {\Small\head@font ãƒ¬\hskip1zw ã‚¿\hskip1zw ãƒ¼}%
   \else
    \setbox\@tempboxb\hbox{\Small\head@font\def\\{\unskip\ignorespaces}%
-   \hd@type ¡¿\kern\z@\hd@title}%
+   \hd@type ï¼\kern\z@\hd@title}%
     \ifdim \wd\@tempboxb > \textwidth
      \ieicej@warning{header is too long. make it shorter. 
       ^^J\@spaces For example, \string\title[header title]{title}}%
@@ -1007,15 +1007,15 @@
  \def\plural@p@affi{}%
 }
 
-\def\rJ@member{\hskip-.25zw ¡ÊÀµ°÷¡Ë}
-\def\mJ@member{\hskip-.25zw ¡ÊÀµ°÷¡Ë}
-\def\aJ@member{\hskip-.25zw ¡Ê½Ú°÷¡Ë}
-%%\def\nJ@member{¡ÊÈó²ñ°÷¡Ë}
+\def\rJ@member{\hskip-.25zw ï¼ˆæ­£å“¡ï¼‰}
+\def\mJ@member{\hskip-.25zw ï¼ˆæ­£å“¡ï¼‰}
+\def\aJ@member{\hskip-.25zw ï¼ˆå‡†å“¡ï¼‰}
+%%\def\nJ@member{ï¼ˆéä¼šå“¡ï¼‰}
 \def\nJ@member{}
-\def\sJ@member{\hskip-.25zw ¡Ê³ØÀ¸°÷¡Ë}
-\def\hJ@member{\hskip-.25zw ¡ÊÌ¾ÍÀ°÷¡Ë}
-\def\fJ@member{\hskip-.25zw ¡ÊÀµ°÷¡§¥Õ¥§¥í¡¼¡Ë}
-\def\eJ@member{\hskip-.25zw ¡ÊÀµ°÷¡§¥·¥Ë¥¢²ñ°÷¡Ë}
+\def\sJ@member{\hskip-.25zw ï¼ˆå­¦ç”Ÿå“¡ï¼‰}
+\def\hJ@member{\hskip-.25zw ï¼ˆåèª‰å“¡ï¼‰}
+\def\fJ@member{\hskip-.25zw ï¼ˆæ­£å“¡ï¼šãƒ•ã‚§ãƒ­ãƒ¼ï¼‰}
+\def\eJ@member{\hskip-.25zw ï¼ˆæ­£å“¡ï¼šã‚·ãƒ‹ã‚¢ä¼šå“¡ï¼‰}
 
 \def\authorentry{\@ifnextchar[% ]
  {\TR@ae}{\N@ae}}
@@ -1581,7 +1581,7 @@
  \def\J@affiliate{}
  \def\E@affiliate{}
 
- %% °ú¿ô¤ò3¤Ä¤ËÊÑ¹¹
+ %% å¼•æ•°ã‚’3ã¤ã«å¤‰æ›´
  \def\paffiliate[#1]#2#3{%
   \advance \chk@p@alcnt \@ne
   \@ifundefined{p@al@#1}%
@@ -1715,12 +1715,12 @@
     \def\baselinestretch{\@titlepagebaselinestretch}%
     \hskip8mm
     \vtop{\footnotesize\baselineskip3mm
-     \hbox{¼ÒÃÄË¡¿Í\hskip1zw ÅÅ»Ò¾ğÊóÄÌ¿®³Ø²ñ}%
+     \hbox{ç¤¾å›£æ³•äºº\hskip1zw é›»å­æƒ…å ±é€šä¿¡å­¦ä¼š}%
      \hbox{THE INSTITUTE OF ELECTRONICS,}%
      \hbox{INFORMATION AND COMMUNICATION ENGINEERS}%
     }\hfill
     \vtop{\footnotesize\baselineskip3mm
-     \hbox{¿®³Øµ»Êó}%
+     \hbox{ä¿¡å­¦æŠ€å ±}%
      \hbox{TECHNICAL REPORT OF IEICE.}%
      \hbox{}%
     }\hskip8mm\hbox{}\par
@@ -1846,12 +1846,12 @@
 
  \def\jabstract{\global\setbox\jabstractbox\hbox\bgroup
    \large
-   {\bfseries ¤¢¤é¤Ş¤·\hskip1zw}\ignorespaces}
+   {\bfseries ã‚ã‚‰ã¾ã—\hskip1zw}\ignorespaces}
    \def\endjabstract{\egroup}
 
  \def\jkeyword{\global\setbox\jkeywordbox\hbox\bgroup
    \large
-   {\bfseries ¥­¡¼¥ï¡¼¥É\hskip1zw}\ignorespaces}
+   {\bfseries ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰\hskip1zw}\ignorespaces}
  \def\endjkeyword{\egroup}
 
  \let\abstract\jabstract
@@ -1863,23 +1863,23 @@
 
  \if@letter
   \def\abstract{\parindent\z@
-   \hspace*{1zw}{\bfseries ¤¢¤é¤Ş¤·\hskip1zw}\ignorespaces}
+   \hspace*{1zw}{\bfseries ã‚ã‚‰ã¾ã—\hskip1zw}\ignorespaces}
   \def\endabstract{\par\ignorespaces}
 
   \def\keyword{\parindent\z@
-   \hspace*{1zw}{\bfseries ¥­¡¼¥ï¡¼¥É\hskip1zw}\ignorespaces}
+   \hspace*{1zw}{\bfseries ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰\hskip1zw}\ignorespaces}
   \def\endkeyword{\par}
  \else
   \newbox\abstractbox
   \newbox\keywordbox
   \def\abstract{\global\setbox\abstractbox=\hbox\bgroup
    \begin{minipage}[t]{137.5mm}%11Q 50zw
-    \Small\hskip1zw{\bfseries ¤¢¤é¤Ş¤·\hskip1zw}\ignorespaces}
+    \Small\hskip1zw{\bfseries ã‚ã‚‰ã¾ã—\hskip1zw}\ignorespaces}
   \def\endabstract{\end{minipage}\egroup}
 
   \def\keyword{\global\setbox\keywordbox=\hbox\bgroup
    \begin{minipage}[t]{137.5mm}%11Q 50zw
-    \Small\hskip1zw{\bfseries ¥­¡¼¥ï¡¼¥É\hskip1zw}\ignorespaces}
+    \Small\hskip1zw{\bfseries ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰\hskip1zw}\ignorespaces}
   \def\endkeyword{\end{minipage}\egroup}
  \fi
 
@@ -2359,7 +2359,7 @@
    \inhibitglue #1%
   \else
    \def\@makefnmark{\kern0pt\hbox to \z@{%
-    $^{\mbox{\tiny \kern-.5zw ¡ÊÃí\@thefnmark{}¡Ë\kern-.5zw}}$\hss}}%
+    $^{\mbox{\tiny \kern-.5zw ï¼ˆæ³¨\@thefnmark{}ï¼‰\kern-.5zw}}$\hss}}%
    \kanjiskip\z@ \@plus 1fill \@minus 1fill\xkanjiskip=\kanjiskip
     \jmathkanjiskip=\kanjiskip
    \hbox to 5zw{\inhibitglue #1\hfil}%
@@ -2413,7 +2413,7 @@
   {.5\Cvs}% \@plus.1mm \@minus.1mm
   {.5\Cvs}% \@plus.1mm \@minus.1mm
   {\if@letter\centering\bfseries\else\centering\Large\sec@font\fi}}%
- \section*{ÉÕÏ¿}
+ \section*{ä»˜éŒ²}
   \renewcommand{\section}{\@startsection{section}{1}{1zw}
    {\z@}% \@plus.1mm \@minus.1mm
    {\z@}% \@plus.1mm \@minus.1mm
@@ -2518,8 +2518,8 @@
 \renewcommand{\theenumii}{\@alph\c@enumii}
 \renewcommand{\theenumiii}{\@roman\c@enumiii}
 \renewcommand{\theenumiv}{\@Alph\c@enumiv}
-\newcommand{\labelenumi}{\kern-.5zw ¡Ê\,\theenumi\,¡Ë\kern-.5zw}
-\newcommand{\labelenumii}{\kern-.5zw ¡Ê\,\theenumii\,¡Ë\kern-.5zw}
+\newcommand{\labelenumi}{\kern-.5zw ï¼ˆ\,\theenumi\,ï¼‰\kern-.5zw}
+\newcommand{\labelenumii}{\kern-.5zw ï¼ˆ\,\theenumii\,ï¼‰\kern-.5zw}
 \newcommand{\labelenumiii}{\theenumiii.}
 \newcommand{\labelenumiv}{\theenumiv.}
 \renewcommand{\p@enumii}{\theenumi}
@@ -2968,20 +2968,20 @@
 \def\@uketsuke{%
  \vskip6\@Q
  \raggedleft\rightskip1zw
-  ¡Ê\@received\@revised\@finalreceived ¡Ë\kern-.5zw\par
+  ï¼ˆ\@received\@revised\@finalreceived ï¼‰\kern-.5zw\par
 }
 
 \def\received#1#2#3{%
- \gdef\@received{Ê¿À®#1Ç¯#2·î#3Æü¼õÉÕ}%
+ \gdef\@received{å¹³æˆ#1å¹´#2æœˆ#3æ—¥å—ä»˜}%
  \gdef\@receivedyear{#1}}
 \received{xx}{xx}{xx}
 
 \def\revised#1#2#3{%
  \gdef\@revisedyear{#1}%
  \ifx\@receivedyear\@revisedyear
-  \gdef\@revised{¡¤#2·î#3ÆüºÆ¼õÉÕ}%
+  \gdef\@revised{ï¼Œ#2æœˆ#3æ—¥å†å—ä»˜}%
  \else
-  \gdef\@revised{¡¤#1Ç¯#2·î#3ÆüºÆ¼õÉÕ}%
+  \gdef\@revised{ï¼Œ#1å¹´#2æœˆ#3æ—¥å†å—ä»˜}%
  \fi
 }
 \def\@revised{}
@@ -2989,9 +2989,9 @@
 \def\finalreceived#1#2#3{%
  \gdef\@finalreceivedyear{#1}%
  \ifx\@revisedyear\@finalreceivedyear
-  \gdef\@finalreceived{¡¤\inhibitglue\break #2·î#3ÆüºÇ½ª¼õÉÕ}%
+  \gdef\@finalreceived{ï¼Œ\inhibitglue\break #2æœˆ#3æ—¥æœ€çµ‚å—ä»˜}%
  \else
-  \gdef\@finalreceived{¡¤\inhibitglue\break #1Ç¯#2·î#3ÆüºÇ½ª¼õÉÕ}%
+  \gdef\@finalreceived{ï¼Œ\inhibitglue\break #1å¹´#2æœˆ#3æ—¥æœ€çµ‚å—ä»˜}%
  \fi
 }
 \def\@finalreceived{}
@@ -3022,14 +3022,14 @@
 
 \long\def\pic@profile[#1]#2#3#4{%
 % \stepcounter{profile}%
- \if #2r \def\p@mbrship{¡ÊÀµ°÷¡Ë\kern-.5zw}\else
-  \if #2m \def\p@mbrship{¡ÊÀµ°÷¡Ë\kern-.5zw}\else
-   \if #2s \def\p@mbrship{¡Ê³ØÀ¸°÷¡Ë\kern-.5zw}\else
+ \if #2r \def\p@mbrship{ï¼ˆæ­£å“¡ï¼‰\kern-.5zw}\else
+  \if #2m \def\p@mbrship{ï¼ˆæ­£å“¡ï¼‰\kern-.5zw}\else
+   \if #2s \def\p@mbrship{ï¼ˆå­¦ç”Ÿå“¡ï¼‰\kern-.5zw}\else
     \if #2n \def\p@mbrship{}\else
-     \if #2a \def\p@mbrship{¡Ê½Ú°÷¡Ë\kern-.5zw}\else
-      \if #2h \def\p@mbrship{¡ÊÌ¾ÍÀ°÷¡Ë\kern-.5zw}\else
-       \if #2f \def\p@mbrship{¡ÊÀµ°÷¡§¥Õ¥§¥í¡¼¡Ë\kern-.5zw}\else
-        \if #2e \def\p@mbrship{¡ÊÀµ°÷¡§¥·¥Ë¥¢²ñ°÷¡Ë\kern-.5zw}\else
+     \if #2a \def\p@mbrship{ï¼ˆå‡†å“¡ï¼‰\kern-.5zw}\else
+      \if #2h \def\p@mbrship{ï¼ˆåèª‰å“¡ï¼‰\kern-.5zw}\else
+       \if #2f \def\p@mbrship{ï¼ˆæ­£å“¡ï¼šãƒ•ã‚§ãƒ­ãƒ¼ï¼‰\kern-.5zw}\else
+        \if #2e \def\p@mbrship{ï¼ˆæ­£å“¡ï¼šã‚·ãƒ‹ã‚¢ä¼šå“¡ï¼‰\kern-.5zw}\else
   \def\p@mbrship{}%
   \ieicej@warning{Check the 1st. argument of \string\profile{#2}{#3}{}}%
  \fi\fi\fi\fi\fi\fi\fi\fi
@@ -3091,14 +3091,14 @@
 
 \long\def\np@profile#1#2#3{%
  \stepcounter{profile}%
- \if #1r \def\p@mbrship{¡ÊÀµ°÷¡Ë\kern-.5zw}\else
-  \if #1m \def\p@mbrship{¡ÊÀµ°÷¡Ë\kern-.5zw}\else
-   \if #1s \def\p@mbrship{¡Ê³ØÀ¸°÷¡Ë\kern-.5zw}\else
+ \if #1r \def\p@mbrship{ï¼ˆæ­£å“¡ï¼‰\kern-.5zw}\else
+  \if #1m \def\p@mbrship{ï¼ˆæ­£å“¡ï¼‰\kern-.5zw}\else
+   \if #1s \def\p@mbrship{ï¼ˆå­¦ç”Ÿå“¡ï¼‰\kern-.5zw}\else
     \if #1n \def\p@mbrship{}\else
-     \if #1a \def\p@mbrship{¡Ê½Ú°÷¡Ë\kern-.5zw}\else
-      \if #1h \def\p@mbrship{¡ÊÌ¾ÍÀ°÷¡Ë\kern-.5zw}\else
-       \if #1f \def\p@mbrship{¡ÊÀµ°÷¡§¥Õ¥§¥í¡¼¡Ë\kern-.5zw}\else
-        \if #2e \def\p@mbrship{¡ÊÀµ°÷¡§¥·¥Ë¥¢²ñ°÷¡Ë\kern-.5zw}\else
+     \if #1a \def\p@mbrship{ï¼ˆå‡†å“¡ï¼‰\kern-.5zw}\else
+      \if #1h \def\p@mbrship{ï¼ˆåèª‰å“¡ï¼‰\kern-.5zw}\else
+       \if #1f \def\p@mbrship{ï¼ˆæ­£å“¡ï¼šãƒ•ã‚§ãƒ­ãƒ¼ï¼‰\kern-.5zw}\else
+        \if #2e \def\p@mbrship{ï¼ˆæ­£å“¡ï¼šã‚·ãƒ‹ã‚¢ä¼šå“¡ï¼‰\kern-.5zw}\else
   \def\p@mbrship{}%
   \ieicej@warning{Check the 1st. argument of \string\profile{#1}{#2}{}}%
  \fi\fi\fi\fi\fi\fi\fi\fi
@@ -3135,11 +3135,11 @@
   \kern 2.715\p@}
 
 \def\@makefnmark{\hbox{$^{\mbox{\tiny \kern-.5zw
-  ¡ÊÃí\kern.1zw\@thefnmark{}¡Ë\kern-.5zw}}$}}
+  ï¼ˆæ³¨\kern.1zw\@thefnmark{}ï¼‰\kern-.5zw}}$}}
 
 \newcommand\@makefntext[1]{\parindent1zw
  \noindent\hbox{\kern-.5zw
-  ¡ÊÃí\kern.1zw\@thefnmark{}¡Ë\kern-.5zw\hbox to 1zw{\hss ¡§\hss}}#1}
+  ï¼ˆæ³¨\kern.1zw\@thefnmark{}ï¼‰\kern-.5zw\hbox to 1zw{\hss ï¼š\hss}}#1}
 
 \def\thefootnote{\@arabic\c@footnote}
 \def\thempfootnote{\@fnsymbol\c@mpfootnote}
@@ -3233,60 +3233,60 @@
 \def\@eqnnum{{\normalfont \normalcolor (\theequation)\hspace*{3mm}}}
 
 \def\@begintheorem#1#2{%
- \settowidth{\labelwidth}{\kern-.5zw ¡Î#1\ #2¡Ï\kern-.5zw}
+ \settowidth{\labelwidth}{\kern-.5zw ï¼»#1\ #2ï¼½\kern-.5zw}
  \begin{description}
   \item[\@thmlbracket #1\ #2\@thmrbracket]}
 
 \def\@opargbegintheorem#1#2#3{%
  \begin{description}
-  \item[\@thmlbracket #1\ #2\@thmrbracket ¡Ê#3¡Ë\kern-.5zw]}%%
+  \item[\@thmlbracket #1\ #2\@thmrbracket ï¼ˆ#3ï¼‰\kern-.5zw]}%%
 \def\@endtheorem{\end{description}}
 
 \def\thmbracket#1#2{\gdef\@thmlbracket{#1}\gdef\@thmrbracket{#2}}
-\thmbracket{\kern-.5zw ¡Î}{¡Ï\kern-.5zw }
+\thmbracket{\kern-.5zw ï¼»}{ï¼½\kern-.5zw }
 \def\@thmcountersep{}
 
-\def\ack{\par{\bfseries ¼Õ¼­}\hskip1zw}
+\def\ack{\par{\bfseries è¬è¾}\hskip1zw}
 
 \if@NTT\else
-\newif\ifÀ¾Îñ \À¾Îñfalse
-\def\À¾Îñ{\À¾Îñtrue}
-\def\ÏÂÎñ{\À¾Îñfalse}
+\newif\ifè¥¿æš¦ \è¥¿æš¦false
+\def\è¥¿æš¦{\è¥¿æš¦true}
+\def\å’Œæš¦{\è¥¿æš¦false}
 \def\today{{%
   \iftdir
-    \ifÀ¾Îñ
-      \kansuji\number\year Ç¯
-      \kansuji\number\month ·î
-      \kansuji\number\day Æü
+    \ifè¥¿æš¦
+      \kansuji\number\year å¹´
+      \kansuji\number\month æœˆ
+      \kansuji\number\day æ—¥
     \else \@tempcnta\year
-      \advance\@tempcnta-1988 Ê¿À®
-      \ifnum \@tempcnta =1 ¸µ\else\kansuji\number\@tempcnta\fi Ç¯
-      \kansuji\number\month ·î\kansuji\number\day Æü
+      \advance\@tempcnta-1988 å¹³æˆ
+      \ifnum \@tempcnta =1 å…ƒ\else\kansuji\number\@tempcnta\fi å¹´
+      \kansuji\number\month æœˆ\kansuji\number\day æ—¥
     \fi
   \else
-    \ifÀ¾Îñ
-      \number\year\, Ç¯\hspace{.5em}\nobreak
-      \number\month\, ·î\hspace{.5em}\nobreak
-      \number\day\, Æü
+    \ifè¥¿æš¦
+      \number\year\, å¹´\hspace{.5em}\nobreak
+      \number\month\, æœˆ\hspace{.5em}\nobreak
+      \number\day\, æ—¥
     \else \@tempcnta\year
-      \advance\@tempcnta-1988 Ê¿À®
-      \ifnum \@tempcnta =1 ¸µ\else\number\@tempcnta\fi
-        \, Ç¯\hspace{.5em}\nobreak
-      \number\month\, ·î\hspace{.5em}\nobreak\number\day\, Æü
+      \advance\@tempcnta-1988 å¹³æˆ
+      \ifnum \@tempcnta =1 å…ƒ\else\number\@tempcnta\fi
+        \, å¹´\hspace{.5em}\nobreak
+      \number\month\, æœˆ\hspace{.5em}\nobreak\number\day\, æ—¥
     \fi
   \fi}}
 \fi
-%%\newcommand{\prepartname}{Âè}
-%%\newcommand{\postpartname}{Éô}
-%%\newcommand{\contentsname}{ÌÜ ¼¡}
-%%\newcommand{\listfigurename}{¿Ş ÌÜ ¼¡}
-%%\newcommand{\listtablename}{É½ ÌÜ ¼¡}
-\newcommand{\refname}{Ê¸¸¥}
-%%\newcommand{\indexname}{º÷ °ú}
-\newcommand{\figurename}{¿Ş}
-\newcommand{\tablename}{É½}
-%%\newcommand{\appendixname}{ÉÕ Ï¿}
-%%\newcommand{\abstractname}{³µ Í×}
+%%\newcommand{\prepartname}{ç¬¬}
+%%\newcommand{\postpartname}{éƒ¨}
+%%\newcommand{\contentsname}{ç›® æ¬¡}
+%%\newcommand{\listfigurename}{å›³ ç›® æ¬¡}
+%%\newcommand{\listtablename}{è¡¨ ç›® æ¬¡}
+\newcommand{\refname}{æ–‡çŒ®}
+%%\newcommand{\indexname}{ç´¢ å¼•}
+\newcommand{\figurename}{å›³}
+\newcommand{\tablename}{è¡¨}
+%%\newcommand{\appendixname}{ä»˜ éŒ²}
+%%\newcommand{\abstractname}{æ¦‚ è¦}
 
 %%## citesort.sty ##%%
 %% from "citesort.sty", a little customized
@@ -3318,7 +3318,7 @@
     \ifnum\@tempcnta=\@minsofar %   Number follows previous--hold on to it
       \ifx\@h@ld\relax
         \edef \@h@ld{\@citea\csname b@\@scan@copy\endcsname}%
-      \else \edef\@h@ld{\ifmmode{]¡Á[}\else]¡Á[\fi
+      \else \edef\@h@ld{\ifmmode{]ã€œ[}\else]ã€œ[\fi
        \csname b@\@scan@copy\endcsname}%
       \fi
     \else \@h@ld\@citea\csname b@\@scan@copy\endcsname
@@ -3375,26 +3375,26 @@
 \let\ne\neq
 
 \if@NTT\else
- \postbreakpenalty`¡Ê=10000
- \prebreakpenalty`¡Ë=10000
- \postbreakpenalty`¡Î=10000
- \prebreakpenalty`¡Ï=10000
- \postbreakpenalty`¡Ò=10000
- \prebreakpenalty`¡Ó=10000
- \postbreakpenalty`¡Ú=10000
- \prebreakpenalty`¡Û=10000
- \postbreakpenalty`¡Ì=10000
- \prebreakpenalty`¡Í=10000
- \postbreakpenalty`¡Ø=10000
- \prebreakpenalty`¡Ù=10000
+ \postbreakpenalty`ï¼ˆ=10000
+ \prebreakpenalty`ï¼‰=10000
+ \postbreakpenalty`ï¼»=10000
+ \prebreakpenalty`ï¼½=10000
+ \postbreakpenalty`ã€ˆ=10000
+ \prebreakpenalty`ã€‰=10000
+ \postbreakpenalty`ã€=10000
+ \prebreakpenalty`ã€‘=10000
+ \postbreakpenalty`ã€”=10000
+ \prebreakpenalty`ã€•=10000
+ \postbreakpenalty`ã€=10000
+ \prebreakpenalty`ã€=10000
  \prebreakpenalty`"=10000
- \prebreakpenalty`¡î=10000
- \prebreakpenalty`¡¡=10000
- \prebreakpenalty`¡¦=10000
- \prebreakpenalty`¡Á=10000
- \prebreakpenalty`¡¼=10000
- \prebreakpenalty`¡©=10000
- \prebreakpenalty`¡ª=10000
+ \prebreakpenalty`â„ƒ=10000
+ \prebreakpenalty`ã€€=10000
+ \prebreakpenalty`ãƒ»=10000
+ \prebreakpenalty`ã€œ=10000
+ \prebreakpenalty`ãƒ¼=10000
+ \prebreakpenalty`ï¼Ÿ=10000
+ \prebreakpenalty`ï¼=10000
  \postbreakpenalty"5C=10000
 \fi
 
