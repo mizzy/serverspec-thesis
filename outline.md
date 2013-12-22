@@ -29,6 +29,8 @@ serverspec: 宣言的記述でサーバの状態をテスト可能な汎用性�
      * http://www.jedi.be/presentations/IEEE-Agile-Infrastructure.pdf
  * Patrick Debois氏のAgile Infrastructureに論文は2008年なので、Puppetの登場（2006年）より後、Chefの登場（2009年）より前。
      * Infrastructure as Codeはいつぐらいに出てきた言葉なのか？
+       * 明確な出典は見つけられなかった。
+       * ブログにも書いたけど、2006年のEC2、Puppet登場を契機としてわき上がってきた概念、という感じらしい
      * Test-Driven Infrastructureはいつぐらいに出てきた言葉なのか？
        * 書籍Test-Driven Infrastructure with Chefの初出は2011年
 
