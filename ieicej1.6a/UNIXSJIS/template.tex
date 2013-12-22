@@ -1,0 +1,222 @@
+%%「論文」，「レター」，「レター（C分冊）」，「技術研究報告」などのテンプレート
+%% 1. 「論文」
+%% v1.6 [2009/11/03]
+\documentclass{ieicej}
+%\documentclass[invited]{ieicej} % 招待論文
+%\documentclass[comment]{ieicej} % 解説論文
+\usepackage{graphicx}
+%\usepackage{latexsym}
+%\usepackage[fleqn]{amsmath}
+%\usepackage[psamsfonts]{amssymb}
+
+\setcounter{page}{1}
+
+\field{}
+\jtitle{}
+\etitle{}
+\authorlist{%
+ \authorentry{}{}{}% <= 記述しないとエラーになります
+ %\authorentry{和文著者名}{英文著者名}{所属ラベル}
+ %\authorentry[メールアドレス]{和文著者名}{英文著者名}{所属ラベル}
+ %\authorentry{和文著者名}{英文著者名}{所属ラベル}[現在の所属ラベル]
+}
+\affiliate[]{}{}
+%\affiliate[所属ラベル]{和文所属}{英文所属}
+%\paffiliate[]{}
+%\paffiliate[現在の所属ラベル]{和文所属}
+
+\begin{document}
+\begin{abstract}
+%和文あらまし 500字以内
+\end{abstract}
+\begin{keyword}
+%和文キーワード 4～5語
+\end{keyword}
+\begin{eabstract}
+%英文アブストラクト 100 words
+\end{eabstract}
+\begin{ekeyword}
+%英文キーワード
+\end{ekeyword}
+\maketitle
+
+\section{まえがき}
+
+
+\ack %% 謝辞
+
+%\bibliographystyle{sieicej}
+%\bibliography{myrefs}
+\begin{thebibliography}{99}% 文献数が10未満の時 {9}
+\bibitem{}
+\end{thebibliography}
+
+\appendix
+\section{}
+
+\begin{biography}
+\profile{}{}{}
+%\profile{会員種別}{名前}{紹介文}% 顔写真あり
+%\profile*{会員種別}{名前}{紹介文}% 顔写真なし
+\end{biography}
+
+\end{document}
+
+
+
+%% 2. 「レター」
+\documentclass[letter]{ieicej}
+\usepackage{graphicx}
+%\usepackage{latexsym}
+%\usepackage[fleqn]{amsmath}
+%\usepackage[psamsfonts]{amssymb}
+
+\setcounter{page}{1}
+
+\typeofletter{研究速報}
+%\typeofletter{紙上討論}
+%\typeofletter{問題提起}
+%\typeofletter{ショートノート}
+\field{}
+\jtitle{}
+\etitle{}
+\authorlist{%
+ \authorentry{}{}{}{}% <= 記述しないとエラーになります
+ %\authorentry{和文著者名}{英文著者名}{会員種別}{所属ラベル}
+ %\authorentry{和文著者名}{英文著者名}{会員種別}{所属ラベル}[現在の所属ラベル]
+}
+\affiliate[]{}{}
+%\affiliate[所属ラベル]{和文所属}{英文所属}
+%\paffiliate[]{}
+%\paffiliate[現在の所属ラベル]{和文所属}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+%和文あらまし 120字以内
+\end{abstract}
+\begin{keyword}
+%和文キーワード 4～5語
+\end{keyword}
+\begin{eabstract}
+%英文アブストラクト 50 words
+\end{eabstract}
+\begin{ekeyword}
+%英文キーワード
+\end{ekeyword}
+
+\section{まえがき}
+
+
+\ack %% 謝辞
+
+%\bibliographystyle{sieicej}
+%\bibliography{myrefs}
+\begin{thebibliography}{99}% 文献数が10未満の時 {9}
+\bibitem{}
+\end{thebibliography}
+
+\appendix
+\section{}
+
+\end{document}
+
+
+%% 3. 「レター（C分冊）」
+\documentclass[electronicsletter]{ieicej}
+\usepackage{graphicx}
+%\usepackage{latexsym}
+%\usepackage[fleqn]{amsmath}
+%\usepackage[psamsfonts]{amssymb}
+
+\setcounter{page}{1}
+
+\field{}
+\jtitle{}
+\etitle{}
+\authorlist{%
+ \authorentry{}{}{}{}% <= 記述しないとエラーになります
+ %\authorentry{和文著者名}{英文著者名}{会員種別}{所属ラベル}
+ %\authorentry{和文著者名}{英文著者名}{会員種別}{所属ラベル}[現在の所属ラベル]
+}
+\affiliate[]{}{}
+%\affiliate[所属ラベル]{和文所属}{英文所属}
+%\paffiliate[]{}
+%\paffiliate[現在の所属ラベル]{和文所属}
+
+\begin{document}
+\begin{abstract}
+%和文あらまし 120字以内
+\end{abstract}
+\begin{keyword}
+%和文キーワード 4～5語
+\end{keyword}
+\begin{eabstract}
+%英文アブストラクト 50 words
+\end{eabstract}
+\begin{ekeyword}
+%英文キーワード
+\end{ekeyword}
+\maketitle
+
+\section{まえがき}
+
+
+\ack %% 謝辞
+
+%\bibliographystyle{sieicej}
+%\bibliography{myrefs}
+\begin{thebibliography}{99}% 文献数が 10 未満の時 {9}
+\bibitem{}
+\end{thebibliography}
+
+\appendix
+\section{}
+
+\end{document}
+
+
+
+%% 4. 「技術研究報告」
+\documentclass[technicalreport]{ieicej}
+\usepackage{graphicx}
+%\usepackage{latexsym}
+%\usepackage[fleqn]{amsmath}
+%\usepackage[psamsfonts]{amssymb}
+
+\jtitle{}
+\jsubtitle{}
+\etitle{}
+\esubtitle{}
+\authorlist{%
+ \authorentry[]{}{}{}% <= 記述しないとエラーになります
+% \authorentry[メールアドレス]{和文著者名}{英文著者名}{所属ラベル}
+}
+\affiliate[]{}{}
+%\affiliate[所属ラベル]{和文勤務先\\ 連絡先住所}{英文勤務先\\ 英文連絡先住所}
+
+\begin{document}
+\begin{jabstract}
+%和文あらまし
+\end{jabstract}
+\begin{jkeyword}
+%和文キーワード
+\end{jkeyword}
+\begin{eabstract}
+%英文アブストラクト
+\end{eabstract}
+\begin{ekeyword}
+%英文キーワード
+\end{ekeyword}
+\maketitle
+
+\section{はじめに}
+
+
+%\bibliographystyle{sieicej}
+%\bibliography{myrefs}
+\begin{thebibliography}{99}% 文献数が10未満の時 {9}
+\bibitem{}
+\end{thebibliography}
+
+\end{document}
