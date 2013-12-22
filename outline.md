@@ -45,6 +45,7 @@ serverspec: 宣言的記述でサーバの状態をテスト可能な汎用性�
   * chefspec/rspec-puppetのようなpre-convergenceテスト
   * test-kitchen/cucumber-chefのようなpost-convergenceテスト
     * 実際にテストする部分と、テスト環境をつくる部分があり、ツールによっては密に結合してたりするので、いっしょくたにして論じない方が良さそう
+  * 構成管理ツールに密結合してるのが課題
 
 ## 3. 提案するサーバテスト手法
 
