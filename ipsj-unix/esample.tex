@@ -1,0 +1,1148 @@
+%\documentclass[JIP,draft]{ipsj}
+\documentclass[JIP]{ipsj}
+
+\usepackage[dvips]{graphicx}
+\usepackage{latexsym}
+
+\def\Underline{\setbox0\hbox\bgroup\let\\\endUnderline}
+\def\endUnderline{\vphantom{y}\egroup\smash{\underline{\box0}}\\}
+\def\|{\verb|}
+
+\setcounter{volume}{20}% vol20=2012
+\setcounter{number}{4}% 1, 2, 3, 4
+\setcounter{page}{1}
+
+\received{2011}{7}{1}
+%\rereceived{2011}{10}{1}   % optional
+%\rerereceived{2011}{10}{31} % optional
+\accepted{2011}{11}{5}
+
+\usepackage[varg]{txfonts}%%!!
+\makeatletter%
+\input{ot1txtt.fd}
+\makeatother%
+
+\begin{document}
+
+\title{How to Prepare Your Papers for the JIP}
+
+\affiliate{IPSJ}{Information Processing Society of Japan, 
+Chiyoda, Tokyo 101--0062, Japan}
+\affiliate{JU}{Johoshori University, Chiyoda, Tokyo 101--0062, Japan}
+\paffiliate{PJU}{Johoshori University}
+
+\author{Joho Taro}{IPSJ,PJU}[joho.taro@ipsj.or.jp]
+\author{Shori Hanako}{JU}[shori.hanako@johosyori-u.ac.jp]
+\author{Gakkai Jiro}{JU}
+
+\begin{abstract}
+This document is a guide for preparing drafts to be submitted to the
+Journal of Information Processing (JIP) and for the final camera-ready
+manuscripts of papers to appear in the JIP that use \LaTeX and special
+style files.  Since this document itself is produced with these style
+files, it will help you to refer to its source file, which is
+distributed with these style files.
+\end{abstract}
+
+\begin{keyword}
+Journal of Information Processing, \LaTeX, style files, ``Dos and
+ Don'ts'' list
+\end{keyword}
+
+\maketitle
+
+%1
+\section{Introduction}
+
+The Information Processing Society of Japan (IPSJ) publishes Journal of
+Information Processing (JIP) as its flagship international journal.
+Thus far, the JIP adopted the landscape A4 format for publishing papers,
+but it has changed this format to the portrait A4 format because of many
+requests from authors.  Corresponding to this format change, the JIP
+accepts the portrait A4 format for submitting papers.
+
+Following with this change, we, the Editorial Board of the JIP, prepared
+a new style file for \LaTeX\@.  In this manuscript, we first describe
+the usage of the style file.  The basic strategy of the new style file
+is to require no special knowledge of command usage that does not use
+standard \LaTeX commands.  Authors of a paper can use standard \LaTeX
+commands to keep within the formatting restrictions of the paper, such
+as setting space pitches and margins.  The guideline of the paper format
+will be described in Section~\ref{body}.  Since this manuscript itself
+also is written with the style file, we hope it will help with writing a
+paper.
+
+The Editorial Board of the JIP has also prepared a ``Dos and Don'ts''
+list of matters an author should consider while writing a paper.  We
+have added the list to the latter portion of this manuscript.  Please
+use the list as a checklist for preparing to submit a paper.
+
+%2
+\section{Flow from Submission to Publishing}
+%2.1
+\subsection{Preparation}
+
+The JIP author's kit including the \LaTeX style files can be downloaded
+from the following URL:
+\begin{quote}
+ \small
+ \|http://www.ipsj.or.jp/jip/submit/style.html|
+\end{quote}
+The kit includes the following files:
+\begin{enumerate}%{
+\item \|ipsj.cls|: style file for ipsj journals
+\item \|ipsjdraft.sty|: style for drafts to be submitted
+\item \|ipsjpref.sty|: style for the foreword
+\item \|jsample.tex|: source for the Japanese version of this guide
+\item \|esample.tex|: source of this guide
+\item \|ipsjsort-e.bst|: bibtex style (sorted)
+\item \|ipsjunsrt-e.bst|: bibtex style (unsorted)
+\item \|bibsample.bib|: sample of bibliographic data (Japanese)
+\item \|ebibsample.bib|: sample of bibliographic data (English)
+\end{enumerate}%}
+
+
+
+Since the kit has variants corresponding to multiple platforms,
+including UNIX workstations, Windows (DOS), and Macintosh machines, an
+appropriate variant can be selected and unpacked on the target
+platform. 
+
+Since {\LaTeXe} is required as an execution environment, please install
+it.
+
+Regarding manuscripts written with Microsoft Word, a corresponding
+company will convert them into \LaTeX\@.  This means that the Microsoft
+Word format is used just a reference.
+
+
+\footnotetext{The real author is the Editorial Board of JIP.}
+
+%2.2
+\subsection{Draft Submission}
+
+First, generate a PDF file from your \LaTeX source and style file under
+your {\LaTeXe} environment and check that the generated PDF file can be
+read with the Adobe PDF reader.  After that, register your email address
+into the Paper Review Management System (PRMS) through the following
+URL:
+\begin{quote}
+ \small
+ \|https://www.ipsj.or.jp/prms/author_pre_submit.do|
+\end{quote}
+
+\noindent
+The system will return an email including another URL for submitting
+your paper. The manual for submission via the PRMS is available at the
+following URL: 
+\begin{quote}
+ \small
+ \|http://www.ipsj.or.jp/jip/submit/manual/|\\
+ \|e_manual.html|
+\end{quote}
+
+The JIP adopts \textit{double blind review}, where reviewers of your
+paper will not know your name, and you will not know theirs.  To ensure
+that this is possible, the submitted draft version should not contain
+information about the authors.
+
+%2.3
+\subsection{Final Version}
+
+After you receive the notification of acceptance, revise your paper in
+accordance with the comments from the referees and add the required
+omissions from the draft, such as a biography, if any. The layout of
+figures and tables should be fixed. After that, \textit{check your paper
+again and again to completely remove description errors}.
+
+Send \textit{both the {\LaTeX} file package and the hard copy} to the
+IPSJ\@. The standard contents of the file package are .tex and .bbl. If
+you include PostScript files and/or special style files, add them into
+the package. Note that \textit{you must not split your source into
+multiple .tex files} because it is hard for printers to access multiple
+files when they modify your source. Also, carefully make sure that the
+package contains all necessary files, especially special style files.
+
+Details on the file transfer, including its destination and packaging
+method, will be provided to you by the IPSJ secretariat.
+
+%2.4
+\subsection{Proofreading, Typesetting, and Publishing}
+
+The IPSJ may change terms in your paper as per its standard, and the
+printing house may modify your source to make it fit the standard
+printing style.  Even if they make no changes, the result printed at the
+printing house may be different from what you printed because of
+differences in the {\LaTeX} execution environment.  Therefore, the
+galley proofs of your paper will be sent to you so that you can check if
+those modifications and/or differences are acceptable.  If not, correct
+errors with red ink.  Note that \textit{this proofreading is not for
+correcting your errors}, which should have been corrected before sending
+the final version.
+
+Your paper will be typeset after errors you notify us about (if any) are
+corrected and will be published as part of the JIP.
+
+%3
+\section{Guide for Formatting a Paper}
+
+The JIP, as opposed to conference proceedings, has a traditional and
+\textit{stiff} style.  This makes the style files also \textit{stiff}
+and strongly restricts customizability, which is one of the most useful
+features of {\LaTeX}.  For example, you must not change \textit{style
+parameters}, such as \verb+\texheight+.  It is not easy to show which
+customizations are allowed, but the rule ``Don't tamper with it unless
+you are confident'' should suffice.
+
+Note that if you do something you should not, \textit{you may not have
+error messages but simply unattractive results}.
+
+The source file must use the following format.  Underlined parts can be
+omitted from draft versions.
+
+%4
+\section{Configuration of Paper}
+\label{body}
+
+The source file must use the following format.  Underlined parts can be
+omitted from draft versions.  Note that a few additional commands, shown
+in A.1 of the Appendix, are available for a paper included in the
+Transactions.
+
+\vskip\baselineskip
+
+\noindent
+\|\documentclass[JIP]{ipsj}|\ or\\
+\|\documentclass[JIP,draft]{ipsj}|\\
+\quad Specify other option styles if necessary.\\
+\quad Specify auxiliary styles with \|\usepackage|.\\
+\\
+\Underline{\|\setcounter{|{\bf volume}\|}{<volume>}|}\\
+\Underline{\|\setcounter{|{\bf number}\|}{<number>}|}\\
+\Underline{\|\setcounter{|{\bf page}\|}{<first-page>}|}\\
+\Underline{\|\|{\bf received}\|{<year>}{<month>}{<day>}|}\\
+\Underline{\|\|{\bf accepted}\|{<year>}{<month>}{<day>}|}\\
+\quad Define your own macros if necessary.\\\\
+\quad If you cannot use the \|txfonts| package, please do not use the following command\\
+\Underline{\|\usepackage[varg]{txfonts}|}\\
+\Underline{\|\makeatletter|}\\
+\Underline{\|\input{ot1txtt.fd}|}\\
+\Underline{\|\makeatother|}\\\\
+\|\begin{document}|\\[.5em]
+\|\title{<title>}|\\[.5em]
+\Underline{\|\affiliate{<affiliation-label>}{<affiliation>}|}\\\\
+\quad Declare current affiliation with \|\paffilabel| if necessary.\\
+\Underline{\|\paffiliate{<affiliation-label>}{<affiliation>}|}\\\\
+\Underline{\|\author{1st-author}{affiliation-label}[E-mail]|}\\
+\Underline{\|\author{2nd-author}{affiliation-label}|}\\\\
+\|\begin{abstract}|\\
+\quad\|<abstract>|\\
+\|\end{abstract}|\\\\
+\|\begin{keyword}|\\
+\quad\|<keyword>|\\
+\|\end{keyword}|\\\\
+\|\maketitle|\\\\
+\|\section{|heading-of-1st-section\|}|\\
+\dots\dots\dots\dots\dots\\
+\quad \|<main text>|\\
+\dots\dots\dots\dots\dots\\\\
+\quad Put acknowledgments here with the acknowledgment environment if any.\\
+\|\begin{acknowledgment}|\\
+\|\end{acknowledgment}|\\\\
+\|\begin{thebibliography}{99}%9 or 99|\\
+\|\bibitem{1}|\\
+\|\bibitem{2}|\\
+\|\end{thebibliography}|\\\\
+\quad Put appendices here following \|\appendix| if any.\\
+\|\appendix|\\
+\|\section{|heading-of-1st-section\|}|\\\\
+\Underline{\|\begin{biography}|}\\
+\Underline{\|\profile{<1st-author>}{<biography-of-1st-author>}|}\\
+\Underline{\|\profile{<2nd-author>}{<biography-of-2nd-author>}|}\\
+\Underline{\|\end{biography}|}\\
+\|\end{document}|
+
+%4.1
+\subsection{Option Style}
+
+The following six styles are available as optional arguments of the
+\|\documentclass|.  If the JIP option is not used, the program will use
+the standard Japanese paper style as the default.
+
+\begin{enumerate}
+\item\|JIP| For English documents
+\item\|draft| For draft versions
+\item\|invited| For invited papers
+\item\|sigrecommended| For a paper recommended by a SIG
+\item\|technote| For technical notes
+\item\|preface| For the preface of an issue
+\end{enumerate}
+
+Any combination of these options can be used.
+
+If you use \|\documentclass[JIP,draft]{ipsj}|, the ``draft'' option
+style will be applied.  If you specify auxiliary style files with the
+\|\usepackage|, you must include them in the file package when you send
+your final version to the IPSJ\@.
+
+However, style files included in the {\LaTeXe} standard distribution
+(e.g., graphicx) may be omitted.  Note that style files may be
+incompatible with the style of the Journal Transaction.
+
+%4.2
+\subsection{Title, Author Names, etc.}
+
+Describe the title of your paper, author names and affiliations, and
+abstract using the commands and environment shown in Section~\ref{body}.
+Then, perform \verb+\maketitle+ to automatically put them at the
+appropriate position.  In the draft version, the title and abstract are
+automatically printed onto separate pages, while author names and
+affiliations are not printed in order to make your paper anonymous.
+
+%4.2.1
+\subsubsection{Title}
+
+The title specified with \verb+\title+ is made centered.  Even if the
+title is too long to fit onto one line, \textit{an automatic line break
+is not performed}.  If your title is long, insert \verb+\\+ into the
+appropriate positions to break the lines.  A multiple line title is
+first flushed left and then centered with respect to the widest line.
+
+The title also appears in the header of odd numbered pages.  If your
+title is too long, provide a shortened title for the header to
+\verb+\title+ as its optional argument as follows.
+
+%4.2.2
+\subsubsection{Author Name and Affiliation}
+
+When indicating the affiliation of each author with a label (first
+citation) and starting from the first author, by using \|\affiliate|,
+numbered footnotes will be generated that show the affiliations.  When
+several authors are affiliated with the same organization, the
+affiliation needs to be indicated only once.  For the author's current
+affiliation, use \|\paffiliate| and provide the label and affiliated
+organization as before.  If the affiliated organization arguments are
+entered as current and a line break is inserted using \|\\|, the author
+name will be automatically defined by \|\author|.  Immediately after the
+author's name, enter the affiliation label and the author's e-mail
+address.
+
+Where there are several authors, repeating \|\author| will generate
+additional authors in sequence (two authors, three authors, and so
+forth).
+
+To add current affiliations or multiple affiliations, delineate the
+affiliate label using commas to include additional data.
+
+%4.2.3
+\subsubsection{Abstract}
+
+The abstract of your paper should only be used in the \verb+abstract+
+environment.
+
+%4.2.4
+\subsubsection{Keywords}
+
+The keywords of your paper should be included as the content for the
+ \verb+keyword+ environment.
+
+%5
+\section{Main part}
+%5.1
+\subsection{Sectioning}
+
+{\LaTeX} standard commands such as \|\section| and \|\sub-| \|section|
+are available for sectioning. The section heading of \|\section|
+occupies two lines, while others are put into one line.
+
+%5.2
+\subsection{Fixed Baselines}
+
+Each page of the JIP is formatted with the double-column style.  The
+printing tradition of double-column requires that a line in the left
+column and its neighbor in the right column have the same baseline.  To
+meet this requirement, the style files carefully control the progression
+of baselines when a vertical space is inserted for section titles and so
+on.
+
+%5.3
+\subsection{Font Size}
+
+You will see that various size fonts are used in the printed result of
+your paper.  Since these fonts are automatically and carefully chosen by
+the style files, you are free from the headache of selecting proper
+fonts.  In fact, it is strongly recommended not to use
+font-size-changing commands such as \verb+\large+ and \verb+\small+ in
+the main text because they are quite harmful to retaining fixed
+baselines.
+
+%5.4
+\subsection{Itemizing}\label{sec:item*}
+
+There is no special format for itemization. You can use the standard
+\|enumerate|, \|itemize|, \|description| environment.
+
+%5.5
+\subsection{Footnotes}
+
+The command \|\footnote| produces footnotes with reference marks such as
+\footnote{An example of footnote 1.} and \footnote{An example of
+footnote 2.}.  When there is more than one footnote within a single
+page, please note that it is necessary to run \LaTeX\ twice to process
+them correctly.  Moreover, it is sometimes preferable to separate a
+footnote and its mark into different columns.  This can be achieved
+using the \|\footnotemark| and \|\footnotetext| commands. The footnote
+numbering produced by \LaTeX\ is continuous throughout the paper; it
+does not restart on each new page.
+
+%5.5.1
+\subsubsection{Overfulls and Underfulls}
+
+The final result must be free from any overfulls.  It is well known that
+almost all overfulls can be avoided with a little effort when writing
+sentences.  For example, avoiding long in-text formulas and \|\verb| is
+very effective.  However, tricks using the \|flushleft| environment,
+\|\\|, or \|\linebreak| are not recommended because they cause quite
+unattractive results.
+
+For underfulls, you will conveniently get the following warning message,
+\begin{quote}\footnotesize*
+\|Underfull| \|\hbox| \|(badness 10000)| \|detected|
+\end{quote}
+, by inserting \|\\| at the end of a paragraph.  This message is also
+output when you use \|\\| just before a list-like environment, just
+before an \|\item|, and at the end of the environment. Such underfulls
+cause unattractive empty lines and a flood of warnings that will hide
+important error messages.
+
+%5.6
+\subsection{Formulas}\label{sec:ITEM}
+%5.6.1
+\subsubsection{In-text Formulas}
+
+In-text formulas may be surrounded by any proper math-open\slash close
+pair, i.e. \|$| and \|$|, \|\(| and \|\)|, or \|\begin| and \|\end| for
+the \|math| environment. Note that tall materials in in-text formulas,
+such as \smash{$\frac{a}{b}$} (\|\frac{a}{b}|), are unattractive and
+will disarrange the baseline progression.
+
+%5.6.2
+\subsubsection{Displayed Formulas}
+
+Displayed formulas {\em must not be surrounded by the pair
+\|$$|}.  Instead, use the \|\[| and \|\]| pair or one of the environments
+\|displaymath|, \|equation|, or \|eqnarray|.  These commands\slash
+environments indent formulas (not centered) and keep fixed baselines as
+follows.
+\begin{equation}
+\Delta_l = \sum_{i=l+1}^L\delta_{pi}.
+\end{equation}
+
+%5.6.3
+\subsubsection{Eqnarray environment}
+
+For a sequence of two or more related formulas (equations), use the
+\|eqnarray| environment to line them up at equal (or unequal) signs
+instead of \|\[| \ \|\]| or the \|equation| environment.
+
+%5.6.4
+\subsubsection{Special Fonts}
+
+It is strongly recommended to use only standard {\LaTeX} math
+fonts.  Otherwise, you must report that you are using special fonts.
+
+\begin{figure}[tb]%1
+\setbox0\vbox{\it
+\hbox{\|\begin{figure}[tb]|}
+\hbox{\quad \|<|figure-body\|>|}
+\hbox{\|\caption{<|caption\|>}|}
+\hbox{\|\label{| $\ldots$ \|}|}
+\hbox{\|\end{figure}\|}}
+\centerline{\fbox{\box0}}
+\caption{Single column figure with caption\\
+explicitly broken by $\backslash\backslash$}
+\label{fig:single}
+\end{figure}
+
+\begin{figure}[tb]%2
+\begin{minipage}[t]{0.5\columnwidth}
+\footnotesize
+\setbox0\vbox{
+\hbox{\|\begin{minipage}[t]%|}
+\hbox{\|  {0.5\columnwidth}|}
+\hbox{\|\captionType{table}|}
+\hbox{\|\caption{| \ldots \|}|}
+\hbox{\|\ecaption{| \ldots \|}|}
+\hbox{\|\label{| \ldots \|}|}
+\hbox{\|\makebox[\textwidth][c]{%|}
+\hbox{\|\begin{tabular}[t]{lcr}|}
+\hbox{\|\hline\hline|}
+\hbox{\|left&center&right\\\hline|}
+\hbox{\|L1&C1&R1\\|}
+\hbox{\|L2&C2&R2\\\hline|}
+\hbox{\|\end{tabular}}|}
+\hbox{\|\end{minipage}|}}
+\hbox{}
+\centerline{\fbox{\box0}}
+\caption{Contents of Table \protect\ref{tab:right}}
+\label{fig:left}
+\end{minipage}%
+\begin{minipage}[t]{0.5\columnwidth}
+\CaptionType{table}
+\caption{A table built by Fig.\ \protect\ref{fig:left}}
+\label{tab:right}
+\makebox[\textwidth][c]{\begin{tabular}[t]{lcr}\hline\hline
+left&center&right\\\hline
+L1&C1&R1\\
+L2&C2&R2\\\hline
+\end{tabular}}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[t]
+\setbox0\vbox{\it
+\hbox{\|\begin{figure}[tb]|}
+\hbox{\quad \|<|figure-body\|>|}
+\hbox{\|\caption{<|caption\|>}|}
+\hbox{\|\label{| $\ldots$ \|}|}
+\hbox{\|\end{figure}\|}}
+\centerline{\fbox{\box0}}
+\caption{Single column figure with caption\\
+explicitly broken by $\backslash\backslash$}
+\end{figure}
+
+\begin{figure*}[t]
+\setbox0\vbox{\large
+\hbox{\|\begin{figure}*[t]|}
+\hbox{\quad\|<|figure-body\|>|}
+\hbox{\|\caption{<|caption\|>}|}
+\hbox{\|\label{| $\ldots$ \|}|}
+\hbox{\|\end{figure*}|}}
+\centerline{\fbox{\hbox to.9\textwidth{\hss\box0\hss}}}
+\caption{Double column figure}
+\label{fig:double}
+\end{figure*}
+
+%5.7
+\subsection{Figures}
+
+A figure fit to one column is specified by the form shown in
+\figref{fig:single}. Note that you must not specify the \|h| option.
+
+The \|\caption| of a figure should be given below the figure body
+together with a \|\label| command.  A long caption will be automatically
+broken into two or more lines and centered with respect to the widest
+line.  You can assist, however, with the line breaking by adding \|\\|
+to obtain a more beautiful result, especially for two-line captions, as
+shown in \figref{fig:single}.
+
+If you want to rank two or more figures and/or tables in a \|figure| (or
+\|table|) environment in order to save space, enclose each figure\slash
+table and its \|\caption| in a \|minipage| environment as shown in
+\figref{fig:left} and \tabref{tab:right}. Also, as in a \|figure|
+environment, the caption for \tabref{tab:right} is correctly typeset
+because the \|minipage| for it has the \|\captionType{table}| command to
+specify the type of caption.  The command can of course be used with the
+\|figure| argument to give a figure caption.
+
+\Figref{fig:double} shows how to make a double column figure.
+
+You may use any size font, as shown in \figref{fig:double}. Also, you
+may include an encapsulated PostScript file (so called EPS file) as the
+body of a figure. To include, use
+%
+\begin{quote}
+\|\usepackage{graphicx}|
+\end{quote}
+%
+in the preamble and put the \|\includegraphics| command where you wish
+to embed the EPS graphics with its file name (and options if necessary). 
+
+You might have noticed that the first reference to \figref{fig:single}
+is bold-faced, while the second and third are typed in roman fonts.
+This font switching is a rule of the Journal\slash Transactions and will
+be automatically performed if you use \|\figref{<|label\|>}| instead of
+\|Fig.~\ref{<|label\|>}|.  Another rule is that ``Figure'' must be used
+instead of ``Fig.''\ if the reference is the first word of a sentence,
+such as was the first reference to \figref{fig:double} above.
+Unfortunately, this switching is too hard to do automatically, so you
+must use \|\figref{<|label\|>}| in such cases.
+
+%5.8
+\subsection{Tables}
+
+A table with many rules is not very beautiful. \tabref{tab:example}
+shows an example of a table with standard style rules. Note that the
+uppermost rule is doubled, and no rules are drawn on the left and right
+edges. The caption should be put above the table. The default font size
+for tables is \|\footnotesize|. Any reference to a table should be made
+using \|\tabref{<|label\|>}|.
+
+\begin{table}[tb]
+\caption{Sections and sub-sections in which list-like environments are used (example of table)}
+\label{tab:example}
+\hbox to\hsize{\hfil
+\begin{tabular}{l|lll}\hline\hline
+&enumerate&itemize&description\\\hline
+type-1&	2 & 3 & 4.5 \\
+type-2&	---& 4.11 & 4.7 \\
+type-3&	2 & --- & 4.5\\
+type-4&	--- & 4.8 & 4.3 \\\hline
+\multicolumn{4}{l}{type-1\,: {\tt enumerate}, etc.\quad
+	type-2\,: {\tt enumerate*}, etc.}\\
+\multicolumn{4}{l}{type-3\,: {\tt Enumerate}, etc.\quad
+	type-4\,: {\tt ENUMERATE}, etc.}\\
+\end{tabular}\hfil}
+\end{table}
+
+%5.9
+\subsection{Citations, Reference, Acknowledgements}
+%5.9.1
+\subsubsection{Citations}
+
+The command \|\cite| is used to add citations in the text.  Cited labels
+are sorted automatically and separated by using square brackets \|[ ]|.
+Thus,
+\begin{quote}
+\|The paper \cite{companion,latex} is|\\
+\|an overview of \LaTeX|.
+\end{quote}
+will produce
+\begin{quote}
+The paper \cite{companion,latex} is an overview of \LaTeX.
+\end{quote}
+
+%5.9.2
+\subsubsection{List of References}
+
+
+References should be arranged in alphabetical or cited order.
+It is recommended to use BiB{\TeX} and style files 
+\|ipsjsort-e.bst|
+(alphabetical order) or \|ipsjunsort-e.bst| (cited order) to make
+references fit to the traditional style.
+Remember that you must include \|.bbl| file in the file package, instead of
+\|.bib|.
+If you cannot use BiB{\TeX} and have to make references manually using the
+bibliography environment, observe the references of this guide carefully
+and follow its style.
+
+
+
+
+%5.9.3
+\subsubsection{Acknowledgments and Appendices}
+
+If you want to acknowledge people, put your acknowledgments just before
+the references and enclose them in the \|acknowledgment|
+environment. Acknowledgments will not be printed in drafts.
+
+Appendices, if there are any, should be put just after the references
+and \|\appendix| command.  Sectioning commands produces headings like
+{\bf \ref{A1}}, {\bf \ref{A2}}, and so on in the appendices.
+
+%5.10
+\subsection{Biography}
+
+Biographies of authors are positioned at the end of the document, just
+before \|\end{document}|, as follows.
+%
+\begin{quote}
+\|\begin{biography}|\\
+\|\profile{<|1st-author's-name\|>}|\\
+\mbox{}\quad\|{<|biography-of-1st-author\|>}|\\
+\|\author{<|2nd-author's-name\|>}|\\
+\mbox{}\quad\|{<|biography-of-2nd-author\|>}|\\
+\mbox{}\quad $\ldots\ldots\ldots$ \\
+\|\end{biography}|
+\end{quote}
+
+%6
+\section{Check List of ``Dos and Don'ts''}
+%6.1
+\subsection{The basics of writing}
+
+\begin{itemize}
+\item[$\Box$] Describe a paper so that readers understand the novelty,
+	      availability, and reliability of the research.
+\item[$\Box$] Try to make a paper easy to read (discontinuity in the
+	      story and obscure backgrounds or themes are a burden to
+	      readers). 
+\item[$\Box$] Revisit the paper if the problem to be solved is not
+	      generalized (entirely focused on a problem at XX
+	      University, etc.) or if the paper reports deliverables
+	      only and does not describe the problem itself. 
+\item[$\Box$] Rethink the paper if its conclusion is not clearly
+	      described, it does not adequately point out its
+	      applicability, limits, and controversial points, or its
+	      conclusion does not follow the contents. 
+\item[$\Box$] Expressions that are inappropriate for scientific papers
+	      and that are hard to understand should be reconsidered. 
+\item[$\Box$] Second thought is necessary if sentences are in colloquial
+	      style. 
+\item[$\Box$] Check the structure of chapters and sections and the
+	      organization of the paper. 
+\item[$\Box$] Do not make the paper so that grasping the meaning is
+	      difficult without guessing from the context. 
+\item[$\Box$] Confirm if the explanation of the hypotheses is enough and
+	      does not contain any gaps in meaning. 
+\item[$\Box$] The authors should not submit a manuscript that includes
+	      redundant and/or too brief descriptions.
+\item[$\Box$] The authors should eliminate undefined terminologies.
+\end{itemize}
+
+%6.2
+\subsection{Show novelty and usefulness clearly}
+
+\begin{itemize}
+\item[$\Box$] The authors should not submit a manuscript that does not
+	      clarify the motivation and the goal of their study and the
+	      relationship to other existing studies.
+\item[$\Box$] The authors should not submit a manuscript that does not
+	      clarify what technologies are well/publicly known and what
+	      idea they are newly/originally proposing. 
+\item[$\Box$] The authors should provide sufficient references in their
+	      manuscript to back up the originality of their study. 
+\item[$\Box$] The authors should not submit a manuscript in which the
+	      readers cannot understand their proposal (or cannot find
+	      any originality in it) because it consists entirely of
+	      abstractive and/or conceptual descriptions. 
+\item[$\Box$] The authors should not submit a manuscript that lacks
+	      discussions on the effectiveness of their proposal. 
+\end{itemize}
+
+%6.3
+\subsection{Concrete attention to writing}
+
+\begin{itemize}
+\item[$\Box$] The authors should not submit a manuscript whose Japanese
+	      title does not match its content correctly.
+\item[$\Box$] The authors should not submit a manuscript whose English
+	      title does not match its content correctly or that
+	      contains incorrect English usage.
+\item[$\Box$] The paper should be revised when its abstract does not
+	      show its purpose or is written in inadequate English.
+\item[$\Box$] The paper should be revised when symbols and abbreviations
+	      are not popular, wordings are not adequate, or the
+	      explanations of its pictures and tables are not adequate.
+\item[$\Box$] The paper should be revised when special wordings, which
+	      are popular only in an individual or local group or a
+	      small company, are used without any explanations.
+\item[$\Box$] The paper should be revised when its pictures or tables
+	      are not semantically clear or they contain mistakes.
+\item[$\Box$] The paper should be revised when its pictures or tables
+	      are not visually clear.
+\item[$\Box$] The paper should be revised when the size or the scale of
+	      its pictures or tables are not adequate.
+\end{itemize}
+
+%6.4
+\subsection{Regarding references}
+
+\begin{itemize}
+\item[$\Box$] The number of references should be more than 10 (Some
+	      opinions say more than 20 or 30 in some research areas.
+\item[$\Box$] A sufficient number of references are required to show the
+	      paper's novelty.
+\item[$\Box$] The paper should be revised when it has an insufficient
+	      number of references.
+\item[$\Box$] Referring to appropriate papers written by Japanese
+	      authors contributes to the further progression of the
+	      Japanese research community.
+\item[$\Box$] Do not include self-citations excessively.
+\end{itemize}
+
+%6.5
+\subsection{Double submission}
+
+\begin{itemize}
+\item[$\Box$] Double submission of the original paper is
+	      prohibited. However, it is permissible to submit a paper
+	      accepted at an international conference and free from
+	      copyright issues.
+\item[$\Box$] Do not use the same figures or charts already included in
+	      other original papers, except those that have proper
+	      citations.
+\item[$\Box$] Be careful not to have overlap between the paper and other
+	      published articles.
+\end{itemize}
+
+%6.6
+\subsection{Check by other researchers}
+
+\begin{itemize}
+\item[$\Box$] Proofreading by experienced persons with many accepted
+	      papers is strongly recommended.
+\item[$\Box$] Take care to avoid leaps of logic from the viewpoint of
+	      the readers.
+\end{itemize}
+
+%6.7
+\subsection{Miscellaneous}
+
+\begin{itemize}
+\item[$\Box$] After the first review round, do not modify the paper
+	      except for the stated conditions for acceptance without
+	      the reviewers' approval.
+\item[$\Box$] Since the IPSJ uses a double-blind review system, in which
+	      both author(s) and reviewers remain anonymous, the authors
+	      cannot select reviewers.
+\item[$\Box$] Fill the self-check sheet carefully before submitting the
+	      paper.
+\end{itemize}
+
+%7
+\section{Concluding Remarks}
+
+We dare not dream that the style files are perfect but rather wish to
+improve them with your cooperation and hope that you will let us know of
+any complaints, comments, suggestions by e-mail to: 
+\begin{quote}
+\|editt@ipsj.or.jp|.
+\end{quote}
+
+
+
+\begin{acknowledgment}
+We wrote this article based on the guideline for A4 landscape layout.
+We are grateful to Prof.\ Hiroshi Nakashima from Kyoto University,
+for his valuable comments on making a class-file, 
+and his consent to usage of BiB{\TeX} files.
+We are also very thankful to the editorial committee for their
+contributions in writing the guideline for the A4 landscape layout.
+\end{acknowledgment}
+
+
+
+\begin{thebibliography}{99}
+\bibitem{companion}%1
+Goossens, M., Mittelbach, F., and Samarin, A.:
+{\it The LaTeX Companion},
+Addison Wesley, Reading, 
+Massachusetts (1993).
+
+\bibitem{latex}%2
+Lamport, L.: 
+{\it A Document Preparation System {\LaTeX} User's Guide \&
+Reference Manual}, 
+Addison Wesley, Reading, Massachusetts (1986).
+
+\bibitem{article1}%3
+Itoh, S. and Goto, N.: 
+An Adaptive Noiseless Coding for Sources with Big
+Alphabet Size, 
+{\it Trans.\ IEICE},  
+Vol. E74, No. 9, pp. 2495--2503 (1991).
+
+\bibitem{article2}%4
+Abrahamson, K., Dadoun, N., Kirkpatrick, D.G., and Przytycka, T.: 
+A Simple Parallel Tree Contraction Algorithm, 
+{\it J.\ Algorithms},  
+Vol. 10, No. 2,
+pp. 287--302 (1989).
+
+\bibitem{article3}%5
+Yamakami, T.: Exploratory Session Analysis in the Mobile Clickstream, 
+{\it IPSJ Digital Courier},  
+Vol. 3, pp. 14--20 (online), \\
+\doi{10.2197/ipsjdc.3.14} (2007).
+
+\bibitem{book1}%6
+Foley, J.D. et al.: 
+{\it Computer Graphics --- Principles and Practice},
+System Programming Series, Addison-Wesley, 
+Reading, Massachusetts, 2nd edition (1990).
+
+\bibitem{book2}%7
+Chang, C.L. and Lee, R.C.T.: 
+{\it Symbolic Logic and Mechanical Theorem Proving}, 
+Academic Press, New York (1973).
+
+\bibitem{booklet1}%8
+{Institute for New Generation Computer Technology}: 
+Overview of the Fifth Generation Computer Project, 
+distributed in {FGCS'92} (1992).
+(in Japanese).
+
+\bibitem{inbook1}%9
+Knuth, D.E.: 
+{\it Fundamental Algorithms}, 
+Art of Computer Programming,
+Vol. 1, chapter 2, 
+pp. 371--381, 
+Addison-Wesley, 2nd edition (1973).
+
+\bibitem{incollection1}%10
+Schwartz, A.J.: 
+Subdividing B{\'e}zier Curves and Surfaces, 
+{\it Geometric Modeling: Algorithms and New Trends\/} 
+(Farin, G.E., ed.), 
+SIAM, Philadelphia,
+pp. 55--66 (1987).
+
+\bibitem{inproceedings1}%11
+Baraff, D.:
+Curved Surfaces and Coherence for Non-penetrating Rigid Body
+Simulation, 
+{\it SIGGRAPH '90 Proceedings\/} (Beach, R.J., ed.), 
+Dallas,
+Texas, ACM, Addison-Wesley, 
+pp. 19--28 (1990).
+
+\bibitem{inproceedings2}%12
+Nakashima, H. et al.: 
+OhHelp: A Scalable Domain-Decomposing Dynamic Load
+Balancing for Particle-in-Cell Simulations, 
+{\it Proc.\ Intl.\ Conf. Supercomputing}, 
+pp. 90--99 (online),\\
+\doi{http://doi.acm.org/10.1145/1542275.1542293} (2009).
+
+\bibitem{manual1}%13
+Adobe Systems Inc.: 
+{\it PostScript Language Reference Manual}, 
+Reading,
+Massachusetts (1985).
+
+\bibitem{mastersthesis1}%14
+Ohno, K.: 
+Efficient Message Communication of Concurrent Logic Programming
+Language KL1 Based on Static Analysis, 
+Master's thesis, 
+Dept.\ Information Science, Kyoto University (1995).
+
+\bibitem{misc1}%15
+Saito, Y. and Nakashima, H.: 
+{\tt ipsjpapers.sty} (1995).
+(Style file for Trans. IPSJ distributed to authors.).
+
+\bibitem{phdthesis1}%16
+Weihl, W.: 
+Specification and Implementation of Atomic Data Types, 
+PhD Thesis,
+MIT, Boston (1984).
+
+\bibitem{proceedings1}%17
+Institute for New Generation Computer Technology: 
+{\it Proc.\ Intl.\ Conf.\ on Fifth Generation Computer Systems}, 
+Vol. 1 (1992).
+
+\bibitem{WarD:WAM-1}%18
+Warren, D.H.D.: An Abstract {Prolog} Instruction Set, 
+Technical Report 309,
+Artificial Intelligence Center, 
+SRI International (1983).
+
+\bibitem{unpublished}%19
+Editorial Board of Trans.\ IPSJ:
+How to Typeset Your Papers in {\LaTeX}
+(Version 1) (1995).
+(distributed to authors).
+
+\bibitem{webpage1}%20
+Kay, A.: Welcome to Squeakland, Squeakland (online),\\
+\urle{http://www.squeakland.org/community/biography/\\
+alanbio.html}
+\refdatee{2007-4-5}.
+
+\bibitem{webpage2}%21
+Nakashima, H.: 
+A {WEB} Page, Kyoto University (online),\\
+\urle{http://www.para.media.kyoto-u.ac.jp/\~{}nakashima/\\
+a.web.page.of.long.url/}
+\refdatee{2010-10-30}.
+
+\bibitem{webpage3}%22
+Nakashima, H.: 
+Another {WEB} Page, 
+Kyoto University (online),\\
+\urle{http://www.para.media.kyoto-u.ac.jp/\~{}nakashima/\\
+a.web.page.of.much.longer.url/} 
+\refdatee{2010-10-30}.
+
+\end{thebibliography}
+
+\appendix
+
+%8
+\section{How to Write an Appendix}
+\label{A1}
+
+To add an appendix, write the command \|\appendix| immediately following
+the reference list.  Within the appendix, the \|\section| command creates
+numbered headings such as \ref{A1} and \ref{A2}.
+
+%8.1
+\subsection{Example of a Heading}
+The command \|\subsection| in the appendix gives this kind of heading.
+
+%9
+\section{Commands for Transactions}
+\label{A2}
+
+Each transaction has its own subtitle, abbreviation code, and serial
+number. This information is given by using the following commands for
+the \|\documentclass| option in the final version.
+
+\begin{itemize}
+\item \|PRO| (Trans.\ Programming)
+\item \|TOM| (Trans.\ Mathematical Modeling and Its Applications)
+\item \|TOD| (Trans.\ Database)
+\item \|ACS| (Trans.\ Advanced Computing Systems)
+\item \|CDS| (Trans.\ Consumer Device \& System)
+\item \|TBIO| (Bioinformatics)
+\item \|SLDM| (System LSI Design Methodology)
+\item \|CVA| (Computer Vision and Applications)
+\end{itemize}
+
+Moreover, for papers in English, the command English can be added. For
+example, writing \|\documentclass[PRO,| \|english]{ipsj}| will create an
+English document.
+
+Note that the research group has a ``month of publication'' number that
+does not correspond to the ``issue month number'' of the
+transaction. You may be notified by the IPSJ or the Editorial Board of
+the \|<month>| in order to set the month of publication counter as
+follows.
+
+\begin{quote}
+\|\setcounter{month}{month of publication}|
+\end{quote}
+
+In addition, commands are provided for executing unique functions for
+several transactions, as shown in the following sections.
+
+%10
+\section{Unique Commands for Each Part}
+
+Since each of the parts has its own detailed specifications, the same
+command may produce different results in two different parts. 
+
+In some cases, the \|<Revised date>| and \|<Second revised| \|date>| are
+inputted. These can be added as a preamble by using 
+
+\begin{quote}
+\|\rereceived{<year>}{<month>}{<day>}|\\
+\|\rerereceived {<year>}{<month>}{<day>}|
+\end{quote}
+
+%10.1
+\subsection{Unique Functions for Programming (PRO)}
+
+Issues of Transactions on Programming (PRO) includes not only regular
+papers but also abstracts from research presentations delivered in the
+research groups of SIGPRO\@. The file for an abstract consists of
+material from the \|\documentclass| to the \maketitle of the format
+shown in Section~\ref{body}. That is, the file does not have a main
+text. Note that the reception and acceptance dates are not required, but
+the date of presentation has to be given:
+\begin{quote}
+\|\Presents{<year>}{<month>}{<day>}|
+\end{quote}
+
+%10.2
+\subsection{Unique Functions for Database (TOD)}
+
+The name of the editor in charge for the paper included in The
+Transactions on Database (TOD) is specified by
+\begin{quote}
+\|\edInCharge{<name-of-editor>}|
+\end{quote}
+
+Also, following a change in style, the command is entered at the end of
+the paper, directly before \|\end{document}|.
+
+%10.3
+\subsection{Unique Functions for Consumer Devices \& Systems (CDS)}
+
+In the ``Transactions on Consumer Devices \& Systems,'' since the
+headings differ depending on the type of document, the type of heading
+is to be changed with the option.
+
+The types are:
+\begin{itemize}
+\item \|systems  | Paper on Consumer Systems
+\item \|services | Paper on Consumer Services
+\item \|devices  | Paper on Consumer Devices
+\item \|research | Research Paper
+\end{itemize}
+For English papers, you simply need to add English.
+
+%10.4
+\subsection{Unique Functions for Bioinformatics (TBIO)}
+
+Since papers in Transactions on Bioinformatics (TBIO) are in English,
+specifying the TBIO option will cause the program to assume that the
+English option has been specified. This effectively means that the
+English option can be omitted.
+
+The following three categories define the different types of papers.
+\begin{itemize}
+\item \|No specification | Original Paper (Default)
+\item \|Data   | Database/Software Paper
+\item \|Survey | Survey Paper
+\end{itemize}
+
+Therefore, \|\documentclass[TBIO]{ipsj}| will be an original paper, and
+\|\documentclass[TBIO,Survey]{ipsj}| will be a survey paper. 
+
+Moreover, as with TOD, the name of the editor in charge of the paper is
+specified by using \|\Editor|, but in this case, the text is introduced with ``Communicated by.'' Therefore, the name of the editor is positioned directly before \|\end{document}|, as with TOD.
+
+%10.5
+\subsection{Unique Functions for Computer Vision and Applications (CVA)}
+
+The Transactions of Computer Vision and Applications is also an English
+language journal, allowing the English option to be omitted.
+
+There are three classes of documents:
+\begin{itemize}
+\item \|No specification | Regular Paper (Default)
+\item \|Research | Research Paper
+\item \|system   | Systems Paper
+\end{itemize}
+
+As with TBIO, the name of the editor in charge is inserted, and the
+inserted text is introduced with ``Communicated by.''
+
+%10.6
+\subsection{Unique Functions for System LSI Design Methodology (SLDM)}
+
+The Transactions of System LSI Design and Methodology (SLDM) is also an
+English language journal, allowing the English option to be omitted.
+
+There are two classes of documents:
+\begin{itemize}
+\item \|No specification | Regular Paper (Default)
+\item \|Short | Short Paper
+\end{itemize}
+
+SDLM also enters the name of the editor in charge, but automatic
+insertion is treated differently depending on the paper.
+
+Normally, text is inserted using ``Recommended by Associate Editor:,''
+but it is only when the ``invited'' option is included that the
+insertion text becomes ``Invited by Editor-in-Chief:.''
+
+\begin{biography}
+
+\profile{Joho Taro}{was born in 1970. He received his M.S.\ degree from
+ Johoshori University in 1994 and has been engaged in the Information
+ Processing Society of Japan since 1994. His research interest is online
+ publishing systems. He is a member of the IEEE and ACM\@.}
+%
+\profile{Shori Hanako}{was born in 1960. She received her M.E.\ and
+ Ph.D.\ from Johoshori University in 1984 and 1987, respectively. She
+ became an associate professor at Gakkai University in 1992 and a
+ professor at Johoshori University in 1997. Her current research
+ interest is online publishing systems. She received the Kiyasu Kinen
+ award in 2010. She is a Board Member of the IPSJ and a member of the
+ IEICE, IEEE-CS, and ACM\@.} 
+%
+\profile{Gakkai Jiro}{was born in 1970. He received his M.S.\ degree
+ from Johoshori University in 1994 and has been engaged in the
+ Information Processing Society of Japan since 1994. His research
+ interest is online publishing systems. He is a member of the IEEE and
+ ACM\@.}
+%
+\end{biography}
+\end{document}
