@@ -35,7 +35,7 @@ serverspec: 宣言的記述でサーバの状態をテスト可能な汎用性�
        * 書籍Test-Driven Infrastructure with Chefの初出は2011年
  * 流れ的には、Puppetの登場 -> Infrastructure as Code -> Agile Operation -> Chefの登場 -> Test-Driven Infrastructure という感じか。
 
-## 2. サーバのテストの現状と課題
+## 2. サーバの構成管理とテスト手法
 
 * サーバのテストってかつてはどうやってたんだろう？
   * 手動？
