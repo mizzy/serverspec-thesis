@@ -2,7 +2,7 @@
 
 サーバの構築・運用を効率化するために，サーバの構成管理方針を宣言的なコードで記述するという手法が提案され，その実装として構成管理ツールCFEngine\cite{cfengine}が1993年に登場している．また，昨今のシステムの大規模化・複雑化の流れや，IaaSのようなサーバの構築・破棄が何度でも手軽にできるような環境の登場を背景に，CFEngineを更に発展させた実装として，2006年にPuppet\cite{puppet}が登場，その後も様々な実装が登場している\cite{chef}\cite{saltstack}\cite{ansible}．
 
-2006年のPuppet登場以降，サーバインフラをコードで記述するという``Infrastructure as Code''という概念が台頭し，サーバインフラのコード化により，``Agile infrastructure and operations''\cite{agile infrastructure}という流れが生まれている．これはアジャイル開発の手法をサーバインフラの構築や運用に適用しよう，という潮流である．
+2006年のPuppet登場以降，サーバの構成管理方針をコードで記述するという``Infrastructure as Code''という概念が台頭し，``Agile infrastructure and operations''\cite{agile infrastructure}という流れが生まれている．これはアジャイル開発の手法をサーバの構築や運用に適用しよう，という潮流である．
 
 この流れの中で，``Agile infrastructures and operations''を効率よく実践するためのプロセスとして，テスト駆動開発の手法をサーバインフラの構築・運用に応用した``Test-Driven Infrastructure''\cite{test driven infrastructure with chef}というプロセスが提案されている．
 
