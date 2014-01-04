@@ -1,12 +1,3 @@
-%%
-%% 研究報告用スイッチ
-%% [techrep]
-%%
-%% 欧文表記無しのスイッチ(etitle,jkeyword,eabstract,ekeywordは任意)
-%% [noauthor]
-%%
-
-%\documentclass[submit,techreq]{ipsj}
 \documentclass[submit,techreq,noauthor]{ipsj}
 
 
@@ -23,9 +14,6 @@
 \title{serverspec: 宣言的記述でサーバの状態をテスト可能な\\
 汎用性の高いテストフレームワーク}
 
-%\etitle{How to Prepare Your Paper for IPSJ Journal \\
-%(version 2012/10/12)}
-
 \paffiliate{PAPERBOY}{株式会社paperboy\&co.}
 
 \paffiliate{TU}{帝京大学}
@@ -36,31 +24,12 @@
 \author{栗林 健太郎}{Kuribayashi Kentaro}{PAPERBOY}[kentarok@gmail.com]
 \author{松本 亮介}{Matsumoto Ryosuke}{KU}[matsumoto\_r@net.ist.i.kyoto-u.ac.jp]
 
-\begin{abstract}
-システムの大規模・複雑化に伴い，サーバの構築・運用を効率化するために，サーバの状態をコードで記述する手法が数多く提案されている．それらの手法を効率良く扱うプロセスとして，テスト駆動開発の手法をサーバ構築に応用したTest-Driven Infrastructureが提案されている．このプロセスを支援するテストフレームワークもいくつか登場しているが，あるものは特定の構成管理ツールに依存，またあるものはOS毎の違いを自ら吸収しなければならないなど、汎用性に難がある．そこで，本論文では，特定の構成管理ツールやOSに依存することなく，サーバの状態を汎用的かつ可読性の高いコードでテスト可能なテストフレームワークを提案する．提案手法では，汎用性を高めるために，これまでのOSや構成管理ツール固有の振る舞いを整理して一般化し，汎用コマンド実行フレームワークとして定義する．続いて，テストコード記述の抽象度を高め可読性を上げるために宣言的な記法で汎用コマンド実行フレームワークを操作できる制御テストフレームワークを定義する．これにより，管理者がOSや構成管理ツールの違いを気にすることなくサーバの状態を容易にテストできるようになり，サーバの運用・管理コストを低減できる．また，フレームワークを用途別に分離して定義することにより，制御テストフレームワークを独自の記述に変更する事も容易である．提案するテストフレームワークをserverspecと名付けた．
-\end{abstract}
-
-
-%\begin{jkeyword}
-%情報処理学会論文誌ジャーナル，\LaTeX，スタイルファイル，べからず集
-%\end{jkeyword}
-%
-%\begin{eabstract}
-%This document is a guide to prepare a draft for submitting to IPSJ
-%Journal, and the final camera-ready manuscript of a paper to appear in
-%IPSJ Journal, using {\LaTeX} and special style files.  Since this
-%document itself is produced with the style files, it will help you to
-%refer its source file which is distributed with the style files.
-%\end{eabstract}
-%
-%\begin{ekeyword}
-%IPSJ Journal, \LaTeX, style files, ``Dos and Dont's'' list
-%\end{ekeyword}
+\input{abstract}
 
 \maketitle
 
-%1
-\section{はじめに}
+\input{01}
 
+\input{bibliography}
 
 \end{document}
