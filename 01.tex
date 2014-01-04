@@ -1,6 +1,6 @@
 \section{はじめに}
 
-システムの大規模・複雑化に伴い，サーバの構築・運用を効率化するために，サーバの構成を宣言的なコードで記述・管理するという手法が提案され，その実装として構成管理ツールCFEngine\cite{cfengine}が1993年に登場している．その後様々な構成管理ツールが生み出されているが\cite{cmt}，2005年のPuppetの登場\cite{puppet}と，2006年のAmazon EC2の登場\cite{ec2}をきっかけに，``Infrastructure as Code''という概念が台頭し，``Agile infrastructure and operations''\cite{agile infrastructure}という流れが生まれている．これはアジャイル開発の手法をサーバの構築や運用に適用しよう，という潮流である．（ここで言う``Infrastructure''はアプリケーションを載せるための土台を意味し，OSやミドルウェアといったソフトウェアレイヤーを含む．）
+システムの大規模・複雑化に伴い，サーバの構築・運用を効率化するために，サーバ構成を宣言的なコードで記述・管理するという手法が提案され，その実装として構成管理ツールCFEngine\cite{cfengine}が1993年に登場している．その後様々な構成管理ツールが生み出されているが\cite{cmt}，2005年のPuppetの登場\cite{puppet}と，2006年のAmazon EC2の登場\cite{ec2}をきっかけに，``Infrastructure as Code''という概念が台頭し，``Agile infrastructure and operations''\cite{agile infrastructure}という流れが生まれている．これはアジャイル開発の手法をサーバの構築や運用に適用しよう，という潮流である．（ここで言う``Infrastructure''はアプリケーションを載せるための土台を意味し，OSやミドルウェアといったソフトウェアレイヤーを含む．）
 
 この流れの中で，``Agile infrastructures and operations''を効率よく実践するためのプロセスとして，テスト駆動開発の手法をサーバインフラの構築・運用に応用した``Test-Driven Infrastructure''\cite{test driven infrastructure with chef}というプロセスが提案されている．このプロセスを支援するテストフレームワークがいくつも登場している\cite{chefspec}\cite{rspec-puppet}\cite{cucumber-chef}\cite{minitest-chef-handler}\cite{test kitchen}\cite{rspec-system}．
 
