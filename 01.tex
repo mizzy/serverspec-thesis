@@ -1,10 +1,10 @@
 \section{はじめに}
 
-システムの大規模・複雑化に伴い，サーバの構築・運用を効率化するために，サーバ構成を宣言的なコードで記述・管理するという手法が提案され，その実装として構成管理ツールCFEngine\cite{cfengine}が1993年に登場している．その後様々な構成管理ツールが生み出されているが\cite{cmt}，2005年のPuppetの登場\cite{puppet}と，2006年のAmazon EC2の登場\cite{ec2}をきっかけに，``Infrastructure as Code''という概念が台頭し，``Agile infrastructure and operations''\cite{agile infrastructure}という流れが生まれている．これはアジャイル開発の手法をサーバの構築や運用に適用しよう，という潮流である．（ここで言う``Infrastructure''はアプリケーションを載せるための土台を意味し，OSやミドルウェアといったソフトウェアレイヤーを含む．）
+システムの大規模・複雑化に伴い，サーバの構築・運用を効率化するために，サーバ構成を宣言的なコードで記述・管理するという手法が提案され，その実装として構成管理ツールCFEngine\cite{cfengine}が1993年に登場している．その後様々な構成管理ツールが生み出されているが\cite{cmt}，2005年のPuppetの登場\cite{puppet}と2006年のAmazon EC2の登場\cite{ec2}をきっかけに``Infrastructure as Code''という概念が台頭し，``Agile infrastructure and operations''\cite{agile infrastructure}という流れが生まれている．これはアジャイル開発の手法をサーバ構築・運用に適用しようという潮流である．（ここで言う``Infrastructure''はアプリケーションを載せるための土台を意味し，OSやミドルウェアといったソフトウェアレイヤーを含む．）
 
-この流れの中で，``Agile infrastructures and operations''を効率よく実践するためのプロセスとして，テスト駆動開発の手法をサーバインフラの構築・運用に応用した``Test-Driven Infrastructure''\cite{test driven infrastructure with chef}というプロセスが提案されている．このプロセスを支援するテストフレームワークがいくつも登場している\cite{chefspec}\cite{rspec-puppet}\cite{cucumber-chef}\cite{minitest-chef-handler}\cite{test kitchen}\cite{rspec-system}．
+この流れの中で，``Agile infrastructures and operations''を効率よく実践するためのプロセスとして，テスト駆動開発の手法をサーバ構築・運用に応用した``Test-Driven Infrastructure''\cite{test driven infrastructure with chef}というプロセスが提案されており，このプロセスを支援するテストフレームワークがいくつも登場している\cite{chefspec}\cite{rspec-puppet}\cite{cucumber-chef}\cite{minitest-chef-handler}\cite{test kitchen}\cite{rspec-system}．
 
-これらのうち，ChefSpec，rspec-puppetは，構成管理ツール固有の言語で書かれたコードの内容をテストするのみで，実際にコードをサーバに適用した結果はテストしない．そのため，単体テストしては利用できるが結合テスト用途には利用できない．Cucumber-chef，minitest-chef-handlerはChefという特定の構成管理ツールに完全に依存している．そのため，Chef以外の構成管理ツールでは利用することができない．Test Kitchenやrspec-systemは，テスト用VMの作成，テスト用VMへの構成管理ツールの適用，テストの実行をトータルで行う統合テストスイートであるが，組み込みのテスト機構は汎用性に乏しく，特定の構成管理ツールに依存していたり，OSやディストリビューション毎の違いを意識したテストコードを書く必要がある．
+これらのうち，ChefSpec，rspec-puppetは，構成管理ツール固有の言語で書かれたコードの内容をテストするのみで，実際にコードをサーバに適用した結果はテストしない．そのため，単体テストしては利用できるが結合テスト用途には利用できない．Cucumber-chef，minitest-chef-handlerはChefという特定の構成管理ツールに依存している．そのため，Chef以外の構成管理ツールでは利用することができない．Test Kitchenやrspec-systemは，テスト用VMの作成，テスト用VMへの構成管理ツールの適用，テストの実行をトータルで行う統合テストスイートであるが，組み込みのテスト機構は汎用性に乏しく，特定の構成管理ツールに依存していたり，OSやディストリビューション毎の違いを意識したテストコードを書く必要がある．
 
 我々は，テストフレームワークの汎用性を高めるために，構成管理ツール特有の振る舞い（例えば，パッケージのインストールやシステムユーザの作成など）を抽出・一般化し，それらをテストするためのコマンドをOSやディストリビューション毎に分離，その上でOSや実行形式の違いを吸収するレイヤーを設けることにより，汎用コマンド実行フレームワークを定義した．
 
