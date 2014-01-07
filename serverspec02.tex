@@ -1,0 +1,35 @@
+\documentclass[submit,techreq,noauthor]{ipsj}
+
+
+\usepackage[dvips]{graphicx}
+\usepackage{latexsym}
+
+\def\Underline{\setbox0\hbox\bgroup\let\\\endUnderline}
+\def\endUnderline{\vphantom{y}\egroup\smash{\underline{\box0}}\\}
+\def\|{\verb|}
+
+\begin{document}
+
+
+\title{serverspec: 宣言的記述でサーバの状態をテスト可能な\\
+汎用性の高いテストフレームワーク}
+
+\paffiliate{PAPERBOY}{株式会社paperboy\&co.}
+
+\paffiliate{TU}{帝京大学}
+
+\paffiliate{KU}{京都大学}
+
+\author{宮下 剛輔}{Miyashita Gosuke}{PAPERBOY,TU}[gosukenator@gmail.com]
+\author{栗林 健太郎}{Kuribayashi Kentaro}{PAPERBOY}[kentarok@gmail.com]
+\author{松本 亮介}{Matsumoto Ryosuke}{KU}[matsumoto\_r@net.ist.i.kyoto-u.ac.jp]
+
+\maketitle
+
+\input{02}
+
+\begin{thebibliography}{99}
+\input{bibliography02}
+\end{thebibliography}
+
+\end{document}
