@@ -1,0 +1,64 @@
+\section{サーバの構成管理とテスト手法}
+
+本論文で提案するストフレームワークは，サーバ構成を記述したコードのテストをいかに効率よく行うか，という観点から出発している．そこで代表的な構成管理ツールを例に，ツールと言語の特徴，テスト手法ならびに従来手法の問題点について言及する．
+
+\subsection{CFEngineからChefへ}
+
+安価なUNIXライクOSを搭載したサーバが普及し，TCP/IPにより異なるOSを搭載したサーバ同士がネットワーク接続可能になった．これによりシステムが大規模化・複雑化し，シェルスクリプトに代わり，サーバの設定を宣言的なコードで扱う構成管理手法が提案された．その実装としてCFEngine\cite{cfengine}が登場した．
+
+2005年にはCFEngineに影響を受け発展させたPuppet\cite{puppet}が登場，2009年にはPuppetから影響を受けたChef\cite{chef}が登場している．CFEngine，Puppetは独自のDSL(Domain Specific Language)でサーバの構成を記述するが，ChefはRubyによる内部DSLで記述する．その特性ゆえ，Chefはシステム管理者よりも開発者に強く訴求し，Amazon EC2(Elastic Compute Cloud)の様な開発者自身がサーバ構築・運用を行える環境の普及とともに広まりを見せている．
+
+\subsection{ChefからTest-Driven Infrastructureへ}
+
+CFEngineやPuppetでは，記述できることが独自DSLの範囲内に収まるため，コードは比較的簡易なものとなる．しかしChefはRubyでできることはどんなことでも記述できる．そのためシステムが複雑になるにともない，それを記述するコードも複雑になる．そこでサーバ構成を記述したコードに対し，アジャイル開発におけるテスト駆動開発のプロセスを適用する事で，効率よくコードを記述することができる，といった考えが生まれる．Test-Driven Infrastuctureという概念はChefコミュニティ周辺で発生したものであるが，それは偶然ではなく，このようなChefが持つ言語特性ゆえである．
+
+\subsection{Test-Driven Infrastructureにおけるテスト手法の分類}
+
+Test-Driven Infrastructureにおけるテストの種類は，テスト駆動開発における以下の3つに分類できる．
+
+\begin{enumerate}
+  \item 単体テスト
+  \item 結合テスト
+  \item 受け入れテスト
+\end{enumerate}
+
+単体テストは構成管理ツールにおける``モジュール''に対するテストで，実際にコードをサーバに適用する前の段階で行うテストである．結合テストはコードをサーバに適用した後に行うテストで，コードが期待通りにサーバの設定を行ったかどうかをテストする．受け入れテストもコードをサーバに適用した後に行うテストだが，結合テストがサーバ内部の状態をテストするホワイトボックステストなのに対し，受け入れテストはサーバの外から見た振る舞いをテストするブラックボックステストであるという違いがある．
+
+\subsection{従来テスト手法の問題点}
+
+単体テストツールとしてはChefにはChefSpec，Puppetにはrspec-puppetというツールが存在する．その名が示すとおり，それぞれChefとPuppet専用のツールであり，単体テストツールとしては十分であるが，実際にコードをサーバに適用した結果をテストすることはできないため，単体テストツールだけでは不十分である．
+
+結合テストツールとしては，minitest-chef-handler，Test Kitchen，rspec-systemが存在する．この内minitest-chef-handlerとTest KitchenはChefに依存したツールであり，他の構成管理ツールとともに利用することができない．Test Kitchenやrspec-systemは，テスト用VMの作成，テスト用VMへの構成管理ツールの適用，テストの実行をトータルで行う統合テストスイートであるが，ツール標準のテスト機構は汎用性に乏しく，特定の構成管理ツールに依存していたり，OSやディストリビューション毎の違いを意識したテストコードを書く必要がある．
+
+受け入れテストツールとしてはcucumber-chef，leibnizが存在するが，これらはChefに依存したツールであり，他の構成管理ツールとともに利用することができない．
+
+以上をまとめると表\ref{tab:comparison}のようになる．
+
+\begin{table}[htb]
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|}
+      \hline
+      ツール名 & テスト種別 & ツール独立性 & OS汎用性 \\
+      \hline
+      \hline
+      ChefSpec              & 単体 & ×  & ○ \\
+      \hline
+      rspec-puppet          & 単体 & ×  & ○ \\
+      \hline
+      minitest-chef-handler & 結合 & ×  & ○ \\
+      \hline
+      Test Kitchen          & 結合 & ×  & × \\
+      \hline
+      rspec-system          & 結合 & ○ & × \\
+      \hline
+      Cucumber-Chef         & 受入 & ×  & ○ \\
+      \hline
+      leibniz               & 受入 & ×  & ○ \\
+      \hline
+    \end{tabular}
+    \label{tab:comparison}
+    \caption{テストツール比較表}
+  \end{center}
+\end{table}
+
+これにより，従来テスト手法では構成管理ツールからの独立性とOS・ディストリビューションの汎用性双方を満たすものが存在しないことがわかる．
