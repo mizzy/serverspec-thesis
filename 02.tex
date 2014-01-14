@@ -1,12 +1,10 @@
 \section{サーバの構成管理とテスト手法}
 
-本論文で提案するストフレームワークは，サーバ構成を記述したコードのテストをいかに効率よく行うか，という観点から出発している．そこで代表的な構成管理ツールを例に，ツールと言語の特徴，テスト手法ならびに従来手法の問題点について言及する．
+本論文で提案するストフレームワークは，構成管理ツールによりサーバ構成を記述したコードのテストをいかに効率よく行うか，という観点から出発している．そこで代表的な構成管理ツールを例に，ツールと言語の特徴，テスト手法ならびに従来手法の問題点について言及する．
 
 \subsection{CFEngineからChefへ}
 
-安価なUNIXライクOSを搭載したサーバが普及し，TCP/IPにより異なるOSを搭載したサーバ同士がネットワーク接続可能になった．これによりシステムが大規模化・複雑化し，シェルスクリプトに代わり，サーバの設定を宣言的なコードで扱う構成管理手法が提案された．その実装としてCFEngine\cite{cfengine}が登場した．
-
-2005年にはCFEngineに影響を受け発展させたPuppet\cite{puppet}が登場，2009年にはPuppetから影響を受けたChef\cite{chef}が登場している．CFEngine，Puppetは独自のDSL(Domain Specific Language)でサーバの構成を記述するが，ChefはRubyによる内部DSLで記述する．その特性ゆえ，Chefはシステム管理者よりも開発者に強く訴求し，Amazon EC2(Elastic Compute Cloud)の様な開発者自身がサーバ構築・運用を行える環境の普及とともに広まりを見せている．
+第1章で触れたCFEngineは1993年に登場した．2005年にはCFEngineに影響を受け発展させたPuppet\cite{puppet}が登場，2009年にはPuppetから影響を受けたChef\cite{chef}が登場している．CFEngine，Puppetは独自のDSL(Domain Specific Language)でサーバの構成を記述するが，ChefはRubyによる内部DSLで記述する．その特性ゆえ，Chefはシステム管理者よりも開発者に強く訴求し，Amazon EC2(Elastic Compute Cloud)の様な開発者自身がサーバ構築・運用を行える環境の普及とともに広まりを見せている．
 
 \subsection{ChefからTest-Driven Infrastructureへ}
 
