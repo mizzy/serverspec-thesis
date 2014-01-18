@@ -6,7 +6,7 @@ serverspecがなぜ同種のツールと比べて広く使われているのか�
 
 特定の構成管理ツールに依存していないということは，テスト対象のサーバに特定の構成管理ツールを入れる必要がないということでもある．serverspecはテスト対象サーバでsshdが動いてさえいれば，Rubyすら入れる必要がない．そのため特定の構成管理ツール依存のテストツールと比較して利用の障壁が低い．
 
-広く使われている理由の二つ目は記法の汎用性と抽象度の高さである．汎用性を高めたため，OS・ディストリビューションの違いを気にすることなくテストを容易に書くことができる．また抽象度が高いためテストコードの可読性が高く，メンテナンス性が高い．例として，Test Kitchenでは標準でbats\cite{bats}を利用してテストを書くが，batsによるUbuntu上でのテストコードを\figref{fig:test-with-bats-on-ubuntu}に示す．また，同じ内容のテストをSolaris向けに書く場合の例を\figref{fig:test-with-bats-on-solaris}に示す．serverspecによるテストコードは，OSが何であっても\figref{fig:test-with-serverspec}で示すようなコードになる．
+広く使われている理由の二つ目は記法の汎用性と抽象度の高さである．汎用性を高めたため，OS・ディストリビューションの違いを気にすることなくテストを容易に書くことができる．また抽象度が高いためテストコードの可読性が高く，メンテナンス性が高い．例として，Test Kitchenでは標準でbats\cite{bats}を利用してテストを書くが，batsによるUbuntu上でのテストコードを\figref{fig:test-with-bats-on-ubuntu}に示す．また，同じ内容のテストをSolaris向けに書く場合の例を\figref{fig:test-with-bats-on-solaris}に示す．serverspecによるテストコードは，OSが何であっても\figref{fig:test-with-serverspec}で示すようなコードになる．このように，提案手法ではOSの違いを意識することなく，テストコードを記述することができる．
 
 \begin{figure}[tb]
 \setbox0\vbox{
@@ -69,6 +69,32 @@ end
 \caption{serverspecによるテストコード\label{fig:test-with-serverspec}}
 \end{figure}
 
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+@test "/etc/sudoers is not readable by others" {
+  ls -l /etc/sudoers | egrep '^......-..'
+}
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{batsによる/etc/sudoersが他人から読めないことをテストするコード\label{fig:test-permission-with-bats}}
+\end{figure}
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+describe file("/etc/sudoers") do
+  it { should_not be_readable.by("others") }
+end
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{serverspecによる/etc/sudoersが他人から読めないことをテストするコード\label{fig:test-permission-with-serverspec}}
+\end{figure}
+
+また別の例として，/etc/sudoersが他人から読めないことをテストするコードの例を示す．batsを利用する場合は\figref{fig:test-permission-with-bats}に示すコードとなる．serverspecを利用する場合は\figref{fig:test-permission-with-serverspec}に示すコードとなる．このように， batsの場合はテストコードだけでは何をテストしているのか判別しにくいため，説明用のテキストが必要となる．一方serverspecはテストコードだけでテスト内容が理解できるため，別途説明用のテキストを必要としない．
 
 構成管理ツール依存を排除し，汎用的なのに加え，単機能でもある．ゆえに他ツールとも組み合わせやすく，従来からあるテストツールや多種ツールに取り込まれる形での利用も広がっている．
 
