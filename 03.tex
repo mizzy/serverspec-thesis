@@ -30,3 +30,75 @@ OS・ディストリビューション汎用性が満たせないのは，テス
 
 この手法に基づき実装した汎用コマンド実行フレームワークをSpecInfra\cite{specinfra}，制御テストフレームワークをserverspec\cite{serverspec}と名付けた．
 
+SpecInfraとserverspecの実装の一部を示す．SpecInfraでは各OS用のコマンド群をクラスとして定義する．例としてRedHat系Linux上で指定されたパッケージがインストールされているかどうかを確認するコマンドの定義を\figref{fig:check-installed-on-redhat}に示す．また，Solaris上で指定されたパッケージがインストールされているかどうかを確認するコマンドの定義を\figref{fig:check-installed-on-solaris}に示す．serverspec上でこのコマンドを呼び出して指定したパッケージがインストールされているかどうかテストする部分の実装を\figref{fig:call-check-install}に示す．
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+module SpecInfra::Command
+  class RedHat < Linux
+    def check_installed(package,version=nil)
+      cmd = "rpm -q #{escape(package)}"
+      if version
+        cmd = "#{cmd} | grep -w -- #{escape(version)}"
+      end
+      cmd
+    end
+  end
+end
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{パッケージがインストールされているかを確認するRedHat系Linux用コマンド定義\label{fig:check-installed-on-redhat}}
+\end{figure}
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+module SpecInfra::Command
+  class Solaris < Base
+    def check_installed(package, version=nil)
+      cmd = "pkg list -H #{escape(package)}"
+      if version
+        cmd = "#{cmd} | grep -qw -- #{escape(version)}"
+      end
+      cmd
+    end
+  end
+end
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{パッケージがインストールされているかを確認するSolaris用コマンド定義\label{fig:check-installed-on-solaris}}
+\end{figure}
+
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+module Serverspec::Type
+  class Package < Base
+    def installed?(provider, version)
+      backend.check_installed(@name, version)
+    end
+  end
+end
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{パッケージインストールチェックコマンドを呼び出す部分のservespecでの実装\label{fig:call-check-install}}
+\end{figure}
+
+これらの実装の上で，サーバ上にntpパッケージがインストールされているかどうかを確認するためのテストコードをserverspecの記法で記述したものを\figref{fig:test-code-to-check-ntp-package-installed}に示す．
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+describe package("ntp") do
+  it { should be_installed }
+end
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{ntpパッケージがインストールされているかをテストするserverspecで記述したテストコード\label{fig:test-code-to-check-ntp-package-installed}}
+\end{figure}
