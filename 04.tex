@@ -6,7 +6,69 @@ serverspecがなぜ同種のツールと比べて広く使われているのか�
 
 特定の構成管理ツールに依存していないということは，テスト対象のサーバに特定の構成管理ツールを入れる必要がないということでもある．serverspecはテスト対象サーバでsshdが動いてさえいれば，Rubyすら入れる必要がない．そのため特定の構成管理ツール依存のテストツールと比較して利用の障壁が低い．
 
-広く使われている理由の二つ目は記法の汎用性と抽象度の高さである．汎用性を高めたため，OS・ディストリビューションの違いを気にすることなくテストを容易に書くことができる．また抽象度が高いためテストコードの可読性が高く，メンテナンス性が高い．
+広く使われている理由の二つ目は記法の汎用性と抽象度の高さである．汎用性を高めたため，OS・ディストリビューションの違いを気にすることなくテストを容易に書くことができる．また抽象度が高いためテストコードの可読性が高く，メンテナンス性が高い．例として，Test Kitchenでは標準でbats\cite{bats}を利用してテストを書くが，batsによるUbuntu上でのテストコードを\figref{fig:test-with-bats-on-ubuntu}に示す．また，同じ内容のテストをSolaris向けに書く場合の例を\figref{fig:test-with-bats-on-solaris}に示す．serverspecによるテストコードは，OSが何であっても\figref{fig:test-with-serverspec}で示すようなコードになる．
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+@test "The package apache2 is installed" {
+  dpkg-query -f '${Status}' -W apache2 \
+    | grep '^install ok installed$'
+}
+
+@test "The apache2 service is running" {
+  service apache2 status
+}
+
+@test "Port 80 is listening" {
+  netstat -tunl ｜ grep ":80 "
+}
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{batsによるUbuntu上でのテストコード\label{fig:test-with-bats-on-ubuntu}}
+\end{figure}
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+@test "The package httpd is installed" {
+  pkg list -H httpd
+}
+ 
+@test "The httpd service is running" {
+  svcs -l httpd | egrep '^status *online$'
+}
+ 
+@test "Port 80 is listening" {
+  netstat -an | grep LISTEN | grep httpd
+}
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{batsによるSolaris上でのテストコード\label{fig:test-with-bats-on-solaris}}
+\end{figure}
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+describe package("httpd") do
+  it { should be_installed }
+end
+ 
+describe service("httpd") do
+  it { should be_running }
+end
+ 
+describe port(80) do
+  it { should be_listning }
+end
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{serverspecによるテストコード\label{fig:test-with-serverspec}}
+\end{figure}
+
 
 構成管理ツール依存を排除し，汎用的なのに加え，単機能でもある．ゆえに他ツールとも組み合わせやすく，従来からあるテストツールや多種ツールに取り込まれる形での利用も広がっている．
 
