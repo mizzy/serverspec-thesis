@@ -32,16 +32,16 @@ serverspecがなぜ同種のツールと比べて広く使われているのか�
 \begin{figure}[tb]
 \setbox0\vbox{
 \begin{verbatim}
-@test "The package httpd is installed" {
-  pkg list -H httpd
+@test "The package apache2 is installed" {
+  pkg list -H apache2
 }
  
-@test "The httpd service is running" {
-  svcs -l httpd | egrep '^status *online$'
+@test "The apache2 service is running" {
+  svcs -l apache2 | egrep '^status *online$'
 }
  
 @test "Port 80 is listening" {
-  netstat -an | grep LISTEN | grep httpd
+  netstat -an | grep LISTEN | grep ".80 "
 }
 \end{verbatim}
 }
@@ -52,11 +52,11 @@ serverspecがなぜ同種のツールと比べて広く使われているのか�
 \begin{figure}[tb]
 \setbox0\vbox{
 \begin{verbatim}
-describe package("httpd") do
+describe package("apache2") do
   it { should be_installed }
 end
  
-describe service("httpd") do
+describe service("apache2") do
   it { should be_running }
 end
  
