@@ -34,8 +34,7 @@ OS・ディストリビューション汎用性が満たせないのは，テス
 
 \subsection{提案手法の実装}
 
-提案手法に基づき実装した汎用コマンド実行フレームワークをSpecInfra\cite{specinfra}，制御テストフレームワークをserverspec\cite{serverspec}と名付けた．
-
+提案手法に基づき実装した汎用コマンド実行フレームワークをSpecInfra\cite{specinfra}，制御テストフレームワークをserverspec\cite{serverspec}と名付けた．実装は\figref{fig:framework}に基づいて行っているが，ここでは実装内部の詳細には触れず，実装の結果としてどのようにテストコードが記述できるようになったかを，\figref{fig:test-files-with-serverspec}，\figref{fig:test-users-with-serverspec}，\figref{fig:test-groups-with-serverspec}，\figref{fig:test-packages-with-serverspec}，\figref{fig:test-services-with-serverspec}，\figref{fig:test-ports-with-serverspec}，\figref{fig:test-interfaces-with-serverspec}，\figref{fig:test-zfs-with-serverspec}に示す．
 
 \begin{figure}[tb]
 \setbox0\vbox{
@@ -76,7 +75,7 @@ end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{serverspecによりシステムユーザに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\caption{serverspecによりシステムユーザに対するテストを実行するためのコード\label{fig:test-users-with-serverspec}}
 \end{figure}
 
 \begin{figure}[tb]
@@ -89,7 +88,7 @@ end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{serverspecによりシステムグループに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\caption{serverspecによりシステムグループに対するテストを実行するためのコード\label{fig:test-groups-with-serverspec}}
 \end{figure}
 
 \begin{figure}[tb]
@@ -111,7 +110,7 @@ end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{serverspecによりパッケージに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\caption{serverspecによりパッケージに対するテストを実行するためのコード\label{fig:test-packages-with-serverspec}}
 \end{figure}
 
 \begin{figure}[tb]
@@ -125,7 +124,7 @@ end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{serverspecによりサービスに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\caption{serverspecによりサービスに対するテストを実行するためのコード\label{fig:test-services-with-serverspec}}
 \end{figure}
 
 \begin{figure}[tb]
@@ -145,7 +144,7 @@ end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{serverspecによりポートに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\caption{serverspecによりポートに対するテストを実行するためのコード\label{fig:test-ports-with-serverspec}}
 \end{figure}
 
 \begin{figure}[tb]
@@ -158,7 +157,7 @@ end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{serverspecによりネットワークインターフェースに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\caption{serverspecによりネットワークインターフェースに対するテストを実行するためのコード\label{fig:test-interfaces-with-serverspec}}
 \end{figure}
 
 \begin{figure}[tb]
@@ -168,7 +167,7 @@ describe zfs('rpool') do
   it { should exist }
   it do
     should have_property {
-      'mountpoint' => '/rpool',
+      'mountpoint'  => '/rpool',
       'compression' => 'off'
     }
   end
@@ -176,5 +175,5 @@ end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{serverspecによりZFSに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\caption{serverspecによりZFSに対するテストを実行するためのコード\label{fig:test-zfs-with-serverspec}}
 \end{figure}
