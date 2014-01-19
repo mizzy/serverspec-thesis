@@ -1,0 +1,66 @@
+\begin{thebibliography}{10}
+
+\bibitem{cfengine}
+Burgess, M.: CFEngine: a system configuration engine, ,
+  \urle{http://cfengine.com/markburgess/papers/cfengine\_history.pdf}
+  \refdatee{2014-01-20}.
+
+\bibitem{cmt}
+Wikipedia: Comparison of open-source configuration management software, ,
+  \urle{http://en.wikipedia.org/wiki/Comparison\_of\_open\_source\_configuration\_management\_software}
+  \refdatee{2014-01-20}.
+
+\bibitem{puppet}
+Kanies, L.: Puppet: Next-Generation Configuration Management, {\em USNIX;
+  login},  Vol.~31, No.~1 (2006).
+
+\bibitem{ec2}
+Amazon Web~Services, I.: Release: Amazon EC2 on 2006-08-23, ,
+  \urle{http://aws.amazon.com/releasenotes/Amazon-EC2/353}
+  \refdatee{2014-01-20}.
+
+\bibitem{agile_manifesto}
+Cunningham, W.: アジャイルソフトウェア開発宣言，,
+  \urlj{http://agilemanifesto.org/iso/ja/} \refdatej{2014-01-20}.
+
+\bibitem{agile_infrastructure}
+Debois, P.: Agile infrastructure and operations: how infra-gile are you?, {\em
+  Agile, 2008. AGILE '08. Conference}, pp.\ 202--207 (2009).
+
+\bibitem{test_driven_development}
+Beck, K.: {\em Test Driven Development: By Example}, Addison-Wesley
+  Professional (2002).
+
+\bibitem{test_driven_infrastructure_with_chef}
+Nelson-Smith, S.: {\em Test-Driven Infrastructure with Chef, 2nd Edition},
+  O'Reilly Media (2013).
+
+\bibitem{chefspec}
+Vargo, S.: ChefSpec, , \urle{http://code.sethvargo.com/chefspec/}
+  \refdatee{2014-01-20}.
+
+\bibitem{rspec-puppet}
+Sharpe, T.: rspec-puppet, , \urle{http://rspec-puppet.com/}
+  \refdatee{2014-01-20}.
+
+\bibitem{cucumber-chef}
+Nelson-Smith, S.: Cucumber-Chef, , \urle{http://www.cucumber-chef.org/}
+  \refdatee{2014-01-20}.
+
+\bibitem{minitest-chef-handler}
+Calavera, D.: minitest-chef-handler, ,
+  \urle{https://github.com/calavera/minitest-chef-handler}
+  \refdatee{2014-01-20}.
+
+\bibitem{test-kitchen}
+Heavy Warter~Opertaions, L.: Test Kitchen, , \urle{http://kitchen.ci/}
+  \refdatee{2014-01-20}.
+
+\bibitem{rspec-system}
+Barber, K.: rspec-system, Puppet Labs (online),
+  \urle{https://github.com/puppetlabs/rspec-system} \refdatee{2014-01-20}.
+
+\bibitem{rspec}
+RSpec: RSpec, , \urle{http://rspec.info/} \refdatee{2014-01-20}.
+
+\end{thebibliography}
