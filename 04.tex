@@ -1,12 +1,12 @@
 \section{提案手法の評価}
 
-提案手法を実装したserverspecを採用している企業がいくつか見受けられる\cite{nintendo}\cite{wantedly}．また，同種ツールとしてとりあげたTest Kitchenやrspec-systemには，ツール標準のテスト機構をserverspecで置き換えるbusser-serverspecやrspec-system-serverspecが存在する．他にも，Vagrantと連携してVMのテストを行うvagrant-serverspecというツールが存在する．このように，serverspecは単体利用だけではなく，同種ツールの一機能として取り込まれたり，他種ツールと連携する形でも利用が広がっている．
+提案手法を実装したserverspecを採用している企業がいくつか見受けられる\cite{nintendo}\cite{wantedly}．また，同種ツールとしてとりあげたTest Kitchenやrspec-systemには，ツール標準のテスト機構をserverspecで置き換えるbusser-serverspec\cite{busser-serverspec}やrspec-system-serverspec\cite{rspec-system-serverspec}が存在する．他にも，Vagrant\cite{vagrant}と連携してVMのテストを行うvagrant-serverspec\cite{vagrant-serverspec}というツールが存在する．このように，serverspecは単体利用だけではなく，同種ツールの一機能として取り込まれたり，他種ツールと連携する形でも利用が広がっている．
 
 serverspecがなぜ同種のツールと比べて広く使われているのかを考察する．まずひとつは特定の構成管理ツールに依存していないことが挙げられる．そのためどの構成管理ツールを利用していてもserverspecは利用できる．それだけにとどまらず，構成管理ツールを利用していない場合でもserverspecを利用することができる．そのため特定の構成管理ツール依存のテストツールと比べて利用の間口が広い．
 
 特定の構成管理ツールに依存していないということは，テスト対象のサーバに特定の構成管理ツールを入れる必要がないということでもある．serverspecはテスト対象サーバでsshdが動いてさえいれば，Rubyすら入れる必要がない．そのため特定の構成管理ツール依存のテストツールと比較して利用の障壁が低い．
 
-広く使われている理由の二つ目は記法の汎用性と抽象度の高さである．汎用性を高めたため，OS・ディストリビューションの違いを気にすることなくテストを容易に書くことができる．また抽象度が高いためテストコードの可読性が高く，メンテナンス性が高い．例として，Test Kitchenでは標準でbats\cite{bats}を利用してテストを書くが，batsによるUbuntu上でのテストコードを\figref{fig:test-with-bats-on-ubuntu}に示す．また，同じ内容のテストをSolaris向けに書く場合の例を\figref{fig:test-with-bats-on-solaris}に示す．serverspecによるテストコードは，OSが何であっても\figref{fig:test-with-serverspec}で示すようなコードになる．このように，提案手法ではOSの違いを意識することなく，テストコードを記述することができる．
+広く使われている理由の二つ目は記法の汎用性と抽象度の高さである．汎用性を高めたため，OS・ディストリビューションの違いを気にすることなくテストを容易に書くことができる．また抽象度が高いためテストコードの可読性が高く，メンテナンス性が高い．例として，Test Kitchenでは標準でbats\cite{bats}を利用してテストを書くが，batsによるUbuntu\cite{ubuntu}上でのテストコードを\figref{fig:test-with-bats-on-ubuntu}に示す．また，同じ内容のテストをSolaris\cite{solaris}向けに書く場合の例を\figref{fig:test-with-bats-on-solaris}に示す．serverspecによるテストコードは，OSが何であっても\figref{fig:test-with-serverspec}で示すようなコードになる．このように，提案手法ではOSの違いを意識することなく，テストコードを記述することができる．
 
 \begin{figure}[tb]
 \setbox0\vbox{
@@ -98,6 +98,6 @@ end
 
 構成管理ツール依存を排除し，汎用的であるのに加え，単機能でもある．ゆえに他ツールとも組み合わせやすく，従来からあるテストツールや多種ツールに取り込まれる形での利用も広がっている．
 
-弊社ではserverspecを採用することによって，古くからあるPuppetマニフェスト（Puppetの記法で書かれたテストコード）をリファクタリングしようという動きが現場エンジニアの間で活発になっている．
+弊社ではserverspecを採用することによって，古くからあるPuppetマニフェスト，すなわちPuppetの記法で書かれた構成管理コードをリファクタリングしようという動きが現場エンジニアの間で活発になっている．
 
 とは言え，利用の広がりについては，きちんとした調査の結果ではなく，定量的な評価は今後の課題である．
