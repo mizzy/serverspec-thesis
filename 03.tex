@@ -36,75 +36,145 @@ OS・ディストリビューション汎用性が満たせないのは，テス
 
 提案手法に基づき実装した汎用コマンド実行フレームワークをSpecInfra\cite{specinfra}，制御テストフレームワークをserverspec\cite{serverspec}と名付けた．
 
-SpecInfraとserverspecの実装の一部を示す．SpecInfraでは各OS用のコマンド群をクラスとして定義する．例としてRedHat系Linux上で指定されたパッケージがインストールされているかどうかを確認するコマンドの定義を\figref{fig:check-installed-on-redhat}に示す．また，Solaris上で指定されたパッケージがインストールされているかどうかを確認するコマンドの定義を\figref{fig:check-installed-on-solaris}に示す．serverspec上でこのコマンドを呼び出して指定したパッケージがインストールされているかどうかテストする部分の実装を\figref{fig:call-check-install}に示す．
 
 \begin{figure}[tb]
 \setbox0\vbox{
 \begin{verbatim}
-module SpecInfra::Command
-  class RedHat < Linux
-    def check_installed(package,version=nil)
-      cmd = "rpm -q #{escape(package)}"
-      if version
-        cmd = "#{cmd} | grep -w -- #{escape(version)}"
-      end
-      cmd
-    end
+describe file("/etc/password") do
+  it { should be_file }
+end
+
+describe file("/tmp") do
+  it { should be_directory }
+end
+
+describe file("/var/run/unicorn.sock") do
+  it { should be_socket }
+end
+
+describe file("/etc/httpd/conf/httpd.conf") do
+  its(:content) do
+    should match /ServerName www.example.jp/
   end
 end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{パッケージがインストールされているかを確認するRedHat系Linux用コマンド定義\label{fig:check-installed-on-redhat}}
+\caption{serverspecによりファイルに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
 \end{figure}
 
 \begin{figure}[tb]
 \setbox0\vbox{
 \begin{verbatim}
-module SpecInfra::Command
-  class Solaris < Base
-    def check_installed(package, version=nil)
-      cmd = "pkg list -H #{escape(package)}"
-      if version
-        cmd = "#{cmd} | grep -qw -- #{escape(version)}"
-      end
-      cmd
-    end
-  end
+describe user("root") do
+  it { should exist }
+  it { should have_uid 0 }
+  it { should belong_to_group "root" }
+  it { should have_home_directory "/root" }
+  it { should have_login_shell "/bin/bash" }
 end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{パッケージがインストールされているかを確認するSolaris用コマンド定義\label{fig:check-installed-on-solaris}}
+\caption{serverspecによりシステムユーザに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
 \end{figure}
-
 
 \begin{figure}[tb]
 \setbox0\vbox{
 \begin{verbatim}
-module Serverspec::Type
-  class Package < Base
-    def installed?(provider, version)
-      backend.check_installed(@name, version)
-    end
-  end
+describe group("root") do
+  it { should exist }
+  it { should have_gid 0 }
 end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{パッケージインストールチェックコマンドを呼び出す部分のservespecでの実装\label{fig:call-check-install}}
+\caption{serverspecによりシステムグループに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
 \end{figure}
-
-これらの実装の上で，サーバ上にntpパッケージがインストールされているかどうかを確認するためのテストコードをserverspecの記法で記述したものを\figref{fig:test-code-to-check-ntp-package-installed}に示す．
 
 \begin{figure}[tb]
 \setbox0\vbox{
 \begin{verbatim}
-describe package("ntp") do
+describe package("httpd") do
   it { should be_installed }
 end
+
+describe package("serverspec") do
+  it { should be_installed.by("gem") }
+end
+
+describe package("serverspec") do
+  it do
+    should be_installed.by("gem").with_version("0.14.3")
+  end
+end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{ntpパッケージがインストールされているかをテストするserverspecで記述したテストコード\label{fig:test-code-to-check-ntp-package-installed}}
+\caption{serverspecによりパッケージに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\end{figure}
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+describe service("ntpd") do
+  it { should be_enabled }
+  it { should be_running }
+  it { should be_monitored_by("monit") }
+end
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{serverspecによりサービスに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\end{figure}
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+describe port(80) do
+  it { should be_listening }
+end
+
+describe port(80) do
+  it { should be_listening.with("tcp") }
+end
+
+describe port(53) do
+  it { should be_listening.with("udp") }
+end
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{serverspecによりポートに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\end{figure}
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+describe interface('eth0') do
+  it { should have_ipv4_address("192.168.10.10") }
+  its(:speed) { should eq 1000 }
+end
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{serverspecによりネットワークインターフェースに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\end{figure}
+
+\begin{figure}[tb]
+\setbox0\vbox{
+\begin{verbatim}
+describe zfs('rpool') do
+  it { should exist }
+  it do
+    should have_property {
+      'mountpoint' => '/rpool',
+      'compression' => 'off'
+    }
+  end
+end
+\end{verbatim}
+}
+\centerline{\fbox{\box0}}
+\caption{serverspecによりZFSに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
 \end{figure}
