@@ -154,23 +154,5 @@ end
 \caption{serverspecによりネットワークインターフェースに対するテストを実行するためのコード\label{fig:test-interfaces-with-serverspec}}
 \end{figure}
 
-\begin{figure}[tb]
-\setbox0\vbox{
-\begin{verbatim}
-describe zfs('rpool') do
-  it { should exist }
-  it do
-    should have_property {
-      'mountpoint'  => '/rpool',
-      'compression' => 'off'
-    }
-  end
-end
-\end{verbatim}
-}
-\centerline{\fbox{\box0}}
-\caption{serverspecによりZFSに対するテストを実行するためのコード\label{fig:test-zfs-with-serverspec}}
-\end{figure}
-
 RSpecを採用することによりテストコードがどのように書けるのかを例で示す．\figref{fig:test-files-with-serverspec}にserverspecによりファイルに対してテストを行うためのコードを示す．describeではテストの対象となるサーバ上のリソースを指定する．この図ではfile("/etc/passwd")などがそれにあたる．これによりテスト対象が/etc/passwdというファイルであることを指定する．テストしたい内容はit \{ should ... \}といった形で記述する．例えば，it \{ should be\_file \}は，対象リソースがファイルとして存在する，ということをテストするためのコードである．
 
