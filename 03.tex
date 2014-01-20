@@ -36,7 +36,7 @@ OS・ディストリビューション汎用性が満たせないのは，テス
 
 提案手法に基づき実装した汎用コマンド実行フレームワークをspecinfra\cite{specinfra}，制御テストフレームワークをserverspec\cite{serverspec}と名付けた．specinfra，serverspecともに実装にはRubyを採用している．Rubyを採用した理由はテストフレームワークとして実績があり，自然言語に近い形でテストコードを記述することができ，記法のカスタマイズが可能なRSpecを採用するためである．
 
-実装の結果としてどのようにテストコードが記述できるようになったかを，\figref{fig:test-files-with-serverspec}，\figref{fig:test-users-with-serverspec}，\figref{fig:test-groups-with-serverspec}，\figref{fig:test-packages-with-serverspec}，\figref{fig:test-services-with-serverspec}，\figref{fig:test-ports-with-serverspec}，\figref{fig:test-interfaces-with-serverspec}，\figref{fig:test-zfs-with-serverspec}に示す．
+\figref{fig:test-files-with-serverspec}にserverspecによりファイルに対してテストを行うためのコードを示す．describeではテストの対象となるサーバ上のリソースを指定する．この図ではfile("/etc/passwd")などがそうである．これによりテスト対象が/etc/passwdというファイルであることを指定する．テストしたい内容はit { should ... }といった形で記述する．例えば，it { should be\_file }は，対象リソースがファイルとして存在する，ということを確認するためのコードである．
 
 \begin{figure}[tb]
 \setbox0\vbox{
@@ -61,7 +61,7 @@ end
 \end{verbatim}
 }
 \centerline{\fbox{\box0}}
-\caption{serverspecによりファイルに対するテストを実行するためのコード\label{fig:test-files-with-serverspec}}
+\caption{serverspecによりファイルをテストするためのコード\label{fig:test-files-with-serverspec}}
 \end{figure}
 
 \begin{figure}[tb]
