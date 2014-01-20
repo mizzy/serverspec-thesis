@@ -1,12 +1,10 @@
 \section{提案手法の評価}
 
-提案手法を実装したserverspecを採用している企業がいくつか見受けられる\cite{nintendo}\cite{wantedly}．また，同種ツールとしてとりあげたTest Kitchenやrspec-systemには，ツール標準のテスト機構をserverspecで置き換えるbusser-serverspec\cite{busser-serverspec}やrspec-system-serverspec\cite{rspec-system-serverspec}が存在する．他にも，Vagrant\cite{vagrant}と連携してVMのテストを行うvagrant-serverspec\cite{vagrant-serverspec}というツールが存在する．このように，serverspecは単体利用だけではなく，同種ツールの一機能として取り込まれたり，他種ツールと連携する形でも利用が広がっている．
+serverspecを他のテストツールと比較し評価してみる．serverspecの特徴のひとつとして，特定の構成管理ツールに依存していないことが挙げられる．そのため，どの構成管理ツールを利用していてもserverspecは利用できる．それだけにとどまらず，構成管理ツールを利用していない場合でもserverspecを利用することができる．ゆえに特定の構成管理ツール依存のテストツールと比べて利用の間口が広いと言える．また，特定の構成管理ツールに依存していないということは，テスト対象のサーバに特定の構成管理ツールを入れる必要がないということでもある．serverspecはテスト対象サーバでsshdが動いてさえいれば，Rubyすら入れる必要がない．そのため特定の構成管理ツール依存のテストツールと比較して利用の障壁が低い．
 
-serverspecがなぜ同種のツールと比べて広く使われているのかを考察する．まずひとつは特定の構成管理ツールに依存していないことが挙げられる．そのためどの構成管理ツールを利用していてもserverspecは利用できる．それだけにとどまらず，構成管理ツールを利用していない場合でもserverspecを利用することができる．そのため特定の構成管理ツール依存のテストツールと比べて利用の間口が広い．
+2つめの特徴はTest Kitchenやrspec-systemのような統合テストスイートと比較して単機能な点である．単機能であるがゆえに，他のツールとの親和性が高いことは第3章でも述べた．
 
-特定の構成管理ツールに依存していないということは，テスト対象のサーバに特定の構成管理ツールを入れる必要がないということでもある．serverspecはテスト対象サーバでsshdが動いてさえいれば，Rubyすら入れる必要がない．そのため特定の構成管理ツール依存のテストツールと比較して利用の障壁が低い．
-
-広く使われている理由の二つ目は記法の汎用性と抽象度の高さである．汎用性を高めたため，OS・ディストリビューションの違いを気にすることなくテストを容易に書くことができる．また抽象度が高いためテストコードの可読性が高く，メンテナンス性が高い．例として，Test Kitchenでは標準でbats\cite{bats}を利用してテストを書くが，batsによるUbuntu\cite{ubuntu}上でのテストコードを\figref{fig:test-with-bats-on-ubuntu}に示す．また，同じ内容のテストをSolaris\cite{solaris}向けに書く場合の例を\figref{fig:test-with-bats-on-solaris}に示す．serverspecによるテストコードは，OSが何であっても\figref{fig:test-with-serverspec}で示すようなコードになる．このように，提案手法ではOSの違いを意識することなく，テストコードを記述することができる．
+3つ目の特徴は記法の汎用性と抽象度の高さである．汎用性を高めたため，OS・ディストリビューションの違いを気にすることなくテストを容易に書くことができる．また抽象度が高いためテストコードの可読性が高く，メンテナンス性が高い．例として，Test Kitchenでは標準でbats\cite{bats}を利用してテストを書くが，batsによるUbuntu\cite{ubuntu}上でのテストコードを\figref{fig:test-with-bats-on-ubuntu}に示す．また，同じ内容のテストをSolaris\cite{solaris}向けに書く場合の例を\figref{fig:test-with-bats-on-solaris}に示す．serverspecによるテストコードは，OSが何であっても\figref{fig:test-with-serverspec}で示すようなコードになる．このように，提案手法ではOSの違いを意識することなく，テストコードを記述することができる．
 
 \begin{figure}[tb]
 \setbox0\vbox{
@@ -69,7 +67,6 @@ end
 \caption{serverspecによるテストコード\label{fig:test-with-serverspec}}
 \end{figure}
 
-
 \begin{figure}[tb]
 \setbox0\vbox{
 \begin{verbatim}
@@ -94,10 +91,8 @@ end
 \caption{serverspecによる/etc/sudoersが他人から読めないことをテストするコード\label{fig:test-permission-with-serverspec}}
 \end{figure}
 
-また別の例として，/etc/sudoersが他人から読めないことをテストするコードの例を示す．batsを利用する場合は\figref{fig:test-permission-with-bats}に示すコードとなる．serverspecを利用する場合は\figref{fig:test-permission-with-serverspec}に示すコードとなる．このように， batsの場合はテストコードだけでは何をテストしているのか判別しにくいため，説明用のテキストが必要となる．一方serverspecはテストコードだけでテスト内容が理解できるため，別途説明用のテキストを必要としない．
+別の例として，/etc/sudoersが他人から読めないことをテストするコードの例を示す．batsでは\figref{fig:test-permission-with-bats}に示すコードとなる．serverspecでは\figref{fig:test-permission-with-serverspec}に示すコードとなる．このように， batsはテストコードだけでは何をテストしているのか判別しにくいため，説明用のテキストが必要となる．一方serverspecはテストコードだけでテスト内容が理解できるため，別途説明用のテキストを必要としない．
 
-構成管理ツール依存を排除し，汎用的であるのに加え，単機能でもある．ゆえに他ツールとも組み合わせやすく，従来からあるテストツールや多種ツールに取り込まれる形での利用も広がっている．
+serverspecはオープンソースで公開されており，上述のような利用障壁の低さ，単機能，記法の汎用性・抽象度の高さから，利用が広がっている．また，採用している企業もいくつか見受けられる\cite{nintendo}\cite{wantedly}．
 
-弊社ではserverspecを採用することによって，古くからあるPuppetマニフェスト，すなわちPuppetの記法で書かれた構成管理コードをリファクタリングしようという動きが現場エンジニアの間で活発になっている．
-
-とは言え，利用の広がりについては，きちんとした調査の結果ではなく，定量的な評価は今後の課題である．
+しかし，上述の評価や利用の広まりについては定量的な計測ができておらず，今後の課題である．
