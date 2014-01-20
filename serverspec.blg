@@ -3,20 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: serverspec.aux
 The style file: ipsjunsrt.bst
 Database file #1: serverspec.bib
-Warning--I didn't find a database entry for "minitest"
-Warning--I didn't find a database entry for "serverspec"
-Warning--I didn't find a database entry for "nintendo"
-Warning--I didn't find a database entry for "wantedly"
-Warning--I didn't find a database entry for "chef"
-Warning--I didn't find a database entry for "ruby"
-Warning--I didn't find a database entry for "specinfra"
-Warning--I didn't find a database entry for "busser-serverspec"
-Warning--I didn't find a database entry for "rspec-system-serverspec"
-Warning--I didn't find a database entry for "vagrant"
-Warning--I didn't find a database entry for "vagrant-serverspec"
-Warning--I didn't find a database entry for "bats"
-Warning--I didn't find a database entry for "ubuntu"
-Warning--I didn't find a database entry for "solaris"
 `organization' is a missing field, not a string, for entry cfengine
 while executing---line 1199 of file ipsjunsrt.bst
 `organization' is a missing field, not a string, for entry cmt
@@ -39,46 +25,70 @@ while executing---line 1199 of file ipsjunsrt.bst
 while executing---line 1199 of file ipsjunsrt.bst
 `organization' is a missing field, not a string, for entry rspec
 while executing---line 1199 of file ipsjunsrt.bst
-You've used 15 entries,
+`organization' is a missing field, not a string, for entry minitest
+while executing---line 1199 of file ipsjunsrt.bst
+`organization' is a missing field, not a string, for entry serverspec
+while executing---line 1199 of file ipsjunsrt.bst
+`organization' is a missing field, not a string, for entry nintendo
+while executing---line 1199 of file ipsjunsrt.bst
+`organization' is a missing field, not a string, for entry wantedly
+while executing---line 1199 of file ipsjunsrt.bst
+`organization' is a missing field, not a string, for entry chef
+while executing---line 1199 of file ipsjunsrt.bst
+`organization' is a missing field, not a string, for entry ruby
+while executing---line 1199 of file ipsjunsrt.bst
+`organization' is a missing field, not a string, for entry specinfra
+while executing---line 1199 of file ipsjunsrt.bst
+`organization' is a missing field, not a string, for entry busser-serverspec
+while executing---line 1199 of file ipsjunsrt.bst
+`organization' is a missing field, not a string, for entry vagrant-serverspec
+while executing---line 1199 of file ipsjunsrt.bst
+`organization' is a missing field, not a string, for entry bats
+while executing---line 1199 of file ipsjunsrt.bst
+`organization' is a missing field, not a string, for entry ubuntu
+while executing---line 1199 of file ipsjunsrt.bst
+`organization' is a missing field, not a string, for entry solaris
+while executing---line 1199 of file ipsjunsrt.bst
+You've used 29 entries,
             2334 wiz_defined-function locations,
-            635 strings with 5862 characters,
-and the built_in function-call counts, 2298 in all, are:
-= -- 168
-> -- 60
+            670 strings with 6802 characters,
+and the built_in function-call counts, 4167 in all, are:
+= -- 308
+> -- 117
 < -- 1
-+ -- 30
-- -- 15
-* -- 151
-:= -- 361
-add.period$ -- 15
-call.type$ -- 15
++ -- 58
+- -- 29
+* -- 277
+:= -- 669
+add.period$ -- 29
+call.type$ -- 29
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 152
-empty$ -- 231
-format.name$ -- 30
-if$ -- 541
+cite$ -- 31
+duplicate$ -- 276
+empty$ -- 396
+format.name$ -- 57
+if$ -- 973
 int.to.chr$ -- 0
-int.to.str$ -- 15
+int.to.str$ -- 29
 missing$ -- 4
-newline$ -- 48
-num.names$ -- 15
-pop$ -- 37
+newline$ -- 90
+num.names$ -- 29
+pop$ -- 64
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 98
+skip$ -- 168
 stack$ -- 0
 substring$ -- 28
 swap$ -- 13
-text.length$ -- 1
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 17
-width$ -- 17
-write$ -- 120
-is.kanji.str$ -- 95
-(There were 10 error messages)
+while$ -- 31
+width$ -- 31
+write$ -- 232
+is.kanji.str$ -- 193
+(There were 22 error messages)

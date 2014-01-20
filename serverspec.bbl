@@ -63,4 +63,65 @@ Barber, K.: rspec-system, Puppet Labs (online),
 \bibitem{rspec}
 RSpec: RSpec, , \urle{http://rspec.info/} \refdatee{2014-01-20}.
 
+\bibitem{minitest}
+aaaa: minitest, , \urle{http://docs.seattlerb.org/minitest/}
+  \refdatee{2014-01-20}.
+
+\bibitem{serverspec}
+Miyashita, G.: serverspec, , \urle{https://github.com/serverspec/serverspec}
+  \refdatee{2014-01-20}.
+
+\bibitem{nintendo}
+任天堂株式会社\：採用情報：キャリア採用 募集要項 - 京都勤務の募集職種
+  開発部門，,
+  \urlj{http://www.nintendo.co.jp/jobs/career/kyoto\_sec1.html\#p03}
+  \refdatej{2014-01-20}.
+
+\bibitem{wantedly}
+Wantedly: serverspecの求人 - Wantedly，,
+  \urlj{https://www.wantedly.com/projects/search?q=serverspec}
+  \refdatej{2014-01-20}.
+
+\bibitem{chef}
+Chef: Chef - Code Can | Chef, , \urle{http://www.getchef.com/}
+  \refdatee{2014-01-20}.
+
+\bibitem{ruby}
+Matsumoto, Y.: オブジェクト指向スクリプト言語 Ruby，,
+  \urlj{https://www.ruby-lang.org/ja/} \refdatej{2014-01-20}.
+
+\bibitem{specinfra}
+Miyashita, G.: specinfra, , \urle{https://github.com/serverspec/specinfra}
+  \refdatee{2014-01-20}.
+
+\bibitem{busser-serverspec}
+ci-lab k: busser-serverspec, ,
+  \urle{https://github.com/cl-lab-k/busser-serverspec} \refdatee{2014-01-20}.
+
+\bibitem{rspec-system-serverspec}
+Haugen, H.: rspec-system-serverspec, Puppet Labs (online),
+  \urle{https://github.com/puppetlabs/rspec-system-serverspec}
+  \refdatee{2014-01-20}.
+
+\bibitem{vagrant}
+Hashimoto, M.: Vagrant, Hashicorp (online), \urle{http://www.vagrantup.com/}
+  \refdatee{2014-01-20}.
+
+\bibitem{vagrant-serverspec}
+Voorhis, J.: vagrant-serverspec, ,
+  \urle{https://github.com/jvoorhis/vagrant-serverspec} \refdatee{2014-01-20}.
+
+\bibitem{bats}
+Stephenson, S.: bats, , \urle{https://github.com/sstephenson/bats}
+  \refdatee{2014-01-20}.
+
+\bibitem{ubuntu}
+Ubuntu: The world's most popular free OS | Ubuntu, ,
+  \urle{http://www.ubuntu.com/} \refdatee{2014-01-20}.
+
+\bibitem{solaris}
+Oracle: Oracle Solaris, ,
+  \urle{http://www.oracle.com/jp/products/servers-storage/solaris/overview/index.html}
+  \refdatee{2014-01-20}.
+
 \end{thebibliography}
