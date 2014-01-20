@@ -133,19 +133,6 @@ end
 \caption{serverspecによりポートをテストするためのコード\label{fig:test-ports-with-serverspec}}
 \end{figure}
 
-\begin{figure}[tb]
-\setbox0\vbox{
-\begin{verbatim}
-describe interface('eth0') do
-  it { should have_ipv4_address("192.168.10.10") }
-  its(:speed) { should eq 1000 }
-end
-\end{verbatim}
-}
-\centerline{\fbox{\box0}}
-\caption{serverspecによりネットワークインターフェースをテストするためのコード\label{fig:test-interfaces-with-serverspec}}
-\end{figure}
-
 RSpecを採用することによりテストコードがどのように書けるのかを例で示す．\figref{fig:test-files-with-serverspec}にserverspecによりファイルに対してテストを行うためのコードを示す．describeではテストの対象となるサーバ上のリソースを指定する．この図ではfile("/etc/passwd")などがそれにあたる．これによりテスト対象が/etc/passwdというファイルであることを指定する．テストしたい内容はit \{ should ... \}といった形で記述する．例えば，it \{ should be\_file \}は，対象リソースがファイルとして存在する，ということをテストするためのコードである．また，its(:content)といった形で指定することで，対象リソースそのものだけではなく，リソースに付随するもの，この例ではファイルの内容についてもテストすることができる．
 
 \figref{fig:test-users-with-serverspec}にシステムユーザ/グループに対してテストを行うためのコードを示す．この例では，rootユーザが存在し，uidが0，rootグループに所属，ホームディレクトリが/root，ログインシェルが/bin/bashであること，rootグループが存在し，gidが0であることをテストしている．
