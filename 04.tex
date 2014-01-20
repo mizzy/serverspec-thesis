@@ -1,10 +1,10 @@
 \section{提案手法の評価}
 
-serverspecを他のテストツールと比較し評価してみる．serverspecの特徴のひとつとして，特定の構成管理ツールに依存していないことが挙げられる．そのため，どの構成管理ツールを利用していてもserverspecは利用できる．それだけにとどまらず，構成管理ツールを利用していない場合でもserverspecを利用することができる．ゆえに特定の構成管理ツール依存のテストツールと比べて利用の間口が広いと言える．また，特定の構成管理ツールに依存していないということは，テスト対象のサーバに特定の構成管理ツールを入れる必要がないということでもある．serverspecはテスト対象サーバでsshdが動いてさえいれば，Rubyすら入れる必要がない．そのため特定の構成管理ツール依存のテストツールと比較して利用の障壁が低い．
+serverspecを他のテストツールと比較し評価してみる．serverspecの特徴の一つとして，特定の構成管理ツールに依存していないことが挙げられる．そのため，どの構成管理ツールを利用していてもserverspecを利用することができる．それだけにとどまらず，構成管理ツールを利用していない場合でもserverspecを利用することができる．ゆえに特定の構成管理ツール依存のテストツールと比べて利用の間口が広いと言える．また，特定の構成管理ツールに依存していないということは，テスト対象のサーバに特定のソフトウェアを入れる必要がないということでもある．serverspecはテスト対象サーバでsshdが動いてさえいれば，Rubyすら入れる必要がない．そのため特定の構成管理ツール依存のテストツールと比較して利用の障壁が低い．
 
-2つめの特徴はTest Kitchenやrspec-systemのような統合テストスイートと比較して単機能な点である．単機能であるがゆえに，他のツールとの親和性が高いことは第3章でも述べた．
+二つ目の特徴はTest Kitchenやrspec-systemのような統合テストスイートと比較して単機能な点である．単機能であるがゆえに，他のツールとの親和性が高いことは3章でも述べた．
 
-3つ目の特徴は記法の汎用性と抽象度の高さである．汎用性を高めたため，OS・ディストリビューションの違いを気にすることなくテストを容易に書くことができる．また抽象度が高いためテストコードの可読性が高く，メンテナンス性が高い．例として，Test Kitchenでは標準でbats\cite{bats}を利用してテストを書くが，batsによるUbuntu\cite{ubuntu}上でのテストコードを\figref{fig:test-with-bats-on-ubuntu}に示す．また，同じ内容のテストをSolaris\cite{solaris}向けに書く場合の例を\figref{fig:test-with-bats-on-solaris}に示す．serverspecによるテストコードは，OSが何であっても\figref{fig:test-with-serverspec}で示すようなコードになる．このように，提案手法ではOSの違いを意識することなく，テストコードを記述することができる．
+三つ目の特徴は記法の汎用性と抽象度の高さである．汎用性を高めたため，OS・ディストリビューションの違いを気にすることなくテストを容易に書くことができる．また抽象度が高いためテストコードの可読性が高く，メンテナンス性が高い．例として，Test Kitchenでは標準でbats\cite{bats}を利用してテストコードを書くが，batsによるUbuntu\cite{ubuntu}上でのテストコードを\figref{fig:test-with-bats-on-ubuntu}に示す．また，同じ内容のテストをSolaris\cite{solaris}向けに書く場合の例を\figref{fig:test-with-bats-on-solaris}に示す．serverspecによるテストコードは，OSが何であっても\figref{fig:test-with-serverspec}で示すようなコードになる．このように，提案手法ではOSの違いを意識することなく，テストコードを記述することができる．
 
 \begin{figure}[tb]
 \setbox0\vbox{
@@ -91,8 +91,8 @@ end
 \caption{serverspecによる/etc/sudoersが他人から読めないことをテストするコード\label{fig:test-permission-with-serverspec}}
 \end{figure}
 
-別の例として，/etc/sudoersが他人から読めないことをテストするコードの例を示す．batsでは\figref{fig:test-permission-with-bats}に示すコードとなる．serverspecでは\figref{fig:test-permission-with-serverspec}に示すコードとなる．このように， batsはテストコードだけでは何をテストしているのか判別しにくいため，説明用のテキストが必要となる．一方serverspecはテストコードだけでテスト内容が理解できるため，別途説明用のテキストを必要としない．
+別の例として，/etc/sudoersが他人から読めないことをテストするコードの例を示す．batsでは\figref{fig:test-permission-with-bats}に示すコードとなり．serverspecでは\figref{fig:test-permission-with-serverspec}に示すコードとなる．このように， batsはテストコードだけでは何をテストしているのか判別しにくいため，説明用のテキストが必要となる．一方serverspecはテストコードだけでテスト内容が理解できるため，別途説明用のテキストを必要としない．
 
 serverspecはオープンソースで公開されており，上述のような利用障壁の低さ，単機能，記法の汎用性・抽象度の高さから，利用が広がっている．また，採用している企業もいくつか見受けられる\cite{nintendo}\cite{wantedly}．
 
-しかし，上述の評価や利用の広まりについては定量的な計測ができておらず，今後の課題である．
+しかし，定量的な評価ができておらず，評価手法の検討など，今後に課題が残る．
