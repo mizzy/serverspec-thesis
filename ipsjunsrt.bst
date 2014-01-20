@@ -62,7 +62,7 @@ FUNCTION {output.nonnull}
 { 's :=
   output.state mid.sentence =
     { duplicate$ is.kanji				% 2.00(2)
-	{ "°§" * write$ }
+	{ "Ôºå" * write$ }
 	{ ", " * write$ }
       if$
     }
@@ -274,7 +274,7 @@ FUNCTION {format.names}					% 1.00(4), 2.00(4)
     { s nameptr "{ff}{ll}" format.name$ duplicate$ is.kanji
 	{ duplicate$ text.length$ #6 >
 	    { 't := }
-	    { pop$ s nameptr "{ff}°°{ll}" format.name$ 't := }
+	    { pop$ s nameptr "{ff}„ÄÄ{ll}" format.name$ 't := }
 	  if$
 	}
         { pop$ s nameptr "{vv }{ll}{, jj}{, f.}" format.name$ 't := }
@@ -282,18 +282,18 @@ FUNCTION {format.names}					% 1.00(4), 2.00(4)
       nameptr #1 >
 	{ namesleft #1 >
 	    { s is.kanji
-		{ "°§" }
+		{ "Ôºå" }
 		{ ", " }
 	      if$
 	      * t * }
 	    { t "others" =
 		{ s is.kanji
-			{"§€§´" * }
+			{"„Åª„Åã" * }
 			{" et al." * }
 		      if$
                 }
 		{ s is.kanji
-			{"°§" * t * }	% put "," here for Kanji (H.N.)
+			{"Ôºå" * t * }	% put "," here for Kanji (H.N.)
 			{" and " * t * }
 	     	      if$
 		}
@@ -318,7 +318,7 @@ FUNCTION {format.authors}
 
 FUNCTION {add.colon}					% 2.00(5)
 { duplicate$ is.kanji
-    { "\°ß" * }						% 2.12(1)
+    { "\Ôºö" * }						% 2.12(1)
     { ": " * }
   if$
 }
@@ -329,10 +329,10 @@ FUNCTION {format.editors.inparen}			% 2.00(6)
     { editor format.names
       editor num.names$ #1 >
 	{ editor is.kanji
-		{"°§ ‘" * } {", eds." *} if$
+		{"ÔºåÁ∑®" * } {", eds." *} if$
 	}
 	{ editor is.kanji
-		{"°§ ‘" *}  {", ed." *} if$
+		{"ÔºåÁ∑®" *}  {", ed." *} if$
 	}
       if$
     }
@@ -345,10 +345,10 @@ FUNCTION {format.editors}
     { editor format.names
       editor num.names$ #1 >
 	{ editor is.kanji
-		{"°  ‘°À" * } {"(eds.)" *} if$		% 2.00(7)
+		{"ÔºàÁ∑®Ôºâ" * } {"(eds.)" *} if$		% 2.00(7)
 	}
 	{ editor is.kanji
-		{"°  ‘°À" *}  {"(ed.)" *} if$		% 2.00(7)
+		{"ÔºàÁ∑®Ôºâ" *}  {"(ed.)" *} if$		% 2.00(7)
 	}
       if$
     }
@@ -480,7 +480,7 @@ FUNCTION {multi.page.check}
 
 FUNCTION {format.online}				% 3.00(1)>>
 { is.kanji.title
-    { "° •™•Û•È•§•Û°À" * }
+    { "Ôºà„Ç™„É≥„É©„Ç§„É≥Ôºâ" * }
     { duplicate$ empty$
         { "(online)" * }
         { " (online)" * }
@@ -579,7 +579,7 @@ FUNCTION {format.in.ed.booktitle}
       editor empty$
 	'skip$
 	{ booktitle is.kanji
-	    { "° " * format.editors.inparen * "°À" *}	% 2.00(6,7)
+	    { "Ôºà" * format.editors.inparen * "Ôºâ" *}	% 2.00(6,7)
 	    { " (" * format.editors.inparen * ")" *}	% 1.00(9), 2.00(6)
 	  if$
 	}
@@ -612,7 +612,7 @@ FUNCTION {format.tr.number}
     { title empty$
         { "Technical Report" }
         { title is.kanji
-            { "µªΩ— Ûπ" }
+            { "ÊäÄË°ìÂ†±Âëä" }
             { "Technical Report" }
           if$
         }
@@ -648,16 +648,16 @@ FUNCTION {format.crossref.editor}			% 1.00(11)
   editor num.names$ duplicate$
   #2 >
     { editor is.kanji
-	  {pop$ "§€§´" *} {pop$ " et al." * } if$
+	  {pop$ "„Åª„Åã" *} {pop$ " et al." * } if$
     }
     { #2 <
 	'skip$
 	{ editor #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
 	    { editor is.kanji
-		{"§€§´" *} {" et al." * } if$
+		{"„Åª„Åã" *} {" et al." * } if$
 	    }
 	    { editor is.kanji
-		{"°¶" * editor #2 "{ff}" format.name$ * }
+		{"„Éª" * editor #2 "{ff}" format.name$ * }
 		{" and " * editor #2 "{vv }{ll}" format.name$ * }
 	      if$
 	    }
@@ -689,7 +689,7 @@ FUNCTION {format.book.crossref}				% 2.00(8)
   " \cite{" * crossref * "}" *
   volume empty$
     { "empty volume in " cite$ * "'s crossref of " * crossref * warning$ }
-    { duplicate$ is.kanji { "°§" } { ", "} if$ *
+    { duplicate$ is.kanji { "Ôºå" } { ", "} if$ *
       "Vol." * volume tie.or.space.connect
     }
   if$
@@ -944,7 +944,7 @@ FUNCTION {mastersthesis}
   author empty$
     { "Master's thesis" }
     { author is.kanji
-        { "Ω§ªŒœ¿ ∏" }  
+        { "‰øÆÂ£´Ë´ñÊñá" }  
         { "Master's thesis" }
       if$
     }
@@ -990,7 +990,7 @@ FUNCTION {phdthesis}
   author empty$
     { "PhD Thesis" }
     { author is.kanji
-        { "«ÓªŒœ¿ ∏" }
+        { "ÂçöÂ£´Ë´ñÊñá" }
         { "PhD Thesis" }
       if$
     }
@@ -1082,8 +1082,8 @@ FUNCTION {webpage}					% 3.00(1)>>
 %%%%
   output.bibitem
   format.authors add.colon
-  title output
-  organization format.doi.url output
+  title format.doi.url output
+  organization output
   format.ref.date output
   new.block
   note output
