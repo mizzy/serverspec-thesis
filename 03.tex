@@ -34,8 +34,6 @@ OS・ディストリビューション汎用性が満たせないのは，テス
 
 提案手法に基づき実装した汎用コマンド実行フレームワークをspecinfra\cite{specinfra}，制御テストフレームワークをserverspec\cite{serverspec}と名付けた．specinfra，serverspecともに実装にはRubyを採用している．Rubyを採用した理由はRSpecを利用するためである．RSpecはテストフレームワークとして実績があり，自然言語に近い形でテストコードを記述することができ，記法のカスタマイズが可能であることから採用した．
 
-RSpecを採用することによりテストコードがどのように書けるのかを例で示す．\figref{fig:test-files-with-serverspec}にserverspecによりファイルに対してテストを行うためのコードを示す．describeではテストの対象となるサーバ上のリソースを指定する．この図ではfile("/etc/passwd")などがそれにあたる．これによりテスト対象が/etc/passwdというファイルであることを指定する．テストしたい内容はit \{ should ... \}といった形で記述する．例えば，it \{ should be\_file \}は，対象リソースがファイルとして存在する，ということをテストするためのコードである．
-
 \begin{figure}[tb]
 \setbox0\vbox{
 \begin{verbatim}
@@ -177,5 +175,7 @@ end
 \centerline{\fbox{\box0}}
 \caption{serverspecによりZFSに対するテストを実行するためのコード\label{fig:test-zfs-with-serverspec}}
 \end{figure}
+
+RSpecを採用することによりテストコードがどのように書けるのかを例で示す．\figref{fig:test-files-with-serverspec}にserverspecによりファイルに対してテストを行うためのコードを示す．describeではテストの対象となるサーバ上のリソースを指定する．この図ではfile("/etc/passwd")などがそれにあたる．これによりテスト対象が/etc/passwdというファイルであることを指定する．テストしたい内容はit \{ should ... \}といった形で記述する．例えば，it \{ should be\_file \}は，対象リソースがファイルとして存在する，ということをテストするためのコードである．
 
 他に実装上重要な点として，テスト対象サーバに対して何もインストールする必要がないことが挙げられる．serverspecはインストールされたサーバに対してテストが実行できることはもちろん，インストールされていないサーバに対してもSSH経由でテストを実行することができる．また，提案手法に基づいて実装しているため，特定の構成管理管理ツールに依存せず，テストのみに特化し単機能である．単機能であるため他のツールとも組み合わせやすく，同種ツールとしてとりあげたTest Kitchenやrspec-systemには，ツール標準のテスト機構をserverspecで置き換えるbusser-serverspec\cite{busser-serverspec}やrspec-system-serverspec\cite{rspec-system-serverspec}が存在する．他にも，Vagrant\cite{vagrant}と連携してVMのテストを行うvagrant-serverspec\cite{vagrant-serverspec}というツールが存在する．
