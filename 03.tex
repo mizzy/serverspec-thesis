@@ -34,7 +34,9 @@ OS・ディストリビューション汎用性が満たせないのは，テス
 
 \subsection{提案手法の実装}
 
-提案手法に基づき実装した汎用コマンド実行フレームワークをspecinfra\cite{specinfra}，制御テストフレームワークをserverspec\cite{serverspec}と名付けた．実装の結果としてどのようにテストコードが記述できるようになったかを，\figref{fig:test-files-with-serverspec}，\figref{fig:test-users-with-serverspec}，\figref{fig:test-groups-with-serverspec}，\figref{fig:test-packages-with-serverspec}，\figref{fig:test-services-with-serverspec}，\figref{fig:test-ports-with-serverspec}，\figref{fig:test-interfaces-with-serverspec}，\figref{fig:test-zfs-with-serverspec}に示す．
+提案手法に基づき実装した汎用コマンド実行フレームワークをspecinfra\cite{specinfra}，制御テストフレームワークをserverspec\cite{serverspec}と名付けた．specinfra，serverspecともに実装にはRubyを採用している．Rubyを採用した理由はテストフレームワークとして実績があり，自然言語に近い形でテストコードを記述することができ，記法のカスタマイズが可能なRSpecを採用するためである．
+
+実装の結果としてどのようにテストコードが記述できるようになったかを，\figref{fig:test-files-with-serverspec}，\figref{fig:test-users-with-serverspec}，\figref{fig:test-groups-with-serverspec}，\figref{fig:test-packages-with-serverspec}，\figref{fig:test-services-with-serverspec}，\figref{fig:test-ports-with-serverspec}，\figref{fig:test-interfaces-with-serverspec}，\figref{fig:test-zfs-with-serverspec}に示す．
 
 \begin{figure}[tb]
 \setbox0\vbox{
