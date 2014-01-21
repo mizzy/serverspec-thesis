@@ -1,0 +1,103 @@
+\begin{thebibliography}{10}
+
+\bibitem{survey_and_taxonomy_of_iaas}
+R. Prodan and S. Ostermann, ``A Survey and Taxonomy of Infrastructure as a Service and Web Hosting Cloud Providers'', {\em Grid Com puting, 2009 10th IEEE/ACM International Conference}, pp.\ 17--25 (2009).
+
+\bibitem{cfengine}
+M. Burgess, ``CFEngine: a system configuration engine'', http://cfengine.com/markburgess/papers/cfengine
+\_history.pdf.
+
+\bibitem{cmt}
+Wikipedia,``Comparison of open-source configuration management software'',\\
+http://en.wikipedia.org/wiki/Comparison\_of\_open\_source\_
+  configuration\_management\_software.
+
+\bibitem{puppet}
+L. Kanies, ``Puppet: Next-Generation Configuration Management'', {\em USNIX; login},  Vol.~31, No.~1 (2006).
+
+\bibitem{ec2}
+Amazon WebServices,Inc.,
+ ``Release: Amazon EC2 on 2006-08-23'',\\
+ http://aws.amazon.com/releasenotes/Amazon-EC2/353.
+
+\bibitem{agile_manifesto}
+W. Cunningham,
+  ``アジャイルソフトウェア開発宣言''，http://agilemanifesto.org/iso/ja/.
+
+\bibitem{agile_infrastructure}
+P. Debois, ``Agile infrastructure and operations: how infra-gile are you?'', {\em
+  Agile, 2008. AGILE '08. Conference}, pp.\ 202--207 (2009).
+
+\bibitem{test_driven_development}
+K. Beck, {\em Test Driven Development: By Example},\\
+ Addison-Wesley Professional (2002).
+
+\bibitem{test_driven_infrastructure_with_chef}
+S. Nelson-Smith, {\em Test-Driven Infrastructure with Chef, 2nd Edition},
+  O'Reilly Media (2013).
+
+\bibitem{chefspec}
+S. Vargo: ``ChefSpec'',\\
+ http://code.sethvargo.com/chefspec/.
+
+\bibitem{rspec-puppet}
+T.Sharpe, ``rspec-puppet'', http://rspec-puppet.com/.
+
+\bibitem{cucumber-chef}
+S. Nelson-Smith, ``Cucumber-Chef'',\\
+ http://www.cucumber-chef.org/.
+
+\bibitem{minitest-chef-handler}
+D. Calavera, ``minitest-chef-handler'',\\
+  https://github.com/calavera/minitest-chef-handler.
+
+\bibitem{test-kitchen}
+Heavy Warter Opertaions, LLC., ``Test Kitchen'', http://kitchen.ci/.
+
+\bibitem{rspec-system}
+Puppet Labs, ``rspec-system'',\\
+  https://github.com/puppetlabs/rspec-system.
+
+\bibitem{rspec}
+RSpec, ``RSpec'', http://rspec.info/.
+
+\bibitem{serverspec}
+G. Miyashita, ``serverspec'',\\
+  https://github.com/serverspec/serverspec.
+
+\bibitem{nintendo}
+任天堂株式会社, ``採用情報：キャリア採用 募集要項 - 京都勤務の募集職種
+  開発部門''，\\
+http://www.nintendo.co.jp/jobs/career/kyoto\_sec1.html\#p03.
+
+\bibitem{wantedly}
+Wantedly, ``serverspecの求人 - Wantedly''，\\
+https://www.wantedly.com/projects/search?q=serverspec.
+
+\bibitem{chef}
+Chef, ``Chef - Code Can | Chef'',\\
+ http://www.getchef.com/.
+
+\bibitem{ruby}
+Y. Matsumoto, ``オブジェクト指向スクリプト言語 Ruby''，https://www.ruby-lang.org/ja/.
+
+\bibitem{specinfra}
+G. Miyashita, ``specinfra'',\\
+  https://github.com/serverspec/specinfra.
+
+\bibitem{vagrant}
+M. Hashimoto, ``Vagrant'', http://www.vagrantup.com/.
+
+\bibitem{bats}
+S. Stephenson, ``bats'',\\
+ https://github.com/sstephenson/bats.
+
+\bibitem{ubuntu}
+Ubuntu, ``The world's most popular free OS | Ubuntu'',
+  http://www.ubuntu.com/.
+
+\bibitem{solaris}
+Oracle, ``Oracle Solaris'',\\
+  http://www.oracle.com/jp/products/servers-storage/solaris/overview/index.html.
+
+\end{thebibliography}

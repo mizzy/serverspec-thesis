@@ -2066,8 +2066,8 @@ Presently with\ %
 \csname paffiliate@\the\count@\endcsname}%
  \else
   \footnotetext{%
-\def\\{\newline Presently with \ignorespaces}%
-現在，\csname paffiliate@\the\count@\endcsname}%
+\def\\{\newline \ignorespaces}%
+\csname paffiliate@\the\count@\endcsname}%
   \fi%
    \advance\count@\@ne
 }%

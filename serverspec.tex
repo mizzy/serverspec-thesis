@@ -1,7 +1,7 @@
-\documentclass[submit,techreq,noauthor]{ipsj}
+\documentclass[submit,techreq]{ipsj}
 
 
-\usepackage[dvips]{graphicx}
+\usepackage[dvipdfmx]{graphicx}
 \usepackage{latexsym}
 
 \def\Underline{\setbox0\hbox\bgroup\let\\\endUnderline}
@@ -14,17 +14,26 @@
 \title{serverspec: 宣言的記述でサーバの状態をテスト可能な\\
 汎用性の高いテストフレームワーク}
 
-\paffiliate{PAPERBOY}{株式会社paperboy\&co.}
+\etitle{serverspec: A Versatile Test Framework for Testing States of Servers by Delarative Description}
 
-\paffiliate{TU}{帝京大学}
+\paffiliate{PAPERBOY}{株式会社paperboy\&co.\\
+paperboy\&co., Inc.
+}
 
-\paffiliate{KU}{京都大学}
+\paffiliate{TU}{帝京大学 理工学部\\
+Faculty of SCIENCE and ENGINEERING, Teikyo University
+}
 
-\author{宮下 剛輔}{Miyashita Gosuke}{PAPERBOY,TU}[gosukenator@gmail.com]
-\author{栗林 健太郎}{Kuribayashi Kentaro}{PAPERBOY}[kentarok@gmail.com]
-\author{松本 亮介}{Matsumoto Ryosuke}{KU}[matsumoto\_r@net.ist.i.kyoto-u.ac.jp]
+\paffiliate{KU}{京都大学 情報科学研究科，京都市\\
+Graduates School of Infromatics, Kyoto University
+}
+
+\author{宮下 剛輔}{Gosuke Miyashita}{PAPERBOY,TU}[gosukenator@gmail.com]
+\author{栗林 健太郎}{Kentaro Kuribayashi}{PAPERBOY}
+\author{松本 亮介}{Ryosuke Matsumoto}{KU}
 
 \input{abstract}
+\input{eabstract}
 
 \maketitle
 
@@ -34,6 +43,11 @@
 \input{04}
 \input{05}
 
-\input{bibliography}
+\begin{acknowledgment}
+serverspec実装にあたり、提案手法の原型となる実装を示してくれた株式会社paperboy\&co.伊藤洋也氏に感謝する。
+\end{acknowledgment}
+
+\bibliographystyle{ipsjunsrt}
+\bibliography{serverspec}
 
 \end{document}

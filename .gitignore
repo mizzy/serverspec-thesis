@@ -1,4 +1,5 @@
 *.dvi
 *.log
 *.aux
-
+*.blg
+memo.txt
