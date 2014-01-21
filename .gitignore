@@ -1,6 +1,5 @@
 *.dvi
 *.log
 *.aux
-*.bbl
 *.blg
 memo.txt
