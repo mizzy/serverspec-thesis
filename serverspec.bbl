@@ -1,117 +1,101 @@
 \begin{thebibliography}{10}
 
 \bibitem{survey_and_taxonomy_of_iaas}
-Prodan, R. and Ostermann, S.: A Survey and Taxonomy of Infrastructure as a
-  Service and Web Hosting Cloud Providers, {\em Grid Com puting, 2009 10th
-  IEEE/ACM International Conference}, pp.\ 17--25 (2009).
+R. Prodan and S. Ostermann, ``A Survey and Taxonomy of Infrastructure as a Service and Web Hosting Cloud Providers'', {\em Grid Com puting, 2009 10th IEEE/ACM International Conference}, pp.\ 17--25 (2009).
 
 \bibitem{cfengine}
-Burgess, M.: CFEngine: a system configuration engine (online),
-  \urle{http://cfengine.com/markburgess/papers/cfengine\_history.pdf}
-  \refdatee{2014-01-20}.
+M. Burgess, ``CFEngine: a system configuration engine'', http://cfengine.com/markburgess/papers/cfengine
+\_history.pdf.
 
 \bibitem{cmt}
-Wikipedia: Comparison of open-source configuration management software
-  (online), \urle{http://en.wikipedia.org/wiki/Comparison\_of\_open\_source\_
-  configuration\_management\_software} \refdatee{2014-01-20}.
+Wikipedia,``Comparison of open-source configuration management software'',\\
+http://en.wikipedia.org/wiki/Comparison\_of\_open\_source\_
+  configuration\_management\_software.
 
 \bibitem{puppet}
-Kanies, L.: Puppet: Next-Generation Configuration Management, {\em USNIX;
-  login},  Vol.~31, No.~1 (2006).
+L. Kanies, ``Puppet: Next-Generation Configuration Management'', {\em USNIX; login},  Vol.~31, No.~1 (2006).
 
 \bibitem{ec2}
-Amazon Web~Services, I.: Release: Amazon EC2 on 2006-08-23 (online),
-  \urle{http://aws.amazon.com/releasenotes/Amazon-EC2/353}
-  \refdatee{2014-01-20}.
+Amazon WebServices,Inc.,
+ ``Release: Amazon EC2 on 2006-08-23'',\\
+ http://aws.amazon.com/releasenotes/Amazon-EC2/353.
 
 \bibitem{agile_manifesto}
-Cunningham, W.:
-  アジャイルソフトウェア開発宣言（オンライン），\urlj{http://agilemanifesto.org/iso/ja/}
-  \refdatej{2014-01-20}.
+W. Cunningham,
+  ``アジャイルソフトウェア開発宣言''，http://agilemanifesto.org/iso/ja/.
 
 \bibitem{agile_infrastructure}
-Debois, P.: Agile infrastructure and operations: how infra-gile are you?, {\em
+P. Debois, ``Agile infrastructure and operations: how infra-gile are you?'', {\em
   Agile, 2008. AGILE '08. Conference}, pp.\ 202--207 (2009).
 
 \bibitem{test_driven_development}
-Beck, K.: {\em Test Driven Development: By Example}, Addison-Wesley
-  Professional (2002).
+K. Beck, {\em Test Driven Development: By Example},\\
+ Addison-Wesley Professional (2002).
 
 \bibitem{test_driven_infrastructure_with_chef}
-Nelson-Smith, S.: {\em Test-Driven Infrastructure with Chef, 2nd Edition},
+S. Nelson-Smith, {\em Test-Driven Infrastructure with Chef, 2nd Edition},
   O'Reilly Media (2013).
 
 \bibitem{chefspec}
-Vargo, S.: ChefSpec (online), \urle{http://code.sethvargo.com/chefspec/}
-  \refdatee{2014-01-20}.
+S. Vargo: ``ChefSpec'',\\
+ http://code.sethvargo.com/chefspec/.
 
 \bibitem{rspec-puppet}
-Sharpe, T.: rspec-puppet (online), \urle{http://rspec-puppet.com/}
-  \refdatee{2014-01-20}.
+T.Sharpe, ``rspec-puppet'', http://rspec-puppet.com/.
 
 \bibitem{cucumber-chef}
-Nelson-Smith, S.: Cucumber-Chef (online), \urle{http://www.cucumber-chef.org/}
-  \refdatee{2014-01-20}.
+S. Nelson-Smith, ``Cucumber-Chef'',\\
+ http://www.cucumber-chef.org/.
 
 \bibitem{minitest-chef-handler}
-Calavera, D.: minitest-chef-handler (online),
-  \urle{https://github.com/calavera/minitest-chef-handler}
-  \refdatee{2014-01-20}.
+D. Calavera, ``minitest-chef-handler'',\\
+  https://github.com/calavera/minitest-chef-handler.
 
 \bibitem{test-kitchen}
-Heavy Warter~Opertaions, L.: Test Kitchen (online), \urle{http://kitchen.ci/}
-  \refdatee{2014-01-20}.
+Heavy Warter Opertaions, LLC., ``Test Kitchen'', http://kitchen.ci/.
 
 \bibitem{rspec-system}
-Barber, K.: rspec-system (online),
-  \urle{https://github.com/puppetlabs/rspec-system}, Puppet Labs
-  \refdatee{2014-01-20}.
+Puppet Labs, ``rspec-system'',\\
+  https://github.com/puppetlabs/rspec-system.
 
 \bibitem{rspec}
-RSpec: RSpec (online), \urle{http://rspec.info/} \refdatee{2014-01-20}.
+RSpec, ``RSpec'', http://rspec.info/.
 
 \bibitem{serverspec}
-Miyashita, G.: serverspec (online),
-  \urle{https://github.com/serverspec/serverspec} \refdatee{2014-01-20}.
+G. Miyashita, ``serverspec'',\\
+  https://github.com/serverspec/serverspec.
 
 \bibitem{nintendo}
-任天堂株式会社\：採用情報：キャリア採用 募集要項 - 京都勤務の募集職種
-  開発部門（オンライン），\urlj{http://www.nintendo.co.jp/jobs/career/kyoto\_sec1.html\#p03}
-  \refdatej{2014-01-20}.
+任天堂株式会社, ``採用情報：キャリア採用 募集要項 - 京都勤務の募集職種
+  開発部門''，http://www.nintendo.co.jp/jobs/career/kyoto\_sec1.html\#p03.
 
 \bibitem{wantedly}
-Wantedly: serverspecの求人 -
-  Wantedly（オンライン），\urlj{https://www.wantedly.com/projects/search?q=serverspec}
-  \refdatej{2014-01-20}.
+Wantedly, ``serverspecの求人 - Wantedly''，https://www.wantedly.com/projects/search?q=serverspec.
 
 \bibitem{chef}
-Chef: Chef - Code Can | Chef (online), \urle{http://www.getchef.com/}
-  \refdatee{2014-01-20}.
+Chef, ``Chef - Code Can | Chef'',\\
+ http://www.getchef.com/.
 
 \bibitem{ruby}
-Matsumoto, Y.: オブジェクト指向スクリプト言語
-  Ruby（オンライン），\urlj{https://www.ruby-lang.org/ja/}
-  \refdatej{2014-01-20}.
+Y. Matsumoto, ``オブジェクト指向スクリプト言語 Ruby''，https://www.ruby-lang.org/ja/.
 
 \bibitem{specinfra}
-Miyashita, G.: specinfra (online),
-  \urle{https://github.com/serverspec/specinfra} \refdatee{2014-01-20}.
+G. Miyashita, ``specinfra'',\\
+  https://github.com/serverspec/specinfra.
 
 \bibitem{vagrant}
-Hashimoto, M.: Vagrant (online), \urle{http://www.vagrantup.com/}, Hashicorp
-  \refdatee{2014-01-20}.
+M. Hashimoto, ``Vagrant'', http://www.vagrantup.com/.
 
 \bibitem{bats}
-Stephenson, S.: bats (online), \urle{https://github.com/sstephenson/bats}
-  \refdatee{2014-01-20}.
+S. Stephenson, ``bats'',\\
+ https://github.com/sstephenson/bats.
 
 \bibitem{ubuntu}
-Ubuntu: The world's most popular free OS | Ubuntu (online),
-  \urle{http://www.ubuntu.com/} \refdatee{2014-01-20}.
+Ubuntu, ``The world's most popular free OS | Ubuntu'',
+  http://www.ubuntu.com/.
 
 \bibitem{solaris}
-Oracle: Oracle Solaris (online),
-  \urle{http://www.oracle.com/jp/products/servers-storage/solaris/overview/index.html}
-  \refdatee{2014-01-20}.
+Oracle, ``Oracle Solaris'',\\
+  http://www.oracle.com/jp/products/servers-storage/solaris/overview/index.html.
 
 \end{thebibliography}
