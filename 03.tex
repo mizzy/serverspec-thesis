@@ -83,62 +83,6 @@ end
 \caption{serverspecによりシステムユーザ/グループをテストするためのコード\label{fig:test-users-with-serverspec}}
 \end{figure}
 
-\begin{figure}[tb]
-\setbox0\vbox{
-\begin{verbatim}
-describe package("httpd") do
-  it { should be_installed }
-end
-
-describe package("serverspec") do
-  it { should be_installed.by("gem") }
-end
-
-describe package("serverspec") do
-  it do
-    should be_installed.by("gem").with_version("0.14.3")
-  end
-end
-\end{verbatim}
-}
-\centerline{\fbox{\box0}}
-\caption{serverspecによりパッケージをテストをためのコード\label{fig:test-packages-with-serverspec}}
-\end{figure}
-
-\begin{figure}[tb]
-\setbox0\vbox{
-\begin{verbatim}
-describe service("ntpd") do
-  it { should be_enabled }
-  it { should be_running }
-  it { should be_monitored_by("monit") }
-end
-\end{verbatim}
-}
-\centerline{\fbox{\box0}}
-\caption{serverspecによりサービスをテストするためのコード\label{fig:test-services-with-serverspec}}
-\end{figure}
-
-\begin{figure}[tb]
-\setbox0\vbox{
-\begin{verbatim}
-describe port(80) do
-  it { should be_listening }
-end
-
-describe port(80) do
-  it { should be_listening.with("tcp") }
-end
-
-describe port(53) do
-  it { should be_listening.with("udp") }
-end
-\end{verbatim}
-}
-\centerline{\fbox{\box0}}
-\caption{serverspecによりポートをテストするためのコード\label{fig:test-ports-with-serverspec}}
-\end{figure}
-
 RSpecを採用することによりテストコードがどのように書けるのかを例で示す．\figref{fig:test-files-with-serverspec}にserverspecによりファイルに対してテストを行うためのコードを示す．describeではテストの対象となるサーバ上のリソースを指定する．この図ではfile("/etc/passwd")などがそれにあたる．これによりテスト対象が/etc/passwdというファイルであることを指定する．テストしたい内容はit \{ should ... \}といった形で記述する．例えば，it \{ should be\_file \}は，対象リソースがファイルとして存在する，ということをテストするためのコードである．また，its(:content)といった形で指定することで，対象リソースそのものだけではなく，リソースに付随するもの，この例ではファイルの内容についてもテストすることができる．
 
 \figref{fig:test-users-with-serverspec}にシステムユーザ/グループに対してテストを行うためのコードを示す．この例では，rootユーザが存在し，uidが0，rootグループに所属，ホームディレクトリが/root，ログインシェルが/bin/bashであること，rootグループが存在し，gidが0であることをテストしている．
